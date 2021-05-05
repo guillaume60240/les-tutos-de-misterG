@@ -8,9 +8,42 @@ ob_start();
 
 
 
-<h1>Voici un accueil</h1>
 
-
+<section class="compo">
+    <h1 class="titleSection">L'accueil</h1>
+    <div class="section">
+        <div class="vid">
+            <h3>Titre</h3>
+            
+        </div>
+        <div class="compo_section">
+        </div>
+        <div class="vid">
+            <h3>Titre</h3>
+            
+        </div>
+        <div class="compo_section">
+        </div>
+        <div class="vid">
+            <h3>Titre</h3>
+            
+        </div>
+        <div class="compo_section">
+        </div>
+        <div class="vid">
+            <h3>Titre</h3>
+            
+        </div>
+        <div class="compo_section">
+        </div>
+        <div class="vid">
+            <h3>Titre</h3>
+            
+        </div>
+        <div class="compo_section">
+        </div>
+    </div>
+</section>
 <?php
 $content = ob_get_clean();
 

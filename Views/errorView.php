@@ -7,9 +7,19 @@
 <!-- le contenu -->
     <section class="container">
 
-        <h1>Oups !!</h1>
-        <p><?= $error ?></p>
+       
+        <section class="compo">
+        <h1 class="titleSection">Oups!!!</h1>
+        <div class="section">
+            <div class="vid">
+                <h3>Erreur</h3>
+                <p><?= $error ?></p>
+            </div>
+            <div class="compo_section">
+            </div>
         
+        </div>
+</section>
 
     </section>
 

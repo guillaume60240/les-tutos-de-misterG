@@ -14,16 +14,17 @@ ob_start();
             <?php
                 if($_SESSION['id']=== null){
 
-                    echo '<a href="#inscription" class="link-light inscription_modale" >M\'inscrire</a>
-
-                            
+                    echo 
+                    '<a href="#inscription" class="link-light inscription_modale" >M\'inscrire</a>
                     <a href="#connexion" class="link-light connexion_modale" >Me connecter</a>';
                 } else{
-                    echo '<a href="/?page=espacePerso" class="link-light" style="text-decoration: none; margin-right: 10px">Mon espace perso</a>
+                    echo 
+                    '<a href="/?page=espacePerso" class="link-light" style="text-decoration: none; margin-right: 10px">Mon espace perso</a>
                     <a href="#" class="link-light" >Me déconnecter</a>';
                 }
                 if($_SESSION['id'] && $_SESSION['role']==='admin'){
-                    echo ' <a href="/?page=administration" class="link-light" >Administrer</a>';
+                    echo 
+                    ' <a href="/?page=administration" class="link-light" >Administrer</a>';
                 }
             ?>
 
@@ -36,6 +37,7 @@ ob_start();
         </div>
         </div>
         <ul class="nav-barre">
+            <li class="menu-nav" id="accueil"><a href="/?page=accueil" class="menu-a">Accueil</a> </li>
             <li class="menu-nav" id="cover"><a href="/?page=covers" class="menu-a">Les covers</a> </li>
             <li class="menu-nav" id="duo"><a href="/?page=duos" class="menu-a">Les covers en duo</a></li>
             <li class="menu-nav" id="compo"><a href="/?page=compos" class="menu-a">Mes compos</a></li>

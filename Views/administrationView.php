@@ -6,10 +6,15 @@ ob_start();
 ?>
 
 
-
-<h1>Administration du site</h1>
-
-
+<section class="compo"> 
+    
+    <h1 class="titleSection">Administration du site</h1>
+    <div class="section">
+        
+        
+    </div>
+        
+</section>
 <?php
 $content = ob_get_clean();
 
