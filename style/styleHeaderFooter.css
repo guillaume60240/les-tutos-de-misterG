@@ -1,0 +1,128 @@
+header{    
+    height: 143px;
+    
+}
+nav{
+    display: block;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: .5rem;
+    font-weight: 500;
+    font-size: 3rem;
+    text-shadow: 2px 2px rgba(46, 80, 231, 0.623);
+}
+.nav-container{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    position: fixed;
+    box-shadow: 4px 4px 4px 4px rgba(13, 19, 44, 0.356);
+    background: rgba(13, 19, 44, 0.685);
+    color: linen;
+   
+}
+.nav-barre{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.menu-nav{
+    font-weight: 900;
+    font-size: medium;
+    letter-spacing: .2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: linear-gradient(to top, rgba(243, 244, 247, 0.384) 0%, rgba(63, 64, 65, 0.164) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
+}
+
+.menu-a{
+    text-decoration: none;
+    color: linen;
+    font-weight: 900;
+    font-size: medium;
+    letter-spacing: .2rem;
+}
+.menu-a:hover{
+    color: linen;
+}
+.menu-nav:hover{
+    background-size: 100% 100%;
+}
+.active::before{
+    margin-right: 5px;
+    padding-right: 2px;
+    background-color: rgba(250, 240, 230, 0.507);
+    content: "";
+    
+}
+.active::after{
+    margin-left: 5px;
+    padding-left: 2px;
+    background-color: rgba(250, 240, 230, 0.507);
+    border-radius: 50%;
+    content: "";
+   
+}
+.link-light{
+    text-decoration: none;
+    margin-right: 5px;
+    color: linen;
+}
+/*******************Style Footer**********************/
+
+
+footer{    
+    height: 120px;
+    position: relative;
+    
+}
+.nav-container2::before{
+    content: ' ';
+    width: 80%;
+    right: -10%;
+    height: 200px;
+    position: absolute;
+    background: rgba(11, 11, 15, 0.2);
+    bottom: -110px;
+    border-radius: 50%;
+    
+    
+}
+.nav-container2::after{
+    content: ' ';
+    width: 100%;
+    right: -50%;
+    height: 300px;
+    position: absolute;
+    background: rgba(11, 11, 15, 0.2);
+    bottom: -180px;
+    border-radius: 50%;
+    
+}
+.nav-container2{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background: rgba(13, 19, 44, 0.685);
+    color: linen;
+    overflow: hidden;
+
+}
+.nav-barre2{
+    list-style-type: none;
+    width: 150px;
+    margin-left: 50px;
+    text-align: center;   
+    
+}
+.nav-barre2 a{
+    text-decoration: none;
+    color: linen;
+    
+}
