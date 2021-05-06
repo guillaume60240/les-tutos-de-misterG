@@ -91,10 +91,15 @@ h1{
 }
 /*******************Style Footer**********************/
 
-
-footer{    
+/* footer{
+    bottom: 0;
+    position: absolute;
+} */
+.footer{    
     height: 120px;
-    position: relative;
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
     
 }
 .nav-container2::before{
@@ -121,6 +126,7 @@ footer{
     
 }
 .nav-container2{
+    position: relative;
     width: 100%;
     padding-top: 30px;
     padding-bottom: 10px;

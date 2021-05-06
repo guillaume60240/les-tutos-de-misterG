@@ -4,7 +4,8 @@ $title = 'Covers';
 
 ob_start();
 ?>
-
+<body>
+    
 <section class="compo">
     <h1 class="titleSection">Les covers</h1>
     <div class="section">
@@ -20,12 +21,12 @@ ob_start();
                 <h3><?=$titleVideo ?></h3>
                 <h6>Publié le : <?= $date?> </h6>
                 <iframe <?= $link ?> ></iframe>
-                <button class="comments">Commentaires</button>
-                <button class="like">J'aime</button>
+                <p class="btn-container">
+                    <button class="btn2 comments">Commentaires</button>
+                    <button class="btn2 like">J'aime</button>
+                </p>
             </div>
-            <div class="compo_section">
-            
-            </div>
+           
 
     <?php
 
@@ -35,6 +36,7 @@ ob_start();
     </div>
 </section>
 
+</body>
 
 <?php
 $content = ob_get_clean();

@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../style/defaultStyle.css">
     <title><?= $title ?></title>
 </head>
-<?php headerContent(); ?>
+
+    <?php headerContent(); ?>
+
 
 <!-- Ce fichier sert de template pour les contenus de page avec header body et footer ainsi que les styles utilisés -->
-<body>
+
     <?= $content ?>
-</body>
-<?php footerContent(); ?>
+
+
+
+    <?php footerContent(); ?>
+
 </html>
