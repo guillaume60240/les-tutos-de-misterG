@@ -10,7 +10,7 @@ ob_start();
 
 
 <section class="compo">
-    <h1 class="titleSection">L'accueil</h1>
+    <h1 class="titleSection">Les dernières nouveautés</h1>
     <div class="section">
         <div class="vid">
             <h3>Titre</h3>

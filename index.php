@@ -52,10 +52,13 @@ if (isset($_GET['page'])){
         case 'administration' :
             administration();
             $_GET['page'] = '';
+        default :
+        $error = "Cette page n'existe pas ou a été supprimée :'(";
+        require('./Views/errorView.php');
             
     }
 } else {
-
+    $_SESSION['pageView'] = 'accueil';
     accueil();
 }
 

@@ -24,6 +24,7 @@ h1{
    
 }
 .nav-barre{
+    margin-top: 10px;
     list-style-type: none;
     width: 100%;
     display: flex;
@@ -61,17 +62,18 @@ h1{
     content: "";
     
 }
-.active::after{
+/* .active::after{
     margin-left: 5px;
     padding-left: 2px;
     background-color: rgba(250, 240, 230, 0.507);
     border-radius: 50%;
     content: "";
    
-}
+} */
 .link-light{
     text-decoration: none;
-    margin-right: 5px;
+    margin-right: 10px;
+    
     color: linen;
 }
 /*******************Style Footer**********************/
