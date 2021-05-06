@@ -11,56 +11,56 @@ ob_start();
     <div class="section">
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         
         </div>   
         <div class="vid">
             <h3>Absurde destinée</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Voir sur instagram</a>
+            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
         </div>
         <div class="compo_section">
         

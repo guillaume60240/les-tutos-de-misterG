@@ -43,6 +43,7 @@ h1{
 }
 
 .menu-a{
+    font-size: medium;
     text-decoration: none;
     color: linen;
     font-weight: 900;
@@ -75,6 +76,17 @@ h1{
     margin-right: 10px;
     
     color: linen;
+}
+.messageBienvenue{
+    margin-left: 5%; 
+    position: absolute; 
+    padding-bottom: 10px
+}
+.userAction{
+    margin-right: 1%; 
+    margin-left: auto; 
+    width: 30%; 
+    text-align: right"
 }
 /*******************Style Footer**********************/
 
@@ -127,4 +139,91 @@ footer{
     text-decoration: none;
     color: linen;
     
+}
+
+@media screen and (max-width: 1282px) {
+    .menu-a{
+        font-size: .7em;
+        text-decoration: none;
+        color: linen;
+        font-weight: 900;
+       
+        letter-spacing: .1rem;
+    }
+    nav div h1{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .nav-barre{
+        margin-top: 2px;   
+        width: 25%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+       
+    }
+    .menu-nav{
+        font-weight: 900;
+        font-size: small;
+        letter-spacing: .1rem;
+        padding: 5px 15px;
+        
+    }
+    header{
+        height: 175px;
+    }
+    .nav-container{
+        height: 176px;
+    }
+    nav div h1{
+        width: 75%;
+        position: absolute;
+        right: 10px;
+    }
+    .messageBienvenue{
+        display: none;
+    }
+    .userAction{
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        width: 50%;
+        font-size: small;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 710px){
+    .nav-barre{
+        width: 30%;
+    }
+    nav div h1{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 630px){
+    .nav-barre{
+        width: 40%;
+    }
+    nav div h1{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 445px){
+    .nav-barre{
+        width: 50%;
+    }
+    nav div h1{
+        width: 50%;
+        font-size: 1.5em;
+    }
+    .userAction{
+        font-size: .7em;
+    }
 }
