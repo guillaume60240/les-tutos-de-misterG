@@ -1,4 +1,5 @@
 <?php
+// cette fonction permet d'aller chercher toutes les vidéos en rapport avec la section voulue
 
 function getVideos($section){
 

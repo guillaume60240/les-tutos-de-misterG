@@ -20,9 +20,13 @@ function accueil(){
 }
 
 function covers(){
+    //indication de pageView pour la classe active
     $_SESSION['pageView'] = 'covers';
+    //indication de $section nécessaire pour la fonction getVideo()
     $section = $_SESSION['pageView'];
+    //on lance la requête getVideos()
     $requete = getVideos($section);
+    //page nécessaire à l'affichage
     require('./Views/coversView.php');
 }
 

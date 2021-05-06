@@ -10,7 +10,7 @@ ob_start();
     <div class="section">
 
     <?php
-
+        // affichage des vidéos de la fonction getVideos
         while($video = $requete->fetch()){
             $titleVideo = $video['titre'];
             $date = $video['created_at'];
