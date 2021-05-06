@@ -38,8 +38,7 @@ h1{
     padding: 5px 15px;
     cursor: pointer;
     border-radius: 10px;
-    background: linear-gradient(to top, rgba(243, 244, 247, 0.384) 0%, rgba(63, 64, 65, 0.164) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-    transition: background-size .5s;
+    
 }
 
 .menu-a{
@@ -49,13 +48,15 @@ h1{
     font-weight: 900;
     font-size: medium;
     letter-spacing: .2rem;
+    padding-bottom: 3px;
+    background: linear-gradient(to top, rgba(243, 244, 247, 0.384) 0%, rgba(63, 64, 65, 0.164) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
 }
 .menu-a:hover{
     color: linen;
-}
-.menu-nav:hover{
     background-size: 100% 100%;
 }
+
 .active::before{
     margin-right: 5px;
     padding-right: 2px;
@@ -171,7 +172,7 @@ footer{
         font-size: small;
         letter-spacing: .1rem;
         padding: 5px 15px;
-        
+        width: auto;
     }
     header{
         height: 175px;
@@ -213,6 +214,9 @@ footer{
     nav div h1{
         width: 60%;
     }
+    .nav-barre2{
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 445px){
@@ -225,5 +229,8 @@ footer{
     }
     .userAction{
         font-size: .7em;
+    }
+    .nav-barre2{
+        margin-left: 2px;
     }
 }

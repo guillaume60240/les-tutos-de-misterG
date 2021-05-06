@@ -1,6 +1,7 @@
 <?php
 // Ce fichier contient toutes les fonctions nécessaires à l'affichage des pages avec les controlers
 require('./Models/function.php');
+require('./Models/adminModel.php');
 
 function headerContent(){
     require('./Views/headerView.php');
@@ -57,6 +58,7 @@ function administration(){
         if ($_SESSION['role'] === 'admin'  ){
             $_SESSION['pageView'] = '';
             require('./Views/administrationView.php');
+           
 
 
         } else {

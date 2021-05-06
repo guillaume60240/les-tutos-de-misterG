@@ -2,4 +2,4 @@
 
 $_SESSION['pseudo'] = "Guillaume";
 $_SESSION['id'] = 5;
-$_SESSION['role'] = 'user';
+$_SESSION['role'] = 'admin';
