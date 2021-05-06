@@ -1,7 +1,9 @@
 <?php
 // Ce fichier contient toutes les fonctions nécessaires à l'affichage des pages avec les controlers
 require('./Models/function.php');
+require('./Models/databaseModel.php');
 require('./Models/adminModel.php');
+require('./Models/videosModel.php');
 
 function headerContent(){
     require('./Views/headerView.php');
@@ -13,11 +15,14 @@ function footerContent(){
 
 function accueil(){
     $_SESSION['pageView'] = 'accueil';
+
     require('./Views/acueilView.php');
 }
 
 function covers(){
     $_SESSION['pageView'] = 'covers';
+    $section = $_SESSION['pageView'];
+    $requete = getVideos($section);
     require('./Views/coversView.php');
 }
 

@@ -5,41 +5,33 @@ $title = 'Covers';
 ob_start();
 ?>
 
-
-
 <section class="compo">
     <h1 class="titleSection">Les covers</h1>
     <div class="section">
+
+    <?php
+
+        while($video = $requete->fetch()){
+            $titleVideo = $video['titre'];
+            $date = $video['created_at'];
+            $link = $video['link'];
+    ?>
         <div class="vid">
-            <h3>Titre</h3>
+                <h3><?=$titleVideo ?></h3>
+                <h6>Publié le : <?= $date?> </h6>
+                <iframe <?= $link ?> ></iframe>
+                <button class="comments">Commentaires</button>
+                <button class="like">J'aime</button>
+            </div>
+            <div class="compo_section">
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+            </div>
+
+    <?php
+
+        }
+    ?>
+
     </div>
 </section>
 
