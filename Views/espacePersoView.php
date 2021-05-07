@@ -8,7 +8,7 @@ ob_start();
 
 
 <section class="compo">
-    <h1 class="titleSection">Mon espace perso</h1>
+    <h1 class="titleSection">l'espace perso de <?= $_SESSION['pseudo']?></h1>
     <div class="section">
         <div class="vid">
             <h3>Titre</h3>

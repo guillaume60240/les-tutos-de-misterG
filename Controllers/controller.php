@@ -32,22 +32,33 @@ function covers(){
 
 function duos(){
     $_SESSION['pageView'] = 'duos';
+
+    $section = $_SESSION['pageView'];
+
+    $requete = getVideos($section);
+
     require('./Views/duosView.php');
 }
 
 function compos(){
     $_SESSION['pageView'] = 'compos';
+    $section = $_SESSION['pageView'];
+    $requete = getVideos($section);
     require('./Views/composView.php');
 
 }
 
 function theorie(){
     $_SESSION['pageView'] = 'theorie';
+    $section = $_SESSION['pageView'];
+    $requete = getVideos($section);
     require('./Views/theorieView.php');
 }
 
 function morceaux(){
     $_SESSION['pageView'] = 'morceaux';
+    $section = $_SESSION['pageView'];
+    $requete = getVideos($section);
     require('./Views/morceauxView.php');
 }
 
@@ -55,27 +66,70 @@ function partitions(){
     $_SESSION['pageView'] = 'partitions';
     require('./Views/partitionsView.php');
 }
+function erreurView(){
+
+    $_SESSION['pageView'] = 'Erreur';
+    $error = 'Cette page n\'existe pas ou a été supprimée';
+    require('./Views/errorView.php');
+}
 
 function espacePerso(){
-    $_SESSION['pageView'] = '';
-    require('./Views/espacePersoView.php');
+    if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
+
+        $_SESSION['pageView'] = '';
+        require('./Views/espacePersoView.php');
+    } else{
+        erreurView();
+    }
 }
 
 function administration(){
-    try {
+    
 
-        if ($_SESSION['role'] === 'admin'  ){
+        if ($_SESSION['role'] === 'admin' && isset($_SESSION['pseudo']) && isset($_SESSION['id'])){
+
             $_SESSION['pageView'] = '';
             require('./Views/administrationView.php');
-           
 
-
-        } else {
-            throw new Exception(("Cette page n'existe pas ou a été supprimée :'(")); 
+        } else{
+            erreurView();
         }
-    } catch(Exception $e) {
         
-        $error = $e->getMessage();
-        require('./Views/errorView.php');
+    
+}
+
+function sectionVide(){
+    ?>
+    <div class="vid">
+            <h3>Cette section est vide pour le moment</h3>
+            <img src="../src/img/work-in-progress.png" alt="Travaille en cours" class="img-attente">
+            <p>A bientôt pour du nouveau contenu</p>
+        </div>
+    <?php
+}
+
+function remplirSection($video){
+    if(!$video){
+        sectionVide();
+        
+    }else{
+
+        $titleVideo = $video['titre'];
+        $date = $video['created_at'];
+        $link = $video['link'];
+        
+        ?>
+        <div class="vid">
+            <h3><?=$titleVideo ?></h3>
+            <h6>Publié le : <?= $date?> </h6>
+            <iframe <?= $link ?> ></iframe>
+            <p class="btn-container">
+                <button class="btn2 comments">Commentaires</button>
+                <button class="btn2 like">J'aime</button>
+            </p>
+        </div>
+        
+        <?php
     }
+  
 }

@@ -1,5 +1,5 @@
 <?php
 
-$_SESSION['pseudo'] = "Guillaume";
-$_SESSION['id'] = 5;
-$_SESSION['role'] = 'admin';
+$_SESSION['pseudo'] = null;
+$_SESSION['id'] = null;
+$_SESSION['role'] = '';

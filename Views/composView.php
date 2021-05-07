@@ -6,69 +6,22 @@ ob_start();
 ?>
 
 
-<section class="compo">
+<section class="affichage">
     <h1 class="titleSection">Mes compos</h1>
     <div class="section">
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        <div class="vid">
-            <h3>Absurde destinée</h3>
-            <iframe  src="https://www.youtube.com/embed/OcAbq75_9oA"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-            <a target="blank" href="https://www.instagram.com/tv/CG8ftRfqPkj/?utm_source=ig_web_copy_link" class="btn">Regarder</a>
-        </div>
-        <div class="compo_section">
-        
-        </div>   
-        
-    </div>
 
-    
+    <?php
+        // affichage des vidéos de la fonction getVideos
+        while($video = $requete->fetch()){
+            
+   
+                remplirSection($video);
+            }
+         
+         
+    ?>
+
+    </div>
 </section>
 <?php
 

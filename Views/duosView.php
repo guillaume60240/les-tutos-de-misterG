@@ -7,39 +7,43 @@ ob_start();
 
 
 
-<section class="compo">
+<section class="affichage">
     <h1 class="titleSection">Les duos</h1>
     <div class="section">
-        <div class="vid">
-            <h3>Titre</h3>
+
+    <?php
+        // affichage des vidéos de la fonction getVideos
+        while($video = $requete->fetch()){
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+   
+            remplirSection($video);
+        }
+
+        //     while($video = $requete->fetch()){
+        //         var_dump($video);
+        //         if(isset($video) ){
+
+        //             remplirSection($video);
+        //         } else{
+        //             sectionVide();
+                
+        //         }
+        //     }
+        // var_dump($video);
+        //  if(empty($video)){
+        //      sectionVide();
+        //      var_dump($video);
+        //  }
+        // try{
+        //     remplirSection($video);
+        //     throw new Exception("Section vide");
+        // } catch(Exception $e){
+        //     sectionVide();
+        //    echo $e->getMessage();
+        // }
+    ?>
+        
+        
     </div>
 </section>
 

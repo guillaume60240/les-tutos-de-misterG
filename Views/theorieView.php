@@ -7,39 +7,21 @@ ob_start();
 
 
 
-<section class="compo">
+<section class="affichage">
     <h1 class="titleSection">Les cours de théories</h1>
     <div class="section">
-        <div class="vid">
-            <h3>Titre</h3>
+
+    <?php
+        // affichage des vidéos de la fonction getVideos
+        while($video = $requete->fetch()){
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+   
+                remplirSection($video);
+            }
+         
+         
+    ?>
+
     </div>
 </section>
 

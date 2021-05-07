@@ -9,7 +9,9 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: rgba(11, 11, 15, 0.1);
 }
-
+.affichage{
+    min-height: 70vh;
+}
 
 .titleSection{
     margin-top: 70px;
@@ -80,6 +82,12 @@ iframe{
     margin-bottom: 10px;
     width: 373px;
     height: 210px;
+    border-radius: 20px;
+}
+div img{
+    margin-bottom: 10px;
+    width: 190px;
+    height: 170px;
     border-radius: 20px;
 }
 video{
@@ -167,7 +175,7 @@ video{
         margin: 10px;
     }
 }
-@media screen and (max-width: 360px){
+@media screen and (max-width: 450px){
     .vid{
         width: 100%;
         margin: 0;
