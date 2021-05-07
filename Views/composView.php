@@ -12,10 +12,12 @@ ob_start();
 
     <?php
         // affichage des vidéos de la fonction getVideos
+        
         while($video = $requete->fetch()){
             
-   
+
                 remplirSection($video);
+                
             }
          
          

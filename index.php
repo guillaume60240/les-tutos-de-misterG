@@ -62,4 +62,6 @@ if (isset($_GET['page'])){
     accueil();
 }
 
+?>
+
 

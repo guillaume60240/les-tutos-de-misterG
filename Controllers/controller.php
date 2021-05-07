@@ -125,11 +125,12 @@ function remplirSection($video){
             <iframe <?= $link ?> ></iframe>
             <p class="btn-container">
                 <button class="btn2 comments">Commentaires</button>
-                <button class="btn2 like">J'aime</button>
+                <button class="btn2 like"><span>J'aime</span>  <span class="likeIcone">&#10084</span></button>
             </p>
         </div>
         
         <?php
+        
     }
   
 }
