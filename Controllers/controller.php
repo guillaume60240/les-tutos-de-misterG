@@ -101,13 +101,7 @@ function administration(){
 }
 
 function sectionVide(){
-    ?>
-    <div class="vid">
-            <h3>Cette section est vide pour le moment</h3>
-            <img src="../src/img/work-in-progress.png" alt="Travaille en cours" class="img-attente">
-            <p>A bientôt pour du nouveau contenu</p>
-        </div>
-    <?php
+    require('./Views/functionView/sectionVideView.php');
 }
 
 function remplirSection($video){
@@ -116,18 +110,7 @@ function remplirSection($video){
         $date = $video['created_at'];
         $link = $video['link'];
         
-        ?>
-        <div class="vid">
-            <h3><?=$titleVideo ?></h3>
-            <h6>Publié le : <?= $date?> </h6>
-            <iframe <?= $link ?> ></iframe>
-            <p class="btn-container">
-                <button class="btn2 comments">Commentaires</button>
-                <button class="btn2 like"><span>J'aime</span>  <span class="likeIcone">&#10084</span></button>
-            </p>
-        </div>
-        
-        <?php
+        require('./Views/functionView/remplirSectionView.php');
 }
 
 function affichePartition($partition){
@@ -136,12 +119,6 @@ function affichePartition($partition){
     $artiste = $partition['artiste'];
     $link = $partition['lien'];
 
-    ?>
-    <div class="partitionContainer">
-        <h3 class="artistePartition"><?= $artiste ?></h3>
-        <h4 class="titrePartition"><?= $title ?></h4>
-        <a href="<?= $link ?>" class="linkPartition" target="_blank">Télécharger</a>
-    </div>
-    <?php
+    require('./Views/functionView/affichePartitionView.php');
 
 }
