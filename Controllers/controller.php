@@ -4,6 +4,7 @@ require('./Models/function.php');
 require('./Models/databaseModel.php');
 require('./Models/adminModel.php');
 require('./Models/videosModel.php');
+require('./Models/partitionsModel.php');
 
 function headerContent(){
     require('./Views/headerView.php');
@@ -64,6 +65,7 @@ function morceaux(){
 
 function partitions(){
     $_SESSION['pageView'] = 'partitions';
+    $requete = getPartition();
     require('./Views/partitionsView.php');
 }
 function erreurView(){
@@ -109,11 +111,7 @@ function sectionVide(){
 }
 
 function remplirSection($video){
-    if(!$video){
-        sectionVide();
-        
-    }else{
-
+    
         $titleVideo = $video['titre'];
         $date = $video['created_at'];
         $link = $video['link'];
@@ -130,7 +128,20 @@ function remplirSection($video){
         </div>
         
         <?php
-        
-    }
-  
+}
+
+function affichePartition($partition){
+
+    $title = $partition['titre'];
+    $artiste = $partition['artiste'];
+    $link = $partition['lien'];
+
+    ?>
+    <div class="partitionContainer">
+        <h3 class="artistePartition"><?= $artiste ?></h3>
+        <h4 class="titrePartition"><?= $title ?></h4>
+        <a href="<?= $link ?>" class="linkPartition" target="_blank">Télécharger</a>
+    </div>
+    <?php
+
 }

@@ -96,6 +96,24 @@ video{
     height: 210px;
     border-radius: 20px;
 }
+
+.partitionContainer{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.partitionContainert{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 1px #333;
+}
+.linkPartitiont{
+    text-decoration: none;
+    
+}
 .btn-container{
     display: flex;
     justify-content: space-around;

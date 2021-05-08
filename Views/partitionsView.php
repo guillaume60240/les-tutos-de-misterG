@@ -5,45 +5,36 @@ $title = 'Les partitions';
 ob_start();
 ?>
 
-
-
-<section class="compo">
+<section class="affichage">
     <h1 class="titleSection">Les partitions</h1>
     <div class="section">
-        <div class="vid">
-            <h3>Titre</h3>
+
+    <div class="partitionContainert">
+        <h3 class="artistePartition"> Artiste</h3>
+        <h4 class="titrePartition">Titre</h4>
+        <a href="<?= $link ?>" class="linkPartitiont">Lien</a>
+    </div>
+    <div class="partitionContainert">
+        <h3 class="artistePartition"> Artiste</h3>
+        <h4 class="titrePartition">Titre</h4>
+        <a href="<?= $link ?>" class="linkPartitiont">Lien</a>
+    </div>
+<?php
+        if($partition = $requete->fetch()){
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
+            do{
+                affichePartition($partition);
+            } while ($partition = $requete->fetch());
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
+        } else {
+            sectionVide();
             
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+        }
+
+?>
+
     </div>
 </section>
-
-
 <?php
 $content = ob_get_clean();
 

@@ -12,35 +12,13 @@ ob_start();
     <div class="section">
 
     <?php
-        // affichage des vidéos de la fonction getVideos
-        while($video = $requete->fetch()){
-            
-   
-            remplirSection($video);
-        }
-
-        //     while($video = $requete->fetch()){
-        //         var_dump($video);
-        //         if(isset($video) ){
-
-        //             remplirSection($video);
-        //         } else{
-        //             sectionVide();
-                
-        //         }
-        //     }
-        // var_dump($video);
-        //  if(empty($video)){
-        //      sectionVide();
-        //      var_dump($video);
-        //  }
-        // try{
-        //     remplirSection($video);
-        //     throw new Exception("Section vide");
-        // } catch(Exception $e){
-        //     sectionVide();
-        //    echo $e->getMessage();
-        // }
+        if($video = $requete->fetch()){
+            do{              
+                remplirSection($video);
+            } while ($video = $requete->fetch());
+            } else {
+                sectionVide();
+            }
     ?>
         
         
