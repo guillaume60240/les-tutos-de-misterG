@@ -96,15 +96,18 @@ video{
     height: 210px;
     border-radius: 20px;
 }
+.sectionTitle{
+    text-align: center;
+}
 
 .partitionContainer{
-    width: 50%;
+    min-width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 .partitionContainert{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -17,7 +17,19 @@ function footerContent(){
 function accueil(){
     $_SESSION['pageView'] = 'accueil';
 
+    $sections = ['covers', 'duos', 'compos', 'theorie', 'morceaux'];
+    
+    $requetes =[
+
+        $requete = getLastVideoForOneSection($sections[0]),
+        $requete = getLastVideoForOneSection($sections[1]),
+        $requete = getLastVideoForOneSection($sections[2]),
+        $requete = getLastVideoForOneSection($sections[3]),
+        $requete = getLastVideoForOneSection($sections[4])
+    ];
+
     require('./Views/acueilView.php');
+
 }
 
 function covers(){
@@ -26,7 +38,7 @@ function covers(){
     //indication de $section nécessaire pour la fonction getVideo()
     $section = $_SESSION['pageView'];
     //on lance la requête getVideos()
-    $requete = getVideos($section);
+    $requete = getAllVideosForOneSection($section);
     //page nécessaire à l'affichage
     require('./Views/coversView.php');
 }
@@ -36,7 +48,7 @@ function duos(){
 
     $section = $_SESSION['pageView'];
 
-    $requete = getVideos($section);
+    $requete = getAllVideosForOneSection($section);
 
     require('./Views/duosView.php');
 }
@@ -44,7 +56,7 @@ function duos(){
 function compos(){
     $_SESSION['pageView'] = 'compos';
     $section = $_SESSION['pageView'];
-    $requete = getVideos($section);
+    $requete = getAllVideosForOneSection($section);
     require('./Views/composView.php');
 
 }
@@ -52,14 +64,14 @@ function compos(){
 function theorie(){
     $_SESSION['pageView'] = 'theorie';
     $section = $_SESSION['pageView'];
-    $requete = getVideos($section);
+    $requete = getAllVideosForOneSection($section);
     require('./Views/theorieView.php');
 }
 
 function morceaux(){
     $_SESSION['pageView'] = 'morceaux';
     $section = $_SESSION['pageView'];
-    $requete = getVideos($section);
+    $requete = getAllVideosForOneSection($section);
     require('./Views/morceauxView.php');
 }
 
@@ -112,6 +124,10 @@ function remplirSection($video){
         
         require('./Views/functionView/remplirSectionView.php');
 }
+
+
+
+
 
 function affichePartition($partition){
 

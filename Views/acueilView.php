@@ -3,6 +3,8 @@
 
 $title = 'C\'est l\'accueil';
 
+
+
 ob_start();
 ?>
 
@@ -12,36 +14,22 @@ ob_start();
 <section class="compo">
     <h1 class="titleSection">Les dernières nouveautés</h1>
     <div class="section">
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+    <?php
+    
+    
+        foreach($requetes as $requete){
+
+            if($video = $requete->fetch()){
+                
+                do{              
+                    ?><div><h2 class="sectionTitle"><?=$video['section']?></h2><?php
+                    remplirSection($video);
+                    ?></div><?php
+                } while ($video = $requete->fetch());
+            }
+        }
+   
+    ?>
     </div>
 </section>
 <?php

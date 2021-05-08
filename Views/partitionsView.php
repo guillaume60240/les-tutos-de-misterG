@@ -9,16 +9,11 @@ ob_start();
     <h1 class="titleSection">Les partitions</h1>
     <div class="section">
 
-    <div class="partitionContainert">
-        <h3 class="artistePartition"> Artiste</h3>
-        <h4 class="titrePartition">Titre</h4>
-        <a href="<?= $link ?>" class="linkPartitiont">Lien</a>
-    </div>
-    <div class="partitionContainert">
-        <h3 class="artistePartition"> Artiste</h3>
-        <h4 class="titrePartition">Titre</h4>
-        <a href="<?= $link ?>" class="linkPartitiont">Lien</a>
-    </div>
+        <div class="partitionContainert">
+            <h3 class="artistePartition"> Artiste</h3>
+            <h4 class="titrePartition">Titre</h4>
+            <a href="<?= $link ?>" class="linkPartitiont">Lien</a>
+        </div>
 <?php
         if($partition = $requete->fetch()){
             
