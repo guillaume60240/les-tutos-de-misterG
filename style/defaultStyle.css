@@ -112,7 +112,13 @@ video{
 }
 .linkPartitiont{
     text-decoration: none;
-    
+    color: #333;
+}
+.titrePartition{
+    text-shadow: none;
+}
+.artistePartition{
+    text-shadow: none;
 }
 .btn-container{
     display: flex;
