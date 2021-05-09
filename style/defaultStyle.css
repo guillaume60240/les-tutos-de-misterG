@@ -22,6 +22,47 @@ body{
     font-size: 3rem;
     text-shadow: 2px 2px rgba(46, 80, 231, 0.623);
 }
+.btn-container-accueil{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btnVoirVideo{
+    border: none;
+    background: transparent; 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.linkVoirVideo{
+    
+    text-decoration: none; 
+    color: #333; 
+    padding-top: 200px; 
+    padding-left: 160px; 
+    padding-right:160px; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+   
+}
+
+.btnVoirSection{
+    border: none;
+    background: transparent; 
+    border-top: solid 1px #333;
+    padding-top: 10px;
+}
+
+.linkVoirSection{
+    text-decoration: none;
+    color: #333;
+}
 .section{
     height: auto;
     display: flex;
@@ -46,10 +87,10 @@ body{
 .vid:hover{
     box-shadow: 6px 6px 6px 5px rgba(51, 51, 51, 0.301);
 }
-iframe{
+/* iframe{
     width: 560px;
     height: 315;
-}
+} */
 h3{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -123,11 +164,15 @@ video{
 .artistePartition{
     text-shadow: none;
 }
+
 .btn-container{
     display: flex;
     justify-content: space-around;
 }
-
+.containerPageLecture{
+    padding-left: 20%;
+    padding-right: 20%;
+}
 .btn2{
     font-size: .5em;
     text-decoration: none;
@@ -168,6 +213,10 @@ video{
     .section{
         margin: 0;
     }
+    .linkVoirVideo{
+        padding-right: 135px;
+        padding-left: 135px;
+    }
 }
 
 @media screen and (max-width: 895px){
@@ -187,6 +236,10 @@ video{
         font-size: xx-large;
         margin-bottom: 10px;
     }
+    .linkVoirVideo{
+        padding-right: 110px;
+        padding-left: 110px;
+    }
 }
 
 @media screen and (max-width: 759px){
@@ -198,6 +251,10 @@ video{
     iframe{
         width: 220px;
 
+    }
+    .linkVoirVideo{
+        padding-right: 75px;
+        padding-left: 75px;
     }
 }
 
@@ -214,6 +271,10 @@ video{
     }
     iframe{
         width: 80%;
+    }
+    .linkVoirVideo{
+    padding-left: 110px; 
+    padding-right:110px; 
     }
 }
 

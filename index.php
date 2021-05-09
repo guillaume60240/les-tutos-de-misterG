@@ -52,11 +52,14 @@ if (isset($_GET['page'])){
         case 'administration' :
             administration();
             $_GET['page'] = '';
+            break;
         case 'lectureVideo' :
             lectureVideo();
             $_GET['page'] = '';
+            break;
         default :
         $error = "Cette page n'existe pas ou a été supprimée :'(";
+        $_GET['page'] = '';
         require('./Views/errorView.php');
             
     }

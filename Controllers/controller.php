@@ -84,7 +84,7 @@ function partitions(){
 function lectureVideo(){
     $_SESSION['pageView'] = 'lectureVideo';
     $videoId = $_GET['videoId'];
-    var_dump($_GET);
+    // var_dump($_GET);
     $requete = getOneVideoById($videoId);
     require('./Views/lectureVideoView.php');
 }
@@ -132,12 +132,30 @@ function remplirSection($video){
         $titleVideo = $video['titre'];
         $date = $video['created_at'];
         $link = $video['link'];
-        
+        $videoId = $video['id'];
         require('./Views/functionView/remplirSectionView.php');
 }
 
+function remplirSectionAccueil($video){
 
+    $titleVideo = $video['titre'];
+    $date = $video['created_at'];
+    $link = $video['link'];
+    $videoId = $video['id'];
 
+    require('./Views/functionView/remplirSectionAccueilView.php');
+}
+
+function remplirSectionMorceau($video){
+
+    $titleVideo = $video['titre'];
+    $date = $video['created_at'];
+    $link = $video['link'];
+    $videoId = $video['id'];
+    
+    require('./Views/functionView/remplirSectionLectureView.php');
+
+}
 
 
 function affichePartition($partition){

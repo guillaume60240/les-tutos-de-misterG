@@ -13,7 +13,7 @@ ob_start();
     <?php
         if($video = $requete->fetch()){
             do{              
-                remplirSection($video);
+                remplirSectionMorceau($video);
             } while ($video = $requete->fetch());
             } else {
                 sectionVide();
