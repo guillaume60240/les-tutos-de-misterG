@@ -42,3 +42,11 @@ function getLastVideoForOneSection($section){
     $requete = $bdd->query('SELECT * FROM videos WHERE section="'.$section.'" ORDER BY created_at DESC LIMIT 1');
     return $requete;
 }
+
+function getOneVideoById($videoId){
+
+    $bdd = getPdo();
+
+    $requete = $bdd->query('SELECT * FROM videos WHERE id="'.$videoId.'"');
+    return $requete;
+}

@@ -80,12 +80,23 @@ function partitions(){
     $requete = getPartition();
     require('./Views/partitionsView.php');
 }
+
+function lectureVideo(){
+    $_SESSION['pageView'] = 'lectureVideo';
+    $videoId = $_GET['videoId'];
+    var_dump($_GET);
+    $requete = getOneVideoById($videoId);
+    require('./Views/lectureVideoView.php');
+}
+
 function erreurView(){
 
     $_SESSION['pageView'] = 'Erreur';
     $error = 'Cette page n\'existe pas ou a été supprimée';
     require('./Views/errorView.php');
 }
+
+
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
