@@ -87,10 +87,43 @@ body{
 .vid:hover{
     box-shadow: 6px 6px 6px 5px rgba(51, 51, 51, 0.301);
 }
-/* iframe{
-    width: 560px;
-    height: 315;
-} */
+.vid2{
+    width: 100%;
+    height: 400px;
+    margin-top: 15px;
+    background: transparent;
+    border-radius: 0;
+    align-items: center;
+    text-align: center;
+    transition: all .5s;
+    position: relative;
+}
+
+.videoEnLecture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:  100%;
+    border-radius: 0;
+}
+.descriptionContainer{
+    width: 75%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.titleVideo{
+    width: 60%;
+}
+.container{
+    width: 40%;
+}
+.commentaires{
+    display: none;
+    transition: all .5s;
+}
+
 h3{
     margin-top: 10px;
     margin-bottom: 10px;

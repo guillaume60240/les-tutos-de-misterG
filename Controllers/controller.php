@@ -11,7 +11,7 @@ function choixRequete(){
 
     if (isset($_GET['page'])){
 
-        $affichage = $_GET['page'];
+        $affichage = htmlspecialchars($_GET['page']);
     
         switch ($affichage) {
             case 'accueil' :
