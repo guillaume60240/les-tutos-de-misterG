@@ -72,6 +72,10 @@ body{
     margin: 30px 20px;   
     border-radius: 30px;
 }
+.videosContainer{
+    display: flex;
+    justify-content: space-between;
+}
 .vid{
     width: 400px;
     min-width: 380px;
@@ -88,17 +92,43 @@ body{
     box-shadow: 6px 6px 6px 5px rgba(51, 51, 51, 0.301);
 }
 .vid2{
-    width: 100%;
+    width: 80%;
+    max-width: 800px;
     height: 400px;
-    margin-top: 15px;
-    background: transparent;
+    margin-top: 30px;
+    
     border-radius: 0;
     align-items: center;
     text-align: center;
     transition: all .5s;
     position: relative;
 }
-
+.vid2::after{
+    content:"";
+    display: block;
+    width: 100%;
+    padding-bottom: calc(400/800*100);
+}
+.suggestion{
+    
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.vid3{
+    width: 200px;
+    
+    height: 165px;
+    margin: 10px;
+    
+    box-shadow: 4px 4px 4px rgba(51, 51, 51, 0.233);
+    background: rgba(250, 240, 230, 0.267);
+    border-radius: 0 20px 20px 20px;
+    align-items: center;
+    text-align: center;
+    transition: all .5s;
+}
 .videoEnLecture{
     position: absolute;
     top: 0;
@@ -116,13 +146,38 @@ body{
 .titleVideo{
     width: 60%;
 }
-.container{
-    width: 40%;
+.commentaireContainer{
+    width: 100%;
+    display: flex;
+
 }
 .commentaires{
-    display: none;
-    transition: all .5s;
+    width: 60%;
+    padding-left: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    
 }
+.commentaire{
+    margin-bottom: 10px;
+}
+#formCommentaires{
+    padding-left: 10px;
+    display: none;
+}
+.formCommentaireContainer{
+    margin-left: 150px;
+}
+.formCommentaire{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+}
+
 
 h3{
     margin-top: 10px;
@@ -215,7 +270,7 @@ video{
     border: solid 1px #333;
     background: transparent;
     color: #333;
-   
+   max-width: 200px;
     letter-spacing: .2em;
     transition: all .4s;
 }
@@ -228,6 +283,12 @@ video{
 .likeIcone{
     color: red;
     display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .suggestion{
+        display: none;
+    }
 }
 @media screen and (max-width: 1000px) {
     .titleSection{
@@ -252,7 +313,7 @@ video{
     }
 }
 
-@media screen and (max-width: 895px){
+@media screen and (max-width: 900px){
 
     .vid{
         width: 300px;
@@ -273,6 +334,20 @@ video{
         padding-right: 110px;
         padding-left: 110px;
     }
+    .vid2{
+        margin-top: 10px;
+    }
+    .commentaireContainer{
+        flex-direction: column-reverse;
+    }
+    .formCommentaireContainer{
+        margin: auto;
+    }
+    .formCommentaire{
+        max-width: 50%;
+        min-width: 450px;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 759px){
@@ -289,11 +364,17 @@ video{
         padding-right: 75px;
         padding-left: 75px;
     }
+    .formCommentaire{
+        max-width: 75%;
+    }
 }
 
 @media screen and (max-width: 620px){
     .vid{
         margin: 10px;
+    }
+    .vid2{
+        width: 100%;
     }
 }
 @media screen and (max-width: 450px){
@@ -308,6 +389,9 @@ video{
     .linkVoirVideo{
     padding-left: 110px; 
     padding-right:110px; 
+    }
+    .formCommentaire{
+        max-width: 90%;
     }
 }
 
