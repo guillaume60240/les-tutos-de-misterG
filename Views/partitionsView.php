@@ -18,11 +18,11 @@ ob_start();
         if($partition = $requete->fetch()){
             
             do{
-                affichePartition($partition);
+                remplirSectionPartition($partition);
             } while ($partition = $requete->fetch());
             
         } else {
-            sectionVide();
+            remplirSectionVide();
             
         }
 

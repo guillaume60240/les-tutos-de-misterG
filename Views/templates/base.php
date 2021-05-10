@@ -9,7 +9,7 @@
     <title><?= $title ?></title>
 </head>
 
-    <?php headerContent(); ?>
+    <?php headerFooterContent('header'); ?>
 
 
 <!-- Ce fichier sert de template pour les contenus de page avec header body et footer ainsi que les styles utilisés -->
@@ -20,7 +20,7 @@
 
 
 
-    <?php footerContent(); ?>
+    <?php headerFooterContent('footer'); ?>
 
 
     <script src="../../js/script.js"></script>

@@ -6,15 +6,70 @@ require('./Models/adminModel.php');
 require('./Models/videosModel.php');
 require('./Models/partitionsModel.php');
 
-function headerContent(){
-    require('./Views/headerView.php');
+//choix de l'affichage principal
+function choixRequete(){
+
+    if (isset($_GET['page'])){
+
+        $affichage = $_GET['page'];
+    
+        switch ($affichage) {
+            case 'accueil' :
+                requeteAccueil();
+                $_GET['page'] = '';
+                break;
+            case 'covers' :
+                requeteSection('covers', 'Les covers');
+                $_GET['page'] = '';
+                break;
+            case 'duos' :
+                requeteSection('duos', 'Les covers en duo');
+                $_GET['page'] = '';
+                break;
+            case 'compos' :
+                requeteSection('compos', 'Mes compos');
+                $_GET['page'] = '';
+                break;
+            case 'theorie' :
+                requeteSection('theorie', 'Les cours théoriques');
+                $_GET['page'] = '';
+                break;
+            case 'morceaux' :
+                requeteSection('morceaux', 'Les cours sur les morceaux');
+                $_GET['page'] = '';
+                break;
+            case 'partitions' :
+                requetePartitions();
+                $_GET['page'] = '';
+                break;
+            case 'espacePerso' :
+                espacePerso();
+                $_GET['page'] = '';
+                break;
+            case 'administration' :
+                administration();
+                $_GET['page'] = '';
+                break;
+            case 'lectureVideo' :
+                requeteLectureVideo();
+                $_GET['page'] = '';
+                break;
+            default :
+                erreurView();
+                $_GET['page'] = '';   
+        }
+    } else {
+        $_SESSION['pageView'] = 'accueil';
+        requeteAccueil();
+    }
 }
 
-function footerContent(){
-    require('./Views/footerView.php');
+function headerFooterContent($choix){
+    require('./Views/'.$choix.'View.php');
 }
 
-function accueil(){
+//fonctions des requêtes sql
+function requeteAccueil(){
     $_SESSION['pageView'] = 'accueil';
 
     $sections = ['covers', 'duos', 'compos', 'theorie', 'morceaux'];
@@ -44,28 +99,19 @@ function requeteSection($section, $h1title){
     
 }
 
-function partitions(){
+function requetePartitions(){
     $_SESSION['pageView'] = 'partitions';
     $requete = getPartition();
     require('./Views/partitionsView.php');
 }
 
-function lectureVideo(){
+function requeteLectureVideo(){
     $_SESSION['pageView'] = 'lectureVideo';
     $videoId = $_GET['videoId'];
     // var_dump($_GET);
     $requete = getOneVideoById($videoId);
     require('./Views/lectureVideoView.php');
 }
-
-function erreurView(){
-
-    $_SESSION['pageView'] = 'Erreur';
-    $error = 'Cette page n\'existe pas ou a été supprimée';
-    require('./Views/errorView.php');
-}
-
-
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
@@ -92,7 +138,8 @@ function administration(){
     
 }
 
-function sectionVide(){
+//fonctions pour remplir les sections après les requêtes sql
+function remplirSectionVide(){
     require('./Views/functionView/sectionVideView.php');
 }
 
@@ -105,9 +152,7 @@ function remplirSection($video, $nomSection){
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
 }
 
-
-
-function affichePartition($partition){
+function remplirSectionPartition($partition){
 
     $title = $partition['titre'];
     $artiste = $partition['artiste'];
@@ -115,4 +160,12 @@ function affichePartition($partition){
 
     require('./Views/functionView/affichePartitionView.php');
 
+}
+
+//fonction pour l'affichage d'erreur
+function erreurView(){
+
+    $_SESSION['pageView'] = 'Erreur';
+    $error = 'Cette page n\'existe pas ou a été supprimée';
+    require('./Views/errorView.php');
 }

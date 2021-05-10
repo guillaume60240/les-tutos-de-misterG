@@ -17,7 +17,7 @@ ob_start();
                 remplirSection($video, 'General');
             } while ($video = $requete->fetch());
             } else {
-                sectionVide();
+                remplirSectionVide();
             }
          
          

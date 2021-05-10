@@ -28,7 +28,7 @@ function getLastVideoForAllSection($sections){
             
         } else {
             ?> <h2><?=$section?> </h2><?php
-            sectionVide();
+            remplirSectionVide();
             
         }
     }
