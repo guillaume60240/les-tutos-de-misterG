@@ -96,35 +96,15 @@ function sectionVide(){
     require('./Views/functionView/sectionVideView.php');
 }
 
-function remplirSection($video){
+function remplirSection($video, $nomSection){
     
         $titleVideo = $video['titre'];
         $date = $video['created_at'];
         $link = $video['link'];
         $videoId = $video['id'];
-        require('./Views/functionView/remplirSectionView.php');
+        require('./Views/functionView/remplirSection'.$nomSection.'View.php');
 }
 
-function remplirSectionAccueil($video){
-
-    $titleVideo = $video['titre'];
-    $date = $video['created_at'];
-    $link = $video['link'];
-    $videoId = $video['id'];
-
-    require('./Views/functionView/remplirSectionAccueilView.php');
-}
-
-function remplirSectionLecture($video){
-
-    $titleVideo = $video['titre'];
-    $date = $video['created_at'];
-    $link = $video['link'];
-    $videoId = $video['id'];
-    
-    require('./Views/functionView/remplirSectionLectureView.php');
-
-}
 
 
 function affichePartition($partition){

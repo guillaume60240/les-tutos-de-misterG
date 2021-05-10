@@ -13,7 +13,7 @@ ob_start();
     <?php
         if($video = $requete->fetch()){
             do{              
-                remplirSectionLecture($video);
+                remplirSection($video, 'Lecture');
             } while ($video = $requete->fetch());
             } else {
                 sectionVide();

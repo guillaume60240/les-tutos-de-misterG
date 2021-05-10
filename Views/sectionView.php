@@ -14,7 +14,7 @@ ob_start();
         // affichage des vidéos de la fonction getVideos
         if($video = $requete->fetch()){
             do{              
-                remplirSection($video);
+                remplirSection($video, 'General');
             } while ($video = $requete->fetch());
             } else {
                 sectionVide();

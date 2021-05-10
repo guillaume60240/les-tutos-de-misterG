@@ -23,7 +23,7 @@ function getLastVideoForAllSection($sections){
         if($video){
             $section = strtoupper($video['section']);
             ?><h2><?=$section?></h2><?php
-            remplirSection($video);
+            remplirSection($video, 'General');
             
             
         } else {

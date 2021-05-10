@@ -23,7 +23,7 @@ ob_start();
                 
                 do{              
                     ?><div><h2 class="sectionTitle"><?=$video['section']?></h2><?php
-                    remplirSectionAccueil($video);
+                    remplirSection($video, 'Accueil');
                     ?></div><?php
                 } while ($video = $requete->fetch());
             }
