@@ -32,47 +32,16 @@ function accueil(){
 
 }
 
-function covers(){
+function requeteSection($section, $h1title){
     //indication de pageView pour la classe active
-    $_SESSION['pageView'] = 'covers';
-    //indication de $section nécessaire pour la fonction getVideo()
-    $section = $_SESSION['pageView'];
+    $_SESSION['pageView'] = $section;
     //on lance la requête getVideos()
+    $h1 = $h1title;
+    $title = $section;
     $requete = getAllVideosForOneSection($section);
     //page nécessaire à l'affichage
-    require('./Views/coversView.php');
-}
-
-function duos(){
-    $_SESSION['pageView'] = 'duos';
-
-    $section = $_SESSION['pageView'];
-
-    $requete = getAllVideosForOneSection($section);
-
-    require('./Views/duosView.php');
-}
-
-function compos(){
-    $_SESSION['pageView'] = 'compos';
-    $section = $_SESSION['pageView'];
-    $requete = getAllVideosForOneSection($section);
-    require('./Views/composView.php');
-
-}
-
-function theorie(){
-    $_SESSION['pageView'] = 'theorie';
-    $section = $_SESSION['pageView'];
-    $requete = getAllVideosForOneSection($section);
-    require('./Views/theorieView.php');
-}
-
-function morceaux(){
-    $_SESSION['pageView'] = 'morceaux';
-    $section = $_SESSION['pageView'];
-    $requete = getAllVideosForOneSection($section);
-    require('./Views/morceauxView.php');
+    require('./Views/sectionView.php');
+    
 }
 
 function partitions(){
@@ -146,7 +115,7 @@ function remplirSectionAccueil($video){
     require('./Views/functionView/remplirSectionAccueilView.php');
 }
 
-function remplirSectionMorceau($video){
+function remplirSectionLecture($video){
 
     $titleVideo = $video['titre'];
     $date = $video['created_at'];

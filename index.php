@@ -22,23 +22,23 @@ if (isset($_GET['page'])){
             $_GET['page'] = '';
             break;
         case 'covers' :
-            covers();
+            requeteSection('covers', 'Les covers');
             $_GET['page'] = '';
             break;
         case 'duos' :
-            duos();
+            requeteSection('duos', 'Les covers en duo');
             $_GET['page'] = '';
             break;
         case 'compos' :
-            compos();
+            requeteSection('compos', 'Mes compos');
             $_GET['page'] = '';
             break;
         case 'theorie' :
-            theorie();
+            requeteSection('theorie', 'Les cours théoriques');
             $_GET['page'] = '';
             break;
         case 'morceaux' :
-            morceaux();
+            requeteSection('morceaux', 'Les cours sur les morceaux');
             $_GET['page'] = '';
             break;
         case 'partitions' :
