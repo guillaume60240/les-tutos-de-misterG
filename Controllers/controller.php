@@ -6,6 +6,7 @@ require('./Models/adminModel.php');
 require('./Models/videosModel.php');
 require('./Models/partitionsModel.php');
 require('./Models/usersModel.php');
+require('./Models/commentsModel.php');
 
 //choix de l'affichage principal
 function choixRequete(){
@@ -121,6 +122,7 @@ function requetePartitions(){
 function requeteLectureVideo(){
     $_SESSION['pageView'] = 'lectureVideo';
     $_SESSION['videoId'] = $_GET['videoId'];
+    $_SESSION['videoTitle'] = $_GET['videoTitle'];
     $videoId = $_SESSION['videoId'];
     // var_dump($_GET);
     $requete = getOneVideoById($videoId);
@@ -198,7 +200,7 @@ function erreurView(){
     require('./Views/errorView.php');
 }
 
-//fonctions traitement des formulaires inscription et connexion
+//fonctions traitement des formulaires 
 function traitementFormulaireInscription(){
     if(!empty($_POST['userPseudo']) && !empty($_POST['userMail']) && !empty($_POST['userPassword']) && !empty($_POST['userPassword2'])){
         
@@ -287,4 +289,18 @@ function traitementFormulaireDeconnexion(){
         $_GET['page'] = 'accueil';
     }
     
+}
+
+function traitementFormulaireCommentaire(){
+    if($_SESSION['id'] && $_SESSION['pseudo']){
+        $contenu = htmlspecialchars($_POST['commentaire']);
+        $userId = $_SESSION['id'];
+        $userPseudo = $_SESSION['pseudo'];
+        $videoId = $_SESSION['videoId'];
+        $videoTitle = $_GET['videoTitle'];
+
+        insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
+    } else {
+        ?><script>alert('Vous devez être connecté pour pouvoir commenter')</script> <?php
+    }
 }

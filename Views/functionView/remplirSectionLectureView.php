@@ -84,10 +84,10 @@
             
         </div>
         <div class="formCommentaireContainer" id="formCommentaires">
-            <form action="" method="post" class="formCommentaire">
+            <form action="#" method="post" class="formCommentaire">
                 <label for="commentaire" class="formCommentaireLabel">Mon commentaire</label>
                 <textarea name="commentaire" id="commentaire" rows="5" cols="30" style="resize: none;"></textarea>
-                <button type="submit" class="btn2">Poster mon commentaire</button>
+                <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
             </form>
         </div>
     </div>
