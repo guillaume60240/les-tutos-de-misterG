@@ -5,6 +5,7 @@ require('./Models/databaseModel.php');
 require('./Models/adminModel.php');
 require('./Models/videosModel.php');
 require('./Models/partitionsModel.php');
+require('./Models/usersModel.php');
 
 //choix de l'affichage principal
 function choixRequete(){
@@ -52,6 +53,14 @@ function choixRequete(){
                 break;
             case 'lectureVideo' :
                 requeteLectureVideo();
+                $_GET['page'] = '';
+                break;
+            case 'inscription' :
+                inscription();
+                $_GET['page'] = '';
+                break;
+            case 'connexion' :
+                connexion();
                 $_GET['page'] = '';
                 break;
             default :
@@ -138,6 +147,15 @@ function administration(){
     
 }
 
+function inscription(){
+    $title = 'Inscription';
+    require('./Views/inscriptionView.php');
+}
+
+function connexion(){
+    $title = 'Connexion';
+    require('./Views/connexionView.php');
+}
 //fonctions pour remplir les sections après les requêtes sql
 function remplirSectionVide(){
     require('./Views/functionView/sectionVideView.php');
@@ -168,4 +186,44 @@ function erreurView(){
     $_SESSION['pageView'] = 'Erreur';
     $error = 'Cette page n\'existe pas ou a été supprimée';
     require('./Views/errorView.php');
+}
+
+//fonctions traitement des formulaires 
+function traitementFormulaireInscription(){
+    if(!empty($_POST['userPseudo']) && !empty($_POST['userMail']) && !empty($_POST['userPassword']) && !empty($_POST['userPassword2'])){
+        var_dump($_POST);
+        $userPseudo = htmlspecialchars($_POST['userPseudo']);
+        $userMail = htmlspecialchars($_POST['userMail']);
+        $mdp = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
+        $mdp2 = password_hash($_POST['userPassword2'], PASSWORD_DEFAULT);
+    } else {
+        ?><script>alert('Veuillez renseigner tous les champs')</script>  <?php
+    }
+
+    $UserPseudoExist = verificationPseudoExist($userPseudo);
+
+    if($UserPseudoExist === false){
+        
+        $userMailExist = verificationMailExist($userMail);
+
+        if($userMailExist === false){
+            
+            if($_POST['userPassword'] === $_POST['userPassword2']){
+
+                inscriptionUtilisateur($userPseudo, $userMail, $mdp);
+
+                ?><script>alert('Inscription réussie. Vous pouvez vous connecter')</script>  <?php
+                connexion();
+
+            } else {
+                ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 1')</script>  <?php
+            }
+
+        } else {
+            ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 2')</script>  <?php
+        }
+
+    } else {
+        ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 3')</script>  <?php
+    }
 }

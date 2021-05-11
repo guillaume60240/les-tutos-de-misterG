@@ -1,6 +1,6 @@
 <?php
 
-// $title = 'Covers';
+
 
 ob_start();
 ?>
