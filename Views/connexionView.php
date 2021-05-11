@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-if(isset($_POST['form_inscription'])){
+if(isset($_POST['form_connexion'])){
     traitementFormulaireConnexion();
 }
 ?>
@@ -11,7 +11,7 @@ if(isset($_POST['form_inscription'])){
     
         
 
-            <form method="post" action="back/traitement-formulaire.php" enctype='multipart/form-data'>
+            <form method="post" action="../index.php" enctype='multipart/form-data'>
 
                 <label for="userPseudo">Mon pseudo</label>
                 <input type="text" name="userPseudo" id="userPseudo" placeholder="Pseudo" value="">
@@ -23,7 +23,7 @@ if(isset($_POST['form_inscription'])){
                 
 
                 <button type="reset">Réinitialiser les valeurs du formulaire</button>
-                <button type="submit">Je me connecte</button>
+                <button type="submit" name="form_connexion">Je me connecte</button>
             </form>
             <a href="#" class="modal_close">&times;</a>
         </div>

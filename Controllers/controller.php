@@ -188,10 +188,10 @@ function erreurView(){
     require('./Views/errorView.php');
 }
 
-//fonctions traitement des formulaires 
+//fonctions traitement des formulaires inscription et connexion
 function traitementFormulaireInscription(){
     if(!empty($_POST['userPseudo']) && !empty($_POST['userMail']) && !empty($_POST['userPassword']) && !empty($_POST['userPassword2'])){
-        var_dump($_POST);
+        
         $userPseudo = htmlspecialchars($_POST['userPseudo']);
         $userMail = htmlspecialchars($_POST['userMail']);
         $mdp = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
@@ -216,14 +216,41 @@ function traitementFormulaireInscription(){
                 connexion();
 
             } else {
-                ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 1')</script>  <?php
+                ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
             }
 
         } else {
-            ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 2')</script>  <?php
+            ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
         }
 
     } else {
-        ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer 3')</script>  <?php
+        ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
+    }
+}
+
+function traitementFormulaireConnexion(){
+
+    if(!empty($_POST['userPseudo']) && !empty($_POST['userPassword'])){
+        $pseudo = htmlspecialchars($_POST['userPseudo']);
+        $mdp = htmlspecialchars($_POST['userPassword']);
+        $userPseudoExist = verificationPseudoExist($pseudo);
+       
+        if(!empty($userPseudoExist)){
+
+            $hash = $userPseudoExist['motdepasse'];
+
+            if (password_verify($mdp , $hash)) {
+                $_SESSION['pseudo'] = $userPseudoExist['pseudo'];
+                $_SESSION['id'] = $userPseudoExist['id'];
+                $_SESSION['role'] = $userPseudoExist['role'];
+                $_GET['page'] = 'accueil';
+                requeteAccueil();
+
+            } else {
+                ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
+            }
+        }
+    } else {
+        ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
     }
 }
