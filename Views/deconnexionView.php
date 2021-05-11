@@ -9,11 +9,11 @@ if(isset($_POST['form_deconnexion'])){
     <div id="deconnexion" class="modal_connexion">
         <div class="modal_content">
     
-        
+            <p>Vous êtes sur le point de fermer votre session</p>
 
             <form method="post" action="../index.php" enctype='multipart/form-data'>
                 
-                <button type="submit" name="form_deconnexion">Je me deconnecte</button>
+                <button type="submit" name="form_deconnexion">Ok</button>
             </form>
             <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
         </div>
