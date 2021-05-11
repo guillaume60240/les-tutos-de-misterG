@@ -254,7 +254,12 @@ function traitementFormulaireConnexion(){
                 $_SESSION['id'] = $userPseudoExist['id'];
                 $_SESSION['role'] = $userPseudoExist['role'];
                 $pageActuelle = $_SESSION['pageView'];
-                $_GET['page'] = $pageActuelle;
+                if($pageActuelle != 'lectureVideo'){
+
+                    $_GET['page'] = $pageActuelle;
+                } else {
+                    $_GET['page'] = 'accueil';
+                }
                 
             } else {
                 ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
@@ -274,6 +279,12 @@ function traitementFormulaireDeconnexion(){
     $_SESSION['role'] = null;
     //redirection
     $pageActuelle = $_SESSION['pageView'];
-    $_GET['page'] = $pageActuelle;
+
+    if($pageActuelle != 'lectureVideo'){
+
+        $_GET['page'] = $pageActuelle;
+    } else {
+        $_GET['page'] = 'accueil';
+    }
     
 }
