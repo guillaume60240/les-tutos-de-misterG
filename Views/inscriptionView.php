@@ -10,7 +10,7 @@ if(isset($_POST['form_inscription'])){
     <div id="inscription" class="modal_inscription">
         <div class="modal_content">
 
-            <form method="post" action="#" enctype='multipart/form-data'>
+            <form method="post" action="../index.php" enctype='multipart/form-data'>
 
                 <label for="userPseudo">Mon pseudo</label>
                 <input type="text" name="userPseudo" id="userPseudo" placeholder="Pseudo">
@@ -27,7 +27,7 @@ if(isset($_POST['form_inscription'])){
                 <button type="reset">Réinitialiser les valeurs du formulaire</button>
                 <button type="submit" name="form_inscription">Je m'inscris</button>
             </form>
-            <a href="/?page=accueil" class="modal_close" class="formInscriptionLink">&times;</a>
+            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close" class="formInscriptionLink">&times;</a>
         </div>
     </div>
 </section>

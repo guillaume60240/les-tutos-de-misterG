@@ -84,7 +84,7 @@ function headerFooterContent($choix){
 //fonctions des requêtes sql
 function requeteAccueil(){
     $_SESSION['pageView'] = 'accueil';
-
+    // $_GET['page'] = 'accueil';
     $sections = ['covers', 'duos', 'compos', 'theorie', 'morceaux'];
     
     $requetes =[
@@ -120,7 +120,8 @@ function requetePartitions(){
 
 function requeteLectureVideo(){
     $_SESSION['pageView'] = 'lectureVideo';
-    $videoId = $_GET['videoId'];
+    $_SESSION['videoId'] = $_GET['videoId'];
+    $videoId = $_SESSION['videoId'];
     // var_dump($_GET);
     $requete = getOneVideoById($videoId);
     require('./Views/lectureVideoView.php');
@@ -252,21 +253,27 @@ function traitementFormulaireConnexion(){
                 $_SESSION['pseudo'] = $userPseudoExist['pseudo'];
                 $_SESSION['id'] = $userPseudoExist['id'];
                 $_SESSION['role'] = $userPseudoExist['role'];
-                ?><script>alert('vous êtes connecté')</script><?php
-                // $_GET['page'] = 'accueil';
-                // requeteAccueil();
-
+                $pageActuelle = $_SESSION['pageView'];
+                $_GET['page'] = $pageActuelle;
+                
             } else {
                 ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
+                $_GET['page'] = 'connexion';
             }
         }
     } else {
         ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
+        connexion();
     }
 }
 
 function traitementFormulaireDeconnexion(){
+    unset($_GET['page']);
     $_SESSION['id'] = null;
     $_SESSION['pseudo'] = null;
     $_SESSION['role'] = null;
+    //redirection
+    $pageActuelle = $_SESSION['pageView'];
+    $_GET['page'] = $pageActuelle;
+    
 }

@@ -11,13 +11,11 @@ if(isset($_POST['form_deconnexion'])){
     
         
 
-            <form method="post" action="#" enctype='multipart/form-data'>
-                
-                <!-- <input type="checkbox" name="form_deconnexion" id="form_deconnexion" hidden checked> -->
+            <form method="post" action="../index.php" enctype='multipart/form-data'>
                 
                 <button type="submit" name="form_deconnexion">Je me deconnecte</button>
             </form>
-            <a href="?/page=accueil" class="modal_close">&times;</a>
+            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
         </div>
     </div>
 </section>
