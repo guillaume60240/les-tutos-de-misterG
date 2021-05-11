@@ -11,7 +11,7 @@ if(isset($_POST['form_connexion'])){
     
         
 
-            <form method="post" action="../index.php" enctype='multipart/form-data'>
+            <form method="post" action="#" enctype='multipart/form-data'>
 
                 <label for="userPseudo">Mon pseudo</label>
                 <input type="text" name="userPseudo" id="userPseudo" placeholder="Pseudo" value="">
@@ -25,7 +25,7 @@ if(isset($_POST['form_connexion'])){
                 <button type="reset">Réinitialiser les valeurs du formulaire</button>
                 <button type="submit" name="form_connexion">Je me connecte</button>
             </form>
-            <a href="#" class="modal_close">&times;</a>
+            <a href="/?page=accueil" class="modal_close">&times;</a>
         </div>
     </div>
 </section>

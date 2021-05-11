@@ -63,6 +63,10 @@ function choixRequete(){
                 connexion();
                 $_GET['page'] = '';
                 break;
+            case 'deconnexion' :
+                deconnexion();
+                $_GET['page'] = '';
+                break;
             default :
                 erreurView();
                 $_GET['page'] = '';   
@@ -156,6 +160,11 @@ function connexion(){
     $title = 'Connexion';
     require('./Views/connexionView.php');
 }
+
+function deconnexion(){
+    $title = 'deconnexion';
+    require('./Views/deconnexionView.php');
+}
 //fonctions pour remplir les sections après les requêtes sql
 function remplirSectionVide(){
     require('./Views/functionView/sectionVideView.php');
@@ -243,8 +252,9 @@ function traitementFormulaireConnexion(){
                 $_SESSION['pseudo'] = $userPseudoExist['pseudo'];
                 $_SESSION['id'] = $userPseudoExist['id'];
                 $_SESSION['role'] = $userPseudoExist['role'];
-                $_GET['page'] = 'accueil';
-                requeteAccueil();
+                ?><script>alert('vous êtes connecté')</script><?php
+                // $_GET['page'] = 'accueil';
+                // requeteAccueil();
 
             } else {
                 ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
@@ -253,4 +263,10 @@ function traitementFormulaireConnexion(){
     } else {
         ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
     }
+}
+
+function traitementFormulaireDeconnexion(){
+    $_SESSION['id'] = null;
+    $_SESSION['pseudo'] = null;
+    $_SESSION['role'] = null;
 }

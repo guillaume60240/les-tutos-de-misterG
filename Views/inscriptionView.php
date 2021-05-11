@@ -27,7 +27,7 @@ if(isset($_POST['form_inscription'])){
                 <button type="reset">Réinitialiser les valeurs du formulaire</button>
                 <button type="submit" name="form_inscription">Je m'inscris</button>
             </form>
-            <a href="#" class="modal_close" class="formInscriptionLink">&times;</a>
+            <a href="/?page=accueil" class="modal_close" class="formInscriptionLink">&times;</a>
         </div>
     </div>
 </section>

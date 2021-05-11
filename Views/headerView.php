@@ -8,7 +8,7 @@ ob_start();
     <nav class="nav-container">
         
         <div class="entete">
-        <?php if($_SESSION['id']){
+        <?php if(isset($_SESSION['id'])){
                 echo '<p class="messageBienvenue" >Bonjour '.$_SESSION['pseudo'].' !</p>'; 
             }
             ?>
@@ -17,17 +17,17 @@ ob_start();
             <div class="pl-4 userAction">
 
             <?php
-                if($_SESSION['id']=== null){
+                if(!isset($_SESSION['id'])){
 
                     echo 
-                    '<a href="#inscription" class="link-light inscription_modale" >M\'inscrire</a>
-                    <a href="#connexion" class="link-light connexion_modale" >Me connecter</a>';
+                    '<a href="/?page=inscription" class="link-light inscription_modale" >M\'inscrire</a>
+                    <a href="/?page=connexion" class="link-light connexion_modale" >Me connecter</a>';
                 } else{
                     echo 
                     '<a href="/?page=espacePerso" class="link-light" >Mon espace perso</a>
-                    <a href="#" class="link-light" >Me déconnecter</a>';
+                    <a href="/?page=deconnexion" class="link-light" >Me déconnecter</a>';
                 }
-                if($_SESSION['id'] && $_SESSION['role']==='admin'){
+                if(isset($_SESSION['id']) && $_SESSION['role']==='admin'){
                     echo 
                     ' <a href="/?page=administration" class="link-light" >Administrer</a>';
                 }
