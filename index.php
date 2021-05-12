@@ -4,12 +4,12 @@
 session_start();
 require('Controllers/controller.php');
 actualiser_session();
-echo('session = </br>');
-var_dump($_SESSION);
-echo('</br>get = </br>');
-var_dump($_GET);
-echo('</br>post = </br>');
-var_dump($_POST);
+// echo('session = </br>');
+// var_dump($_SESSION);
+// echo('</br>get = </br>');
+// var_dump($_GET);
+// echo('</br>post = </br>');
+// var_dump($_POST);
 
 
 
@@ -30,7 +30,13 @@ if(isset($_POST['formulaireCommentaire'])){
     traitementFormulaireCommentaire();
 }
 
-
+if(isset($_POST['deleteCommentaire'])){
+    $idCommentaire = intval($_POST['deleteCommentaire']);
+    suppressionCommentaire($idCommentaire);
+    var_dump($_POST);
+    var_dump($idCommentaire);
+    
+}
 choixRequete();
 
 ?>

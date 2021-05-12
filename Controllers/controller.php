@@ -63,6 +63,7 @@ function choixRequete(){
                 break;
             case 'lectureVideo' :
                 requeteLectureVideo();
+                
                 $_GET['page'] = '';
                 break;
             case 'inscription' :
@@ -133,9 +134,18 @@ function requeteLectureVideo(){
     $rVideoId = $_GET['videoId'];
     // var_dump($_GET);
     $requete = getOneVideoById($rVideoId);
+    $comments = recupererCommentairesPourUneVideo($rVideoId);
     require('./Views/lectureVideoView.php');
     
 }
+
+// function requeteCommentaire(){
+
+//     $videoId = $_GET['videoId'];
+
+//     $comments = recupererCommentairesPourUneVideo($videoId);
+//     require('./Views/lectureVideoView.php');
+// }
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
@@ -189,6 +199,16 @@ function remplirSection($video, $nomSection){
         $videoId = $video['id'];
         
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
+}
+
+function afficheCommentaire($comment){
+    $userPseudo = $comment['user_pseudo'];
+    $contenu = $comment['contenu'];
+    $dateC = $comment['created_at'];
+    $commentaireUserId = $comment['userId'];
+    $idCommentaire = $comment['id'];
+    require('./Views/functionView/remplirSectionCommentaireView.php');
+    // var_dump($comment);
 }
 
 function remplirSectionPartition($partition){
@@ -315,3 +335,4 @@ function traitementFormulaireCommentaire(){
         
     }
 }
+

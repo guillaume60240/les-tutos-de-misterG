@@ -14,3 +14,19 @@ function insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTi
     ));
 
 }
+
+function recupererCommentairesPourUneVideo($videoId){
+    $bdd = getPdo();
+
+    $comments = $bdd->query('SELECT * FROM commentaires WHERE video_id ="'. $videoId.'" ORDER BY id');
+
+    return $comments;
+}
+
+function suppressionCommentaire($id){
+    $bdd = getPdo();
+
+    $requete = $bdd->prepare('DELETE  FROM commentaires WHERE id = :id');
+
+    $requete->execute(['id' =>intval($id)]);
+}

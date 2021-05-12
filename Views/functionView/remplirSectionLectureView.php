@@ -53,42 +53,5 @@
         
         
     </div>
-    <div class="commentaireContainer">
     
-        <div class="commentaires" id="blocCommentaires">
-        <h3>Commentaires</h3>
-
-            <div class="commentaire">        
-                <h4>Pseudo</h4>
-                <h5>le : date</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus autem rerum labore officia. Earum, ullam possimus. Labore, laborum sunt?</p>
-            </div>
-
-            <div class="commentaire">        
-                <h4>Pseudo</h4>
-                <h5>le : date</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus autem rerum labore officia. Earum, ullam possimus. Labore, laborum sunt?</p>
-            </div>
-
-            <div class="commentaire">        
-                <h4>Pseudo</h4>
-                <h5>le : date</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus autem rerum labore officia. Earum, ullam possimus. Labore, laborum sunt?</p>
-            </div>
-
-            <div class="commentaire">        
-                <h4>Pseudo</h4>
-                <h5>le : date</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus autem rerum labore officia. Earum, ullam possimus. Labore, laborum sunt?</p>
-            </div>
-            
-        </div>
-        <div class="formCommentaireContainer" id="formCommentaires">
-            <form action="#" method="post" class="formCommentaire">
-                <label for="commentaire" class="formCommentaireLabel">Mon commentaire</label>
-                <textarea name="commentaire" id="commentaire" rows="5" cols="30" style="resize: none;"></textarea>
-                <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
-            </form>
-        </div>
-    </div>
 </div>
