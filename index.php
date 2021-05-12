@@ -33,9 +33,11 @@ if(isset($_POST['formulaireCommentaire'])){
 if(isset($_POST['deleteCommentaire'])){
     $idCommentaire = intval($_POST['deleteCommentaire']);
     suppressionCommentaire($idCommentaire);
-    var_dump($_POST);
-    var_dump($idCommentaire);
     
+}
+
+if(isset($_POST['ajoutLike'])){
+    traitementFormulaireLike();
 }
 choixRequete();
 

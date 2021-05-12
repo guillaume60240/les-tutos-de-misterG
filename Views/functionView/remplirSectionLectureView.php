@@ -44,10 +44,12 @@
 
                 <h3><?=$titleVideo ?></h3>
                 <h6>Publié le : <?= $date?> </h6>
-                <p class="btn-container">
+                <div class="btn-container">
                     <button class="btn2 comments" id="comments">Commenter</button>
-                    <button class="btn2 like"><span>J'aime</span>  <span class="likeIcone">&#10084</span></button>
-                </p>
+                    <form action="#" method="post">
+                        <button class="btn2 like <?php if(isset($_SESSION['like'])){if($_SESSION['like'] != false){ echo 'likeValide';}}?>" type="submit" name="ajoutLike"><span>J'aime</span> </button>
+                    </form>
+                </div>
             </div>
             
         

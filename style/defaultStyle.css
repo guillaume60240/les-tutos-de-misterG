@@ -147,6 +147,19 @@ body{
 .titleVideo{
     width: 60%;
 }
+.likeValide{
+    position: relative;
+}
+.likeValide::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 53px;
+    height: 30px;
+    border: solid 15px rgba(38, 131, 54, 0.493);
+    border-radius: 15px;
+}
 .commentaireContainer{
     width: 100%;
     display: flex;

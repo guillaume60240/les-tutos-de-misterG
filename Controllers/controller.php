@@ -7,6 +7,7 @@ require('./Models/videosModel.php');
 require('./Models/partitionsModel.php');
 require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
+require('./Models/likeModel.php');
 
 //actualisation de la session pour le nom des videos
 function actualiser_session(){
@@ -16,6 +17,7 @@ function actualiser_session(){
     if(isset($_GET['videoTitle'])){
         $_SESSION['videoTitle'] = $_GET['videoTitle'];
     }
+    
 }
 //choix de l'affichage principal
 function choixRequete(){
@@ -132,20 +134,19 @@ function requetePartitions(){
 function requeteLectureVideo(){
     $rVideoTitle = $_GET['videoTitle'];
     $rVideoId = $_GET['videoId'];
+    $userId = $_SESSION['id'];
     // var_dump($_GET);
     $requete = getOneVideoById($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
+    $likeExist = rechercherLikeUneVideoUnUser($rVideoId, $userId );
+    $_SESSION['like'] = $likeExist;
+    // var_dump($_SESSION['like']);
+    
     require('./Views/lectureVideoView.php');
     
 }
 
-// function requeteCommentaire(){
 
-//     $videoId = $_GET['videoId'];
-
-//     $comments = recupererCommentairesPourUneVideo($videoId);
-//     require('./Views/lectureVideoView.php');
-// }
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
@@ -336,3 +337,26 @@ function traitementFormulaireCommentaire(){
     }
 }
 
+function traitementFormulaireLike(){
+    if(isset($_SESSION['id']) && isset($_SESSION['pseudo'])){
+        $videoId = $_SESSION['videoId'];
+        $userId = $_SESSION['id'];
+        $userPseudo = $_SESSION['pseudo'];
+        $videoTitle = $_SESSION['videoTitle'];
+
+        $likeExist = rechercherLikeUneVideoUnUser($videoId, $userId);
+        if($likeExist === false){
+            insererLike($videoId, $userId, $videoTitle, $userPseudo);
+
+        } else{
+            $id = $likeExist['id'];
+            supprimerUnLike($id);
+        }
+        // echo('</br> like </br>');
+        // var_dump($likeExist);
+
+    } else {
+        $error = 'Vous devez être connecté pour pouvoir liker une vidéo';
+        require('./Views/errorView.php');
+    }
+}
