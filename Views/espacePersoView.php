@@ -3,12 +3,26 @@
 $title = 'Mon espace perso';
 
 ob_start();
+
+// if($video = $requete->fetch()){
+//     do{              
+//         remplirSection($video, 'General');
+//     } while ($video = $requete->fetch());
+//     } else {
+//         remplirSectionVide();
+//     }
+
+
 ?>
 
 
 
 <section class="compo">
-    <h1 class="titleSection">l'espace perso de <?= $_SESSION['pseudo']?></h1>
+    <h1 class="titleSection">l'espace perso de 
+        <?php
+        $_SESSION['pseudo']
+        ?>
+    </h1>
     <div class="section">
         <div class="vid">
             <h3>Titre</h3>

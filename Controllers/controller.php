@@ -134,19 +134,37 @@ function requetePartitions(){
 function requeteLectureVideo(){
     $rVideoTitle = $_GET['videoTitle'];
     $rVideoId = $_GET['videoId'];
-    $userId = $_SESSION['id'];
+    if(isset($_SESSION['id'])){
+
+        $userId = $_SESSION['id'];
+        $likeExist = rechercherLikeUneVideoUnUser($rVideoId, $userId );
+        $_SESSION['like'] = $likeExist;
+    }
     // var_dump($_GET);
     $requete = getOneVideoById($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
-    $likeExist = rechercherLikeUneVideoUnUser($rVideoId, $userId );
-    $_SESSION['like'] = $likeExist;
     // var_dump($_SESSION['like']);
     
     require('./Views/lectureVideoView.php');
     
 }
 
+// function requeteEspacePerso(){
 
+//     $userId = $_SESSION['id'];
+
+//     $requeteLike = rechercherLikesUser($userId);
+
+//     if($liste = $requeteLike->fetch()){
+//         do{
+//             $videoId = $liste['video_id'];
+//             getOneVideoById($videoId);
+//         } while($liste = $requeteLike->fetch());
+//     }
+
+//     require('./Views/espacePersoView.php');
+
+// }
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
@@ -331,8 +349,9 @@ function traitementFormulaireCommentaire(){
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
     } else {
-        $error ='Vous devez être connecté pour pouvoir commenter';
-        require('./Views/errorView.php');
+        // $error ='Vous devez être connecté pour pouvoir commenter';
+        // require('./Views/errorView.php');
+        echo'Vous devez être connecté pour commenter';
         
     }
 }
@@ -356,7 +375,9 @@ function traitementFormulaireLike(){
         // var_dump($likeExist);
 
     } else {
-        $error = 'Vous devez être connecté pour pouvoir liker une vidéo';
-        require('./Views/errorView.php');
+        // $error = 'Vous devez être connecté pour pouvoir liker une vidéo';
+        // require('./Views/errorView.php');
+        ?> <script>alert('Vous devez être connecté pour liker une vidéo)</script> <?php
+        echo'Vous devez être connecté pour liker une vidéo';
     }
 }

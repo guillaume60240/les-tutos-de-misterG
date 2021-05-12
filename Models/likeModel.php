@@ -25,6 +25,16 @@ function rechercherLikeUneVideoUnUser($videoId, $userId){
     return $likeExist;
 }
 
+function rechercherLikesUser($userId){
+    $bdd = getPdo();
+
+    $requeteLike = $bdd->query('SELECT * FROM likes WHERE  userId="'.$userId.'"');
+
+    
+
+    return $requeteLike;
+}
+
 function supprimerUnLike($id){
     $bdd = getPdo();
 

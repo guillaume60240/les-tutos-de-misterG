@@ -29,7 +29,7 @@ ob_start();
                 <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
             </form>
         </div>
-        <div class="commentaireContainer" id="">
+        <div class="commentaireContainer" id="commentaireContainer">
             
             <div class="commentaires" id="blocCommentaires">
                 <h3>Commentaires</h3>
