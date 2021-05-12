@@ -1,4 +1,4 @@
-<div >
+<div class="sectionVideo">
     <div class="videosContainer">
 
         <div class="vid2">

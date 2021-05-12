@@ -2,6 +2,7 @@ const like = document.querySelectorAll('.like');
 
 const commentaireBtn = document.getElementById('comments');
 const formCommentaire = document.getElementById('formCommentaires');
+const commentaireContainer = document.getElementById('commentaireContainer');
 console.log(like);
 
 console.log(like[1]);
@@ -19,10 +20,11 @@ for (const icone of like){
 }
 
 commentaireBtn.addEventListener('click',()=>{
-    console.log('hello');
+    console.log(commentaireContainer);
     
         
         formCommentaire.style.display = 'block';
+        commentaireContainer.style.display = 'none';
         
     
 })

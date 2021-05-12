@@ -11,6 +11,7 @@ body{
 }
 .affichage{
     min-height: 70vh;
+    
 }
 
 .titleSection{
@@ -151,22 +152,38 @@ body{
     display: flex;
 
 }
+.sectionCommentaire{
+    max-width: 1000px;
+    min-height: 250px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    position: relative;
+}
 .commentaires{
-    width: 60%;
+    width: 100%;
     padding-left: 10px;
+    padding-right: 10px;
     height: 200px;
     overflow-y: scroll;
     
 }
 .commentaire{
     margin-bottom: 10px;
+    border-bottom: solid 1px #333;
+    padding-bottom: 10px;
+}
+.textCommentaire{
+    padding-top: 10px;
 }
 #formCommentaires{
     padding-left: 10px;
     display: none;
 }
 .formCommentaireContainer{
-    margin-left: 150px;
+    max-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .formCommentaire{
     height: 100%;
@@ -177,7 +194,9 @@ body{
     align-content: center;
     text-align: center;
 }
-
+.formCommentaireLabel{
+    align-self: flex-start;
+}
 
 h3{
     margin-top: 10px;
@@ -264,8 +283,9 @@ video{
 .btn2{
     font-size: .5em;
     text-decoration: none;
-    padding: 5px 15px;
+    padding: .7em 1em;
     margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 15px;
     border: solid 1px #333;
     background: transparent;
@@ -279,6 +299,7 @@ video{
     color: linen;
     font-weight: 700;
 }
+
 
 .likeIcone{
     color: red;
@@ -389,6 +410,19 @@ button[type=submit], button[type=reset] {
     .suggestion{
         display: none;
     }
+    .vid2{
+        margin-left: 50%;
+        transform: translate(-50%);
+        max-width: 1000px;
+        min-width: 759px;
+    }
+    .descriptionContainer{
+        width: auto;
+        max-width: 1000px;
+        min-width: 759px;
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
 }
 @media screen and (max-width: 1000px) {
     .titleSection{
@@ -466,6 +500,26 @@ button[type=submit], button[type=reset] {
     }
     .formCommentaire{
         max-width: 75%;
+    }
+    .sectionVideo{
+        width: 100%;
+    }
+    .vid2{
+        width: 100%;
+        min-width: none;
+        margin-left: 0;
+        transform: translate(0);
+    }
+    .descriptionContainer{
+        width: 100%;
+        min-width: none;
+        margin-left: 0;
+        transform: translate(0);
+    }
+    .sectionCommentaire{
+        margin-left: 0;
+        transform: translate(0);
+        
     }
 }
 
