@@ -2,6 +2,8 @@
 
 <?php
 session_start();
+require('Controllers/controller.php');
+actualiser_session();
 echo('session = </br>');
 var_dump($_SESSION);
 echo('</br>get = </br>');
@@ -11,7 +13,9 @@ var_dump($_POST);
 
 
 
-require('Controllers/controller.php');
+
+
+
 
 if(isset($_POST['form_deconnexion'])){
     traitementFormulaireDeconnexion();
@@ -25,6 +29,7 @@ if(isset($_POST['form_inscription'])){
 if(isset($_POST['formulaireCommentaire'])){
     traitementFormulaireCommentaire();
 }
+
 
 choixRequete();
 

@@ -6,7 +6,7 @@
     <iframe <?= $link ?> ></iframe>
     <p class="btn-container-accueil" >
         
-        <button class="btnVoirVideo"><a href="/?page=lectureVideo&videoId=<?=$videoId?>" class="linkVoirVideo">Voir la vidéo</a> </button>
+        <button class="btnVoirVideo"><a href="/?page=lectureVideo&videoId=<?=$videoId?>&videoTitle=<?=$titleVideo?>" class="linkVoirVideo">Voir la vidéo</a> </button>
         <button class="btnVoirSection"><a href="/?page=covers" class="linkVoirSection">Voir la section</a> </button>
     </p>
 </div>

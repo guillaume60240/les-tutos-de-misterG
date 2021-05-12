@@ -8,6 +8,15 @@ require('./Models/partitionsModel.php');
 require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
 
+//actualisation de la session pour le nom des videos
+function actualiser_session(){
+    if(isset($_GET['videoId'])){
+        $_SESSION['videoId'] = $_GET['videoId'];
+    }
+    if(isset($_GET['videoTitle'])){
+        $_SESSION['videoTitle'] = $_GET['videoTitle'];
+    }
+}
 //choix de l'affichage principal
 function choixRequete(){
 
@@ -120,13 +129,12 @@ function requetePartitions(){
 }
 
 function requeteLectureVideo(){
-    $_SESSION['pageView'] = 'lectureVideo';
-    $_SESSION['videoId'] = $_GET['videoId'];
-    $_SESSION['videoTitle'] = $_GET['videoTitle'];
-    $videoId = $_SESSION['videoId'];
+    $rVideoTitle = $_GET['videoTitle'];
+    $rVideoId = $_GET['videoId'];
     // var_dump($_GET);
-    $requete = getOneVideoById($videoId);
+    $requete = getOneVideoById($rVideoId);
     require('./Views/lectureVideoView.php');
+    
 }
 
 function espacePerso(){
@@ -179,6 +187,7 @@ function remplirSection($video, $nomSection){
         $date = $video['created_at'];
         $link = $video['link'];
         $videoId = $video['id'];
+        
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
 }
 
@@ -276,11 +285,11 @@ function traitementFormulaireConnexion(){
 
 function traitementFormulaireDeconnexion(){
     unset($_GET['page']);
-    $_SESSION['id'] = null;
-    $_SESSION['pseudo'] = null;
-    $_SESSION['role'] = null;
-    //redirection
     $pageActuelle = $_SESSION['pageView'];
+    $_SESSION = array();
+    session_destroy();
+   
+    //redirection
 
     if($pageActuelle != 'lectureVideo'){
 
@@ -292,15 +301,17 @@ function traitementFormulaireDeconnexion(){
 }
 
 function traitementFormulaireCommentaire(){
-    if($_SESSION['id'] && $_SESSION['pseudo']){
+    if(isset($_SESSION['id']) && isset($_SESSION['pseudo'])){
         $contenu = htmlspecialchars($_POST['commentaire']);
         $userId = $_SESSION['id'];
         $userPseudo = $_SESSION['pseudo'];
         $videoId = $_SESSION['videoId'];
-        $videoTitle = $_GET['videoTitle'];
+        $videoTitle = $_SESSION['videoTitle'];
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
     } else {
-        ?><script>alert('Vous devez être connecté pour pouvoir commenter')</script> <?php
+        $error ='Vous devez être connecté pour pouvoir commenter';
+        require('./Views/errorView.php');
+        
     }
 }

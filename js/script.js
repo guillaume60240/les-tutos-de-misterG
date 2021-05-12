@@ -21,7 +21,7 @@ for (const icone of like){
 commentaireBtn.addEventListener('click',()=>{
     console.log('hello');
     
-
+        
         formCommentaire.style.display = 'block';
         
     
