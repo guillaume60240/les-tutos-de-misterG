@@ -20,6 +20,22 @@ ob_start();
             }
             
     ?>
+    
+    <div class="suggestion">
+        <div class="suggestionContainer">
+
+            <?php
+                if($firstTwoVideo = $requeteFirstTwoVideo->fetch()){
+                    do{
+                        remplirSuggestion1($firstTwoVideo);
+                    } while ($firstTwoVideo = $requeteFirstTwoVideo->fetch());
+                } else{
+                    echo('pas de video');
+                }
+            ?>
+        </div>
+    </div>
+
     <div class="sectionCommentaire">
 
         <div class="formCommentaireContainer" id="formCommentaires">

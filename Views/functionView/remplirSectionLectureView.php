@@ -5,7 +5,7 @@
             
             <iframe class="videoEnLecture" <?= $link ?> ></iframe>
             
-        </div>
+        <!-- </div>
         <div class="suggestion">
             
             <div>
@@ -36,7 +36,7 @@
                 
                 
             
-        </div>
+        </div> -->
     </div>
     <div class="descriptionContainer">
         

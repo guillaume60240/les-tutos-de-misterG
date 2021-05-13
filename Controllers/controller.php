@@ -17,6 +17,12 @@ function actualiser_session(){
     if(isset($_GET['videoTitle'])){
         $_SESSION['videoTitle'] = $_GET['videoTitle'];
     }
+    if(empty($_SESSION['pageView'])){
+        $_SESSION['pageView'] = 'accueil';
+    }
+    if(isset($_GET['page'])){
+        $_SESSION['pageView'] = $_GET['page'];
+    }
     
 }
 //choix de l'affichage principal
@@ -143,6 +149,8 @@ function requeteLectureVideo(){
     // var_dump($_GET);
     $requete = getOneVideoById($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
+    $requeteFirstTwoVideo = getFirstTwoVideo();
+    $firstFourVideo = getFirstFourVideo();
     // var_dump($_SESSION['like']);
     
     require('./Views/lectureVideoView.php');
@@ -220,6 +228,13 @@ function remplirSection($video, $nomSection){
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
 }
 
+function remplirSuggestion1($video){
+    $videoTitle = $video['titre'];
+    $linkS = $video['link'];
+    // echo'</br>4 derniere videos </br>';
+    // var_dump($video);
+    require('./Views/functionView/remplirSuggestion1View.php');
+}
 function afficheCommentaire($comment){
     $userPseudo = $comment['user_pseudo'];
     $contenu = $comment['contenu'];

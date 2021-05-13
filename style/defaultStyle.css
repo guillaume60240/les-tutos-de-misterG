@@ -3,10 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
+/* html{
     width: 100%;
     min-height: 100%;
-}
+} */
 body{
     width: 100%;
     height: 100vh;
@@ -79,8 +79,9 @@ body{
 }
 .videosContainer{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    background: #333;
+    
 }
 .vid{
     width: 400px;
@@ -118,15 +119,30 @@ body{
 .suggestion{
     
     margin-right: 20px;
+    /* display: flex;
+    justify-content: space-around; */
+    margin-top: 180px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    min-width: 30%;
+    height:  100%;
+}
+.suggestionContainer{
+    width: 60%;
     display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 .vid3{
-    width: 200px;
-    
-    height: 165px;
-    margin: 10px;
+    width: 400px;
+    height: 250px;
+    margin-top: 60px;
     
     box-shadow: 4px 4px 4px rgba(51, 51, 51, 0.233);
     background: rgba(250, 240, 230, 0.267);
@@ -135,6 +151,8 @@ body{
     text-align: center;
     transition: all .5s;
 }
+
+
 .videoEnLecture{
     position: absolute;
     top: 0;
@@ -172,7 +190,7 @@ body{
 
 }
 .sectionCommentaire{
-    max-width: 800;
+    max-width: 800px;
     min-height: 250px;
     margin-left: 0;
     transform: none;
@@ -330,7 +348,7 @@ video{
 /* formulaire inscription et connexion */
 
 
-orm {
+form {
     max-width: 80%;
 }
 
@@ -428,7 +446,7 @@ button[type=submit], button[type=reset] {
 
 /* media query */
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1230px){
     .suggestion{
         display: none;
     }
@@ -452,11 +470,12 @@ button[type=submit], button[type=reset] {
         margin-left: 50%;
         transform: translateX(-50%);
         
-        }
-        .sectionCommentaire{
-        margin-left: 50%;
-        transform: translateX(-50%);
-        }
+    }
+    .sectionCommentaire{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    }
+    
 }
 @media screen and (max-width: 1000px) {
     .titleSection{
@@ -519,7 +538,7 @@ button[type=submit], button[type=reset] {
     }
 }
 
-@media screen and (max-width: 759px){
+@media screen and (max-width: 772px){
 
     .vid{
         width: 230px;

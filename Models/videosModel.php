@@ -50,3 +50,17 @@ function getOneVideoById($videoId){
     $requete = $bdd->query('SELECT * FROM videos WHERE id="'.$videoId.'"');
     return $requete;
 }
+
+function getFirstTwoVideo(){
+    $bdd = getPdo();
+
+    $requeteLastFourVideo = $bdd->query('SELECT * FROM videos  ORDER BY created_at ASC LIMIT 2');
+    return $requeteLastFourVideo;
+}
+
+function getFirstFourVideo(){
+    $bdd = getPdo();
+
+    $requete = $bdd->query('SELECT * FROM videos  ORDER BY created_at ASC LIMIT 4');
+    return $requete;
+}
