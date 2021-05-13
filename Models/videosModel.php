@@ -58,9 +58,10 @@ function getFirstTwoVideo(){
     return $requeteLastFourVideo;
 }
 
-function getFirstFourVideo(){
+function getLikedVideoForUserId($userId){
     $bdd = getPdo();
 
-    $requete = $bdd->query('SELECT * FROM videos  ORDER BY created_at ASC LIMIT 4');
-    return $requete;
+    $likedVideos = $bdd->query('SELECT * FROM likes WHERE userId ="'.$userId.'"');
+    return $likedVideos;
 }
+

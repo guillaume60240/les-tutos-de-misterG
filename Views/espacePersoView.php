@@ -17,44 +17,37 @@ ob_start();
 
 
 
-<section class="compo">
-    <h1 class="titleSection">l'espace perso de 
-        <?php
-        $_SESSION['pseudo']
-        ?>
-    </h1>
+<section class="affichage">
+    <h1 class="titleSection">Mon espace perso </h1>
+    <h4>Les vidéos que j'ai aimées</h4>
     <div class="section">
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
-        <div class="vid">
-            <h3>Titre</h3>
-            
-        </div>
-        <div class="compo_section">
-        </div>
+
+        <?php
+
+
+            if($liste = $requeteLike->fetch()){
+                // echo'</br> liste =</br>';
+                // var_dump($liste);
+                do{
+                    $videoId = $liste['video_id'];
+                    $videos = getOneVideoById($videoId);
+                    // echo'</br> video =</br>';
+                    // var_dump($videos);
+                    if($video = $videos->fetch()){
+                        do{
+                            remplirSection($video, 'EspacePerso');
+                        } while($video = $videos->fetch());
+                    }
+                } while($liste = $requeteLike->fetch());
+            }
+
+
+
+
+
+        ?>
     </div>
+    
 </section>
 
 

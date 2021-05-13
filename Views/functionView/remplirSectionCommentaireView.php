@@ -10,7 +10,7 @@
             if($_SESSION['id'] === $commentaireUserId){
                 ?>
                 <form action="#" method="post">
-                    <button type="submit" class="btn2" name="deleteCommentaire" value="<?=$idCommentaire?>">supprimer</button>
+                    <button type="submit" class="btnSupCom" name="deleteCommentaire" value="<?=$idCommentaire?>">supprimer</button>
                 </form>
                 <?php
             }

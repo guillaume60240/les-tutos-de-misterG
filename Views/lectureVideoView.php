@@ -22,8 +22,9 @@ ob_start();
     ?>
     
     <div class="suggestion">
+        
         <div class="suggestionContainer">
-
+        <h4>Suggestions de vidéos</h4>
             <?php
                 if($firstTwoVideo = $requeteFirstTwoVideo->fetch()){
                     do{
@@ -41,7 +42,7 @@ ob_start();
         <div class="formCommentaireContainer" id="formCommentaires">
             <form action="#" method="post" class="formCommentaire">
                 <label for="commentaire" class="formCommentaireLabel">Mon commentaire</label>
-                <textarea name="commentaire" id="commentaire" rows="5" cols="30" style="resize: none;"></textarea>
+                <textarea name="commentaire" id="commentaire" rows="5" cols="50" style="resize: none;"></textarea>
                 <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
             </form>
         </div>

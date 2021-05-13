@@ -9,7 +9,7 @@ require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
 require('./Models/likeModel.php');
 
-//actualisation de la session pour le nom des videos
+//actualisation de la session en fonction de GET
 function actualiser_session(){
     if(isset($_GET['videoId'])){
         $_SESSION['videoId'] = $_GET['videoId'];
@@ -62,7 +62,7 @@ function choixRequete(){
                 $_GET['page'] = '';
                 break;
             case 'espacePerso' :
-                espacePerso();
+                requeteEspacePerso();
                 $_GET['page'] = '';
                 break;
             case 'administration' :
@@ -150,29 +150,21 @@ function requeteLectureVideo(){
     $requete = getOneVideoById($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
     $requeteFirstTwoVideo = getFirstTwoVideo();
-    $firstFourVideo = getFirstFourVideo();
     // var_dump($_SESSION['like']);
     
     require('./Views/lectureVideoView.php');
     
 }
 
-// function requeteEspacePerso(){
+function requeteEspacePerso(){
 
-//     $userId = $_SESSION['id'];
+    $userId = $_SESSION['id'];
 
-//     $requeteLike = rechercherLikesUser($userId);
+    $requeteLike = getLikedVideoForUserId($userId);
+    
+    require('./Views/espacePersoView.php');
 
-//     if($liste = $requeteLike->fetch()){
-//         do{
-//             $videoId = $liste['video_id'];
-//             getOneVideoById($videoId);
-//         } while($liste = $requeteLike->fetch());
-//     }
-
-//     require('./Views/espacePersoView.php');
-
-// }
+}
 
 function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
@@ -228,6 +220,14 @@ function remplirSection($video, $nomSection){
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
 }
 
+// function remplirEspacePerso($video){
+//     $titleVideo = $video['titre'];
+//     $date = $video['created_at'];
+//     $link = $video['link'];
+//     $videoId = $video['id'];
+
+
+// }
 function remplirSuggestion1($video){
     $videoTitle = $video['titre'];
     $linkS = $video['link'];

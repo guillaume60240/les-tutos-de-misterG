@@ -178,7 +178,7 @@ body{
     margin-bottom: 5px;
     border-radius: 15px;
     border: solid 1px green;
-    background: transparent;
+    background: gainsboro;
     color:green;
     max-width: 200px;
     letter-spacing: .2em;
@@ -225,6 +225,26 @@ body{
     top: 0;
     left: 0;
 }
+.btnSupCom{
+    font-size: .6em;
+    text-decoration: none;
+    /* padding: .7em 1em; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: none;
+    border-left: solid 1px red;
+    background: transparent;
+    color: #333;
+    max-width: 200px;
+    letter-spacing: .2em;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.btnSupCom:hover{
+    color: red;
+}
 .formCommentaire{
     height: 100%;
     display: flex;
@@ -233,6 +253,9 @@ body{
     justify-content: space-around;
     align-content: center;
     text-align: center;
+}
+#commentaire{
+    width: 100%;
 }
 .formCommentaireLabel{
     align-self: flex-start;
@@ -330,9 +353,10 @@ video{
     border: solid 1px #333;
     background: transparent;
     color: #333;
-   max-width: 200px;
+    max-width: 200px;
     letter-spacing: .2em;
     transition: all .4s;
+    cursor: pointer;
 }
 .btn2:hover{
     background: rgba(13, 19, 44, 0.685);;
