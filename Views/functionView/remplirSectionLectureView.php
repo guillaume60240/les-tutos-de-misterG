@@ -47,7 +47,21 @@
                 <div class="btn-container">
                     <button class="btn2 comments" id="comments">Commenter</button>
                     <form action="#" method="post">
-                        <button class="btn2 like <?php if(isset($_SESSION['like'])){if($_SESSION['like'] != false){ echo 'likeValide';}}?>" type="submit" name="ajoutLike"><span>J'aime</span> </button>
+                    <?php
+                       if(isset($_SESSION['like'])){
+                        if($_SESSION['like'] != false){
+                            //emplacement bouton délà liké
+                            ?> <button class="btnLikeValide comments" id="comments" name="ajoutLike">J'aime déjà</button> <?php
+                          
+                        } else {
+                              //emplacement bouton like 
+                            ?> <button class="btn2 comments" id="comments" name="ajoutLike">J'aime</button>  <?php
+                        }
+                    } else{
+                       //emplacement bouton like
+                       ?> <button class="btn2 comments" id="comments" name="ajoutLike">J'aime</button>  <?php
+                    }
+                        ?>
                     </form>
                 </div>
             </div>

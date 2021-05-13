@@ -4,8 +4,6 @@
 
 ob_start();
 ?>
-<body>
-    
 <section class="affichage">
     <h1 class="titleSection"><?= $h1?></h1>
     <div class="section">
@@ -24,9 +22,7 @@ ob_start();
     ?>
 
     </div>
-</section>
-
-</body>
+    </section>
 
 <?php
 $content = ob_get_clean();

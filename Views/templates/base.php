@@ -9,15 +9,21 @@
     <title><?= $title ?></title>
 </head>
 
+
     <?php headerFooterContent('header'); ?>
 
 
 <!-- Ce fichier sert de template pour les contenus de page avec header body et footer ainsi que les styles utilisés -->
 
+<body>
+    
+    
 
+        <?= $content ?>
 
-    <?= $content ?>
+   
 
+</body>
 
 
     <?php headerFooterContent('footer'); ?>
