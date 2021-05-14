@@ -4,6 +4,8 @@
 session_start();
 require('Controllers/controller.php');
 actualiser_session();
+
+
 // echo('session = </br>');
 // var_dump($_SESSION);
 // echo('</br>get = </br>');
@@ -17,28 +19,7 @@ actualiser_session();
 
 
 
-if(isset($_POST['form_deconnexion'])){
-    traitementFormulaireDeconnexion();
-}
-if(isset($_POST['form_connexion'])){
-    traitementFormulaireConnexion();
-}
-if(isset($_POST['form_inscription'])){
-    traitementFormulaireInscription();
-}
-if(isset($_POST['formulaireCommentaire'])){
-    traitementFormulaireCommentaire();
-}
 
-if(isset($_POST['deleteCommentaire'])){
-    $idCommentaire = intval($_POST['deleteCommentaire']);
-    suppressionCommentaire($idCommentaire);
-    
-}
-
-if(isset($_POST['ajoutLike'])){
-    traitementFormulaireLike();
-}
 choixRequete();
 
 ?>

@@ -21,10 +21,46 @@ function actualiser_session(){
     if(empty($_SESSION['pageView'])){
         $_SESSION['pageView'] = 'accueil';
     }
-    if(isset($_GET['page']) && $_GET['page'] != 'inscription' && $_GET['page'] != 'connexion'){
+    if(isset($_GET['page']) && $_GET['page'] != 'inscription' && $_GET['page'] != 'connexion' && $_GET['page'] != 'deconnexion'){
         $_SESSION['pageView'] = $_GET['page'];
     }
+    if(isset($_GET['page']) && $_GET['page'] != 'lectureVideo'){
+        unset($_SESSION['videoId']);
+        unset($_SESSION['videoTitle']);
+        unset($_SESSION['like']);
+    }
     
+}
+
+//lancement des fonctions
+if(isset($_POST['form_deconnexion'])){
+    traitementFormulaireDeconnexion();
+}
+if(isset($_POST['form_connexion'])){
+    traitementFormulaireConnexion();
+}
+if(isset($_POST['form_inscription'])){
+    traitementFormulaireInscription();
+}
+if(isset($_POST['formulaireCommentaire'])){
+    traitementFormulaireCommentaire();
+}
+
+if(isset($_POST['deleteCommentaire'])){
+    // $idCommentaire = intval($_POST['deleteCommentaire']);
+    require('./Views/confirmationSuppressionView.php');      
+    $_GET['videoTitle'] = $_SESSION['videoTitle'];
+}
+
+if(isset($_POST['confirm'])){
+    
+    $idCommentaire  = $_POST['confirm'];
+    
+    suppressionCommentaire($idCommentaire);
+} 
+
+if(isset($_POST['ajoutLike'])){
+    traitementFormulaireLike();
 }
 //choix de l'affichage principal
 function choixRequete(){
@@ -204,10 +240,16 @@ function connexion(){
 
 function deconnexion(){
     $title = 'deconnexion';
+    
     require('./Views/deconnexionView.php');
 }
 
+function demandeSuppressionCommentaire($idCommentaire){
 
+    
+    
+    
+}
 //fonctions traitement des formulaires 
 function traitementFormulaireInscription(){
     if(!empty($_POST['userPseudo']) && !empty($_POST['userMail']) && !empty($_POST['userPassword']) && !empty($_POST['userPassword2'])){
@@ -283,20 +325,13 @@ function traitementFormulaireConnexion(){
 }
 
 function traitementFormulaireDeconnexion(){
-    unset($_GET['page']);
-    $pageActuelle = $_SESSION['pageView'];
+    // unset($_GET['page']);
+    // $pageActuelle = $_SESSION['pageView'];
     $_SESSION = array();
     session_destroy();
    
     //redirection
-
-    if($pageActuelle != 'lectureVideo'){
-
-        $_GET['page'] = $pageActuelle;
-    } else {
-        $_GET['page'] = 'accueil';
-    }
-    
+    $_GET['page'] = 'accueil'; 
 }
 
 function traitementFormulaireCommentaire(){

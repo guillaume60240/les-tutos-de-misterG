@@ -7,7 +7,7 @@
         <?php
         if(isset($_SESSION['id'])){
             
-            if($_SESSION['id'] === $commentaireUserId){
+            if($_SESSION['id'] === $commentaireUserId || $_SESSION['role'] === 'admin'){
                 ?>
                 <form action="#" method="post">
                     <button type="submit" class="btnSupCom" name="deleteCommentaire" value="<?=$idCommentaire?>">supprimer</button>

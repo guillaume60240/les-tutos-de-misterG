@@ -421,7 +421,43 @@ button[type=submit], button[type=reset] {
     margin-top: 15px;
 }
 
+.confirmContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(51, 51, 51, 0.88);
+    margin-top: 173p;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.textConfirm{
+    padding: 20px;
+    color: linen;
+    position: relative;
+    width: 250px;
+    padding-top: 50px;
+    border-top: solid 1px linen;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.formulaireConfirm{
+    
+}
+.buttonConfirm{
+    background: transparent;
+    border: none;
+    color: linen;
+    letter-spacing: .2rem;
+    cursor: pointer;
+}
+.buttonConfirm:hover{
+    color: red;
+}
 /******************DESIGN MODALE**********************/
 .formInscriptionLink{
     text-decoration: none;
