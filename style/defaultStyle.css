@@ -15,7 +15,7 @@ body{
 }
 .affichage{
     min-height: 70vh;
-    
+    position: relative;
 }
 
 .titleSection{
@@ -478,19 +478,19 @@ button[type=submit], button[type=reset] {
         margin-left: 50%;
         transform: translate(-50%);
         max-width: 1000px;
-        min-width: 759px;
+        /* min-width: 759px; */
     }
     .descriptionContainer{
         width: auto;
         max-width: 1000px;
-        min-width: 759px;
+        /* min-width: 759px; */
         margin-left: 50%;
         transform: translate(-50%);
     }
     .commentaireContainer{
         width: auto;
         max-width: 1000px;
-        min-width: 759px;
+        /* min-width: 759px; */
         margin-left: 50%;
         transform: translateX(-50%);
         
@@ -583,15 +583,23 @@ button[type=submit], button[type=reset] {
         width: 100%;
     }
     .vid2{
+        /* max-width: 100%; */
         width: 100%;
-        min-width: none;
-        margin-left: 0;
+        /* min-width: auto; */
+        margin: auto;
         transform: translate(0);
+    }
+    .vid2::after{
+        content:"";
+        display: block;
+        width: 100%;
+        padding-bottom: calc(400/772*100);
     }
     .descriptionContainer{
         width: 100%;
-        min-width: none;
         margin-left: 0;
+        /* min-width: none; */
+        align-self: center;
         transform: translate(0);
     }
     .sectionCommentaire{
@@ -601,34 +609,3 @@ button[type=submit], button[type=reset] {
     }
 }
 
-@media screen and (max-width: 620px){
-    .vid{
-        margin: 10px;
-    }
-    .vid2{
-        width: 100%;
-    }
-}
-@media screen and (max-width: 450px){
-    .vid{
-        width: 100%;
-        margin: 0;
-        margin-bottom: 10px;
-    }
-    iframe{
-        width: 80%;
-    }
-    .linkVoirVideo{
-    padding-left: 110px; 
-    padding-right:110px; 
-    }
-    .formCommentaire{
-        max-width: 90%;
-    }
-}
-
-@media screen and (max-width: 328px){
-    .userAction{
-        width: 60%;
-    }
-}
