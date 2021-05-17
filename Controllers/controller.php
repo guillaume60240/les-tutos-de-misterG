@@ -62,6 +62,20 @@ if(isset($_POST['confirm'])){
 if(isset($_POST['ajoutLike'])){
     traitementFormulaireLike();
 }
+
+// if(isset($_POST['categorie'])){
+//     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
+//         $userId = $_SESSION['id'];
+//         $section = $_POST['categorie'];
+
+//         $requeteLike = getLikedVideoForUserIdAndSection($userId, $section);
+        
+//         require_once('./Views/espacePersoView.php');
+//     } else{
+//         erreurView();
+//     }
+//     var_dump($_POST['categorie']);
+// }
 //choix de l'affichage principal
 function choixRequete(){
 
@@ -112,15 +126,15 @@ function choixRequete(){
                 $_GET['page'] = '';
                 break;
             case 'inscription' :
-                inscription();
+                userAction('inscription');
                 $_GET['page'] = '';
                 break;
             case 'connexion' :
-                connexion();
+                userAction('connexion');
                 $_GET['page'] = '';
                 break;
             case 'deconnexion' :
-                deconnexion();
+                userAction('deconnexion');
                 $_GET['page'] = '';
                 break;
             default :
@@ -144,16 +158,13 @@ function requeteAccueil(){
     $sections = ['covers', 'duos', 'compos', 'theorie', 'morceaux'];
     
     $requetes =[
-
-        $requete = getLastVideoForOneSection($sections[0]),
-        $requete = getLastVideoForOneSection($sections[1]),
-        $requete = getLastVideoForOneSection($sections[2]),
-        $requete = getLastVideoForOneSection($sections[3]),
-        $requete = getLastVideoForOneSection($sections[4])
-    ];
-
-    require('./Views/acueilView.php');
-
+            $requete = getLastVideoForOneSection($sections[0]),
+            $requete = getLastVideoForOneSection($sections[1]),
+            $requete = getLastVideoForOneSection($sections[2]),
+            $requete = getLastVideoForOneSection($sections[3]),
+            $requete = getLastVideoForOneSection($sections[4])
+        ];
+        require_once('./Views/acueilView.php');
 }
 
 function requeteSection($section, $h1title){
@@ -194,24 +205,18 @@ function requeteLectureVideo(){
 }
 
 function requeteEspacePerso(){
-
-    $userId = $_SESSION['id'];
-
-    $requeteLike = getLikedVideoForUserId($userId);
-    
-    require('./Views/espacePersoView.php');
-
-}
-
-function espacePerso(){
     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
+        $userId = $_SESSION['id'];
 
-        $_SESSION['pageView'] = '';
+        $requeteLike = getLikedVideoForUserId($userId);
+        
         require('./Views/espacePersoView.php');
     } else{
         erreurView();
     }
+
 }
+
 
 function administration(){
     
@@ -228,28 +233,27 @@ function administration(){
     
 }
 
-function inscription(){
-    $title = 'Inscription';
-    require('./Views/inscriptionView.php');
+// function inscription(){
+//     $title = 'Inscription';
+//     require('./Views/inscriptionView.php');
+// }
+
+// function connexion(){
+//     $title = 'Connexion';
+//     require('./Views/connexionView.php');
+// }
+
+// function deconnexion(){
+//     $title = 'deconnexion';
+    
+//     require('./Views/deconnexionView.php');
+// }
+// en remplacement des trois fonctions au dessus
+function userAction($action){
+    $title = $action;
+    require('./Views/'.$action.'View.php');
 }
 
-function connexion(){
-    $title = 'Connexion';
-    require('./Views/connexionView.php');
-}
-
-function deconnexion(){
-    $title = 'deconnexion';
-    
-    require('./Views/deconnexionView.php');
-}
-
-function demandeSuppressionCommentaire($idCommentaire){
-
-    
-    
-    
-}
 //fonctions traitement des formulaires 
 function traitementFormulaireInscription(){
     if(!empty($_POST['userPseudo']) && !empty($_POST['userMail']) && !empty($_POST['userPassword']) && !empty($_POST['userPassword2'])){
@@ -275,7 +279,7 @@ function traitementFormulaireInscription(){
                 inscriptionUtilisateur($userPseudo, $userMail, $mdp);
 
                 ?><script>alert('Inscription réussie. Vous pouvez vous connecter')</script>  <?php
-                connexion();
+                userAction('connexion');
 
             } else {
                 ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
@@ -320,7 +324,7 @@ function traitementFormulaireConnexion(){
         }
     } else {
         ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
-        connexion();
+        userAction('connexion');
     }
 }
 

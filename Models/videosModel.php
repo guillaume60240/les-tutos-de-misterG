@@ -53,8 +53,8 @@ function getOneVideoById($videoId){
 
 function getFirstTwoVideo(){
     $bdd = getPdo();
-
-    $requeteLastFourVideo = $bdd->query('SELECT * FROM videos  ORDER BY created_at ASC LIMIT 2');
+    $videoLecture = $_SESSION['videoId'];
+    $requeteLastFourVideo = $bdd->query('SELECT * FROM videos  WHERE id != "'.$videoLecture.'" ORDER BY created_at ASC LIMIT 2');
     return $requeteLastFourVideo;
 }
 
@@ -65,3 +65,9 @@ function getLikedVideoForUserId($userId){
     return $likedVideos;
 }
 
+// function getLikedVideoForUserIdAndSection($userId, $section){
+//     $bdd = getPdo();
+
+//     $likedVideos = $bdd->query('SELECT * FROM videos WHERE userId ="'.$userId.'" AND section ="'.$section.'"');
+//     return $likedVideos;
+// }

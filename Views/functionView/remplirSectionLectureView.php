@@ -5,38 +5,6 @@
             
             <iframe class="videoEnLecture" <?= $link ?> ></iframe>
             
-        <!-- </div>
-        <div class="suggestion">
-            
-            <div>
-
-                <div class="vid3">
-                    <h3>Titre</h3>
-                    
-                </div>
-                
-                <div class="vid3">
-                    <h3>Titre</h3>
-                    
-                </div>
-            </div>
-            <div>
-
-                <div class="vid3">
-                    <h3>Titre</h3>
-                    
-                </div>
-                
-                <div class="vid3">
-                    <h3>Titre</h3>
-                    
-                </div>
-            </div>
-                
-                
-                
-            
-        </div> -->
     </div>
     <div class="descriptionContainer">
         
@@ -64,9 +32,8 @@
                         ?>
                     </form>
                 </div>
+                
             </div>
-            
-        
         
     </div>
     

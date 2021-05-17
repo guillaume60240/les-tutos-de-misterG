@@ -6,7 +6,7 @@ ob_start();
 ?>
 
 
-<section class="compo"> 
+<section class=""> 
     
     <h1 class="titleSection">Administration du site</h1>
     <div class="section">
@@ -18,6 +18,6 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-require('templates/base.php');
+require('templates/admin.php');
 
 // <!--  Cette page contient tous les éléments qui seront affichés sur la page administration-->

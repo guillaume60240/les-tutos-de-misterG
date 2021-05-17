@@ -22,8 +22,8 @@ if(isset($_POST['form_connexion'])){
 
                 
 
-                <button type="reset">Réinitialiser les valeurs du formulaire</button>
-                <button type="submit" name="form_connexion">Je me connecte</button>
+                <button type="submit" name="form_connexion" class="btn2">Je me connecte</button>
+                <button type="reset" class="btn2">Tout effacer</button>
             </form>
             <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
         </div>

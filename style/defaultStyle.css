@@ -273,6 +273,9 @@ h3{
     text-shadow: 2px 2px rgba(247, 189, 189, 0.384);
     color: #333;
 }
+.likedVideoTitle{
+    margin-left: 50%;
+}
 h6{
     margin-bottom: 5px;
 }
@@ -378,9 +381,9 @@ video{
 /* formulaire inscription et connexion */
 
 
-form {
-    max-width: 80%;
-}
+/* form {
+    max-width: 80%; 
+} */
 
 form label {
     display: block;
@@ -445,9 +448,9 @@ button[type=submit], button[type=reset] {
     text-align: center;
 }
 
-.formulaireConfirm{
+/* .formulaireConfirm{
     
-}
+} */
 .buttonConfirm{
     background: transparent;
     border: none;
