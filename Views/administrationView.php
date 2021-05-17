@@ -13,6 +13,7 @@ ob_start();
     
 
     <aside class="aside">
+        <a href="/?page=accueil" class="btn actionTitle">Retour à l'accueil</a>
         <ul>
             <form action="#" method="post">
                 <span class="actionTitle">Gestion des utilisateurs</span>
@@ -35,6 +36,7 @@ ob_start();
                 <li><button type="submit" name="supprimerDemandes" action="#" class="btn">Supprimer</button></li>
                
             </form>
+            
         </ul>
     </aside>
 
