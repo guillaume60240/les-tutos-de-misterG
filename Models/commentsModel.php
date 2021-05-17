@@ -30,3 +30,12 @@ function suppressionCommentaire($id){
 
     $requete->execute(['id' =>intval($id)]);
 }
+
+function getCommentaires(){
+
+    $bdd = getPdo();
+
+    $requeteCommentaires = $bdd->query('SELECT * FROM commentaires ORDER BY created_at ASC');
+
+    return $requeteCommentaires;
+}

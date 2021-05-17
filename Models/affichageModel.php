@@ -49,3 +49,28 @@ function erreurView(){
     $error = 'Cette page n\'existe pas ou a été supprimée';
     require('./Views/errorView.php');
 }
+
+//fonctions d'affichage de l'espace administration
+
+function afficheUtilisateur($utilisateurs){
+    $pseudo = $utilisateurs['pseudo'];
+    $mail = $utilisateurs['mail'];
+    $date = $utilisateurs['created_at'];
+    $id = $utilisateurs['id'];
+    $role = $utilisateurs['role'];
+
+        require('./Views/functionView/administration/afficheUtilisateurs.php');
+
+}
+
+function afficheAdminCommentaire($commentaire){
+
+    $pseudo = $commentaire['user_pseudo'];
+    $date = $commentaire['created_at'];
+    $content = $commentaire['contenu'];
+    $id = $commentaire['id'];
+
+    require('./Views/functionView/administration/afficheCommentaires.php');
+
+
+}

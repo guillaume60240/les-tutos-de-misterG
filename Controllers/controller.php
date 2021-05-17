@@ -10,6 +10,7 @@ require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
 require('./Models/likeModel.php');
 
+
 //actualisation de la session en fonction de GET
 function actualiser_session(){
     if(isset($_GET['videoId'])){
@@ -151,7 +152,7 @@ function headerFooterContent($choix){
     require('./Views/'.$choix.'View.php');
 }
 
-//fonctions des requêtes sql
+//fonctions pour lancer les requêtes sql
 function requeteAccueil(){
     $_SESSION['pageView'] = 'accueil';
     // $_GET['page'] = 'accueil';
@@ -376,7 +377,11 @@ function traitementFormulaireLike(){
     } else {
         // $error = 'Vous devez être connecté pour pouvoir liker une vidéo';
         // require('./Views/errorView.php');
-        ?> <script>alert('Vous devez être connecté pour liker une vidéo)</script> <?php
+        ?> <script>alert('Vous devez être connecté pour liker une vidéo')</script> <?php
         echo'Vous devez être connecté pour liker une vidéo';
     }
 }
+
+
+//Fonction administration
+

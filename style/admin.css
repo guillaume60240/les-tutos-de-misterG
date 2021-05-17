@@ -1,0 +1,71 @@
+.titleSection{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section{
+    display: flex;
+}
+
+.aside{
+    max-width: 300px;
+    width: 30%;
+    border-right: solid 1px #333;
+}
+.actionTitle{
+    font-weight: bold;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.15);
+}
+li{
+    list-style-type: none;
+    padding: 5px;
+}
+
+.btn{
+    border: none;
+    background: transparent;
+    font-size: medium;
+    font-weight: lighter;
+    letter-spacing: .1em;
+    border-bottom: solid 1px transparent;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: all ease-in-out .5s;
+}
+.btn:hover{
+    border-bottom: solid 1px blue;
+   
+}
+.utilisateurs{
+    width: 60%;
+    padding-left: 20px;
+    
+}
+
+/* Tableau  */
+
+.tableauStyle{
+    border-collapse: collapse;
+    min-width: 400px;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15);
+    border: 1px solid blue;
+}
+
+thead tr{
+    background-color: #333;
+    color: linen;
+}
+
+th, td{
+    padding: 15px 20px;
+}
+
+tbody tr, td, th{
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even){
+    background-color: #f3f3f3;
+}
+

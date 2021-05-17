@@ -29,3 +29,29 @@ function inscriptionUtilisateur($pseudo, $mail, $mdp){
     ));
     
 }
+
+function getUtilisateurs(){
+    $bdd = getPdo();
+
+    $requete = $bdd->query('SELECT * FROM membres ORDER BY pseudo');
+
+    return $requete;
+}
+
+function deleteUser($id){
+    $bdd = getPdo();
+
+    $requete = $bdd->prepare('DELETE  FROM membres WHERE id = :id');
+    $requete->execute(['id' =>intval($id)]);
+}
+
+function updateUtilisateur($champ, $recherche, $key, $valeur){
+    $bdd = getPdo();
+
+    $requete = $bdd->prepare("UPDATE membres SET $champ = :valeur  WHERE $recherche = :clef");
+    $requete->execute([':valeur' => $valeur,
+                        ':clef' => $key
+    ]);
+
+}
+
