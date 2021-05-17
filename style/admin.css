@@ -15,6 +15,12 @@
     font-weight: bold;
     border-bottom: solid 2px rgba(0, 0, 0, 0.15);
 }
+.titleAction{
+    position: absolute;
+    top: 50px;
+    left: 400px;
+    color: tan;
+}
 li{
     list-style-type: none;
     padding: 5px;
@@ -41,11 +47,15 @@ ul a{
     color: #333;
 }
 .utilisateurs{
-    width: 60%;
+    width: auto;
     padding-left: 20px;
     
 }
-
+.affichage{
+    display: flex;
+    flex-direction: column;
+    
+}
 /* Tableau  */
 
 .tableauStyle{

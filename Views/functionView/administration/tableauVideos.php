@@ -4,20 +4,20 @@
     <table class="tableauStyle">
         <thead>
             <tr>
-                <th>Pseudo</th>
-                <th>Adresse mail</th>
-                <th>Rôle</th>
-                <th>Date d'inscription</th>
+                <th>Titre</th>
+                <th>Section</th>
+                <th>Date de mise en ligne</th>
+                <th>lien</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             
             <?php
-                if($utilisateur = $requeteUtilisateur->fetch()){
+                if($video = $requeteVideos->fetch()){
                     do{
-                        afficheUtilisateur($utilisateur);
-                    } while($utilisateur = $requeteUtilisateur->fetch());
+                        afficheVideos($video);
+                    } while($video = $requeteVideos->fetch());
                 }               
                 
             ?>

@@ -74,3 +74,24 @@ function afficheAdminCommentaire($commentaire){
 
 
 }
+
+function afficheVideos($video){
+    $id = $video['id'];
+    $titre = $video['titre'];
+    $section = $video['section'];
+    $created_at = $video['created_at'];
+    $link = $video['link'];
+
+    require('./Views/functionView/administration/afficheVideos.php');
+}
+
+function affichePartitions($partition){
+    $id = $partition['ID'];
+    $titre = $partition['titre'];
+    $artiste = $partition['artiste'];
+    
+    $created_at = $partition['dateUpload'];
+    $link = $partition['lien'];
+
+    require('./Views/functionView/administration/affichePartitions.php');
+}

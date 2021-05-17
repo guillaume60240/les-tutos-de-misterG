@@ -9,3 +9,9 @@ function getPartition(){
     return $requete;
 
 }
+
+function suppressionPartition($id){
+    $bdd = getPdo();
+    $requete = $bdd->prepare('DELETE  FROM partitionPdf WHERE id = :id');
+    $requete->execute(['id' =>intval($id)]);
+}

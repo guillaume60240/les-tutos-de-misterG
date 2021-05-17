@@ -12,6 +12,13 @@ function getAllVideosForOneSection($section){
 
 }
 
+function getAllVideos(){
+    $bdd = getPdo();
+    $requeteVideos = $bdd->query('SELECT * FROM videos  ORDER BY created_at DESC');
+
+    return $requeteVideos;
+}
+
 function getLastVideoForAllSection($sections){
     
     
@@ -71,3 +78,9 @@ function getLikedVideoForUserId($userId){
 //     $likedVideos = $bdd->query('SELECT * FROM videos WHERE userId ="'.$userId.'" AND section ="'.$section.'"');
 //     return $likedVideos;
 // }
+
+function suppressionVideo($id){
+    $bdd = getPdo();
+    $requete = $bdd->prepare('DELETE  FROM videos WHERE id = :id');
+    $requete->execute(['id' =>intval($id)]);
+}
