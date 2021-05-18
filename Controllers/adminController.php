@@ -135,3 +135,20 @@ if(isset($_POST['insertContenu'])){
         echo('erreur');
     }
 }
+
+//gestion des requêtes de demande
+
+if(isset($_POST['afficheDemandes'])){
+
+    $action = 'Les demandes en cours';
+    $requeteDemandes = getDemandes();
+    require('./Views/functionView/administration/tableauDemandes.php');
+}
+
+if(isset($_POST['supprimerDemande'])){
+    $id = $_POST['supprimerDemande'];
+    deleteDemande($id);
+    echo('<p style= "width: 100%; position: absolute; top:0;">Le commentaire n° '.$id.' a été supprimé</p>');
+    $requeteDemandes = getDemandes();
+    require('./Views/functionView/administration/tableauDemandes.php');
+}

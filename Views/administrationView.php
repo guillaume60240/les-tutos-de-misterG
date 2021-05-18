@@ -33,7 +33,7 @@ ob_start();
                 
                 <span class="actionTitle">Gestion des demandes</span>
                 <li><button type="submit" name="afficheDemandes" action="#" class="btn">Afficher</button> </li>               
-                <li><button type="submit" name="supprimerDemandes" action="#" class="btn">Supprimer</button></li>
+                
                
             </form>
             

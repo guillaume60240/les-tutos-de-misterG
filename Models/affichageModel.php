@@ -89,9 +89,20 @@ function affichePartitions($partition){
     $id = $partition['ID'];
     $titre = $partition['titre'];
     $artiste = $partition['artiste'];
-    
     $created_at = $partition['dateUpload'];
     $link = $partition['link'];
 
     require('./Views/functionView/administration/affichePartitions.php');
+}
+
+function afficheAdminDemande($demande){
+    $id = $demande['id'];
+    $date = $demande['created_at'];
+    $pseudo = $demande['userPseudo'];
+    $prenom = $demande['userPrenom'];
+    $nom = $demande['userNom'];
+    $ecole = $demande['userEcole'];
+    $message = $demande['message'];
+
+    require('./Views/functionView/administration/afficheDemande.php');
 }

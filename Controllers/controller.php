@@ -9,6 +9,7 @@ require('./Models/partitionsModel.php');
 require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
 require('./Models/likeModel.php');
+require('./Models/demandesModel.php');
 
 
 //actualisation de la session en fonction de GET
