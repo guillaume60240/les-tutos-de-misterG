@@ -18,8 +18,7 @@ function remplirSection($video, $nomSection){
 function remplirSuggestion1($video){
     $videoTitle = $video['titre'];
     $linkS = $video['link'];
-    // echo'</br>4 derniere videos </br>';
-    // var_dump($video);
+    
     require('./Views/functionView/remplirSuggestion1View.php');
 }
 function afficheCommentaire($comment){
@@ -29,7 +28,7 @@ function afficheCommentaire($comment){
     $commentaireUserId = $comment['userId'];
     $idCommentaire = $comment['id'];
     require('./Views/functionView/remplirSectionCommentaireView.php');
-    // var_dump($comment);
+    
 }
 
 function remplirSectionPartition($partition){
@@ -59,7 +58,7 @@ function afficheUtilisateur($utilisateurs){
     $id = $utilisateurs['id'];
     $role = $utilisateurs['role'];
 
-        require('./Views/functionView/administration/afficheUtilisateurs.php');
+    require('./Views/functionView/administration/afficheUtilisateurs.php');
 
 }
 
@@ -71,7 +70,6 @@ function afficheAdminCommentaire($commentaire){
     $id = $commentaire['id'];
 
     require('./Views/functionView/administration/afficheCommentaires.php');
-
 
 }
 

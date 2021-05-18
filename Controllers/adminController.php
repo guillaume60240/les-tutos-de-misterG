@@ -30,7 +30,7 @@ if(isset($_POST['modifierUtilisateurs'])){
 }
 
 if(isset($_POST['update'])){
-    // var_dump($_POST['update']);
+    
     $key = htmlspecialchars($_POST['rechercheClef']);
     $recherche = $_POST['recherche'];
     $champ = $_POST['champ'];
@@ -48,8 +48,6 @@ if(isset($_POST['afficheCommentaires'])){
 }
 
 if(isset($_POST['supprimerCommentaire'])){
-
-    // var_dump($_POST['supprimerCommentaire']);
     
     $id = $_POST['supprimerCommentaire'];
     suppressionCommentaire($id);
@@ -80,6 +78,7 @@ if(isset($_POST['supprimerVideo'])){
     $requetePartitions = getPartition();
     require('./Views/functionView/administration/tableauPartitions.php');
 }
+
 if(isset($_POST['supprimerPartition'])){
     $id = $_POST['supprimerPartition'];
     suppressionPartition($id);

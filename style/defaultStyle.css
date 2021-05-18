@@ -378,6 +378,15 @@ video{
     color: red;
     display: none;
 }
+.espace-perso-container{
+   display: flex;
+}
+.aside-perso-menu{
+    display: flex;
+    flex-direction: column;
+    max-width: 15%;
+    padding-left: 10px;
+}
 /* formulaire inscription et connexion */
 
 

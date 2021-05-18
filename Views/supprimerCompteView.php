@@ -1,21 +1,20 @@
+
 <?php
 
 ob_start();
-// if(isset($_POST['form_deconnexion'])){
-//     traitementFormulaireDeconnexion();
-// }
+
 ?>
 <section class="affichage">
     <div id="deconnexion" class="modal_connexion">
         <div class="modal_content">
     
-            <p>Vous êtes sur le point de fermer votre session</p>
+            <p>Vous êtes sur le point de supprimer votre compte</p>
 
             <form method="post" action="../index.php" enctype='multipart/form-data'>
                 
-                <button type="submit" name="form_deconnexion">Ok</button>
+                <button type="submit" name="deleteCompte">Ok</button>
             </form>
-            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
+            <a href="/?page=espacePerso" class="modal_close">&times;</a>
         </div>
     </div>
 </section>

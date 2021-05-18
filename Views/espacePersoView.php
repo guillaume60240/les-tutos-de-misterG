@@ -4,62 +4,51 @@ $title = 'Mon espace perso';
 
 ob_start();
 
-// if($video = $requete->fetch()){
-//     do{              
-//         remplirSection($video, 'General');
-//     } while ($video = $requete->fetch());
-//     } else {
-//         remplirSectionVide();
-//     }
-
-
 ?>
-
 
 
 <section class="affichage">
     <h1 class="titleSection">Mon espace perso </h1>
     <h4 class="likedVideoTitle">Les vidéos que j'ai aimées</h4>
-    <div class="likedVideoTitle">
-        <h5>Trier par catégorie :</h5>
-        <form action="#" method="post">
-
-            <select name="categorie" >
-                <option value="all"></option>
-                <option value="covers">Les covers</option>
-                <option value="compos">Les compos</option>
-                <option value="theorie">Cours de théorie</option>
-                <option value="morceaux">Morceaux expliqués</option>
-            </select>
-            <button type="submit">Trier</button>
-        </form>
-    </div>
-    <div class="section">
-
-        <?php
-
+    <div class="espace-perso-container">
         
-            if($liste = $requeteLike->fetch()){
-                // echo'</br> liste =</br>';
-                // var_dump($liste);
-                do{
-                    $videoId = $liste['video_id'];
-                    $videos = getOneVideoById($videoId);
-                    // echo'</br> video =</br>';
-                    // var_dump($videos);
-                    if($video = $videos->fetch()){
-                        do{
-                            remplirSection($video, 'EspacePerso');
-                        } while($video = $videos->fetch());
+        <aside class="aside-perso-menu">
+            <h3>Gestion du compte</h3>
+            <form action="#" method="post">
+                <?php
+                    if(isset($_SESSION['role']) && $_SESSION['role'] === 'user'){
+
+                        echo('<button type="submit"  name="statut" class="btn2">Demander le statut élève</button>');
                     }
-                } while($liste = $requeteLike->fetch());
-            }
+                ?>               
+                <button type="submit"  name="modifPseudo"class="btn2">Modifier mon pseudo</button>
+                <button type="submit"  name="supprimerCompte"class="btn2">Supprimer mon compte</button>
+            </form>
+            
+        
+        </aside>
+        <div class="section">
+
+            <?php
 
 
+                if($liste = $requeteLike->fetch()){
+                    
+                    do{
+                        $videoId = $liste['video_id'];
+                        $videos = getOneVideoById($videoId);
+                        
+                        if($video = $videos->fetch()){
+                            do{
+                                remplirSection($video, 'EspacePerso');
+                            } while($video = $videos->fetch());
+                        }
+                    } while($liste = $requeteLike->fetch());
+                }
 
 
-
-        ?>
+            ?>
+        </div>
     </div>
     
 </section>

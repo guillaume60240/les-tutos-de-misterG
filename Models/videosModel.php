@@ -84,20 +84,12 @@ function getFirstTwoVideo(){
 
 function getLikedVideoForUserId($userId){
     $bdd = getPdo();
-    if(isset($_SESSION['role']) && ($_SESSION['role'] === 'eleve' || $_SESSION['role'] === 'admin')){
+    
         $likedVideos = $bdd->query('SELECT * FROM likes WHERE userId ="'.$userId.'"');
-    } else{
-        $likedVideos = $bdd->query('SELECT * FROM likes WHERE userId ="'.$userId.'" AND  restriction = "aucune" ');
-    }
+    
     return $likedVideos;
 }
 
-// function getLikedVideoForUserIdAndSection($userId, $section){
-//     $bdd = getPdo();
-
-//     $likedVideos = $bdd->query('SELECT * FROM videos WHERE userId ="'.$userId.'" AND section ="'.$section.'"');
-//     return $likedVideos;
-// }
 
 function suppressionVideo($id){
     $bdd = getPdo();

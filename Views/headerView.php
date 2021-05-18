@@ -9,7 +9,12 @@ ob_start();
         
         <div class="entete">
         <?php if(isset($_SESSION['id'])){
-                echo '<p class="messageBienvenue" >Bonjour '.$_SESSION['pseudo'].' !</p>'; 
+                if(isset($_SESSION['role']) && $_SESSION['role'] === 'eleve'){
+                    $role = 'Padawan';
+                } else{
+                    $role = '';
+                }
+                echo '<p class="messageBienvenue" >Bonjour '.$role.' '.$_SESSION['pseudo'].' !</p>'; 
             }
             ?>
             <!-- <h1>Bienvenue sur mon site musical</h1> -->

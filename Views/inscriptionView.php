@@ -24,7 +24,7 @@ if(isset($_POST['form_inscription'])){
                 <label for="userPassword2">Mot de passe de confirmation</label>
                 <input type="password" name="userPassword2" id="userPassword2" placeholder="mot de passe ">
 
-                <button type="submit" name="form_inscription" class="btn2">Je m'inscris</button>
+                <button type="submit" name="form_inscription" class="btn2">Je m inscris</button>
                 <button type="reset" class="btn2">Tout effacer</button>
             </form>
             <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close" class="formInscriptionLink">&times;</a>

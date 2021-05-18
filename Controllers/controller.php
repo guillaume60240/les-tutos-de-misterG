@@ -49,7 +49,7 @@ if(isset($_POST['formulaireCommentaire'])){
 }
 
 if(isset($_POST['deleteCommentaire'])){
-    // $idCommentaire = intval($_POST['deleteCommentaire']);
+    
     require('./Views/confirmationSuppressionView.php');      
     $_GET['videoTitle'] = $_SESSION['videoTitle'];
 }
@@ -65,19 +65,20 @@ if(isset($_POST['ajoutLike'])){
     traitementFormulaireLike();
 }
 
-// if(isset($_POST['categorie'])){
-//     if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['role'])){
-//         $userId = $_SESSION['id'];
-//         $section = $_POST['categorie'];
+if(isset($_POST['statut'])){
+    $_GET['page'] = 'demandeStatut';
+}
+if(isset($_POST['demandeStatut'])){
+    traitementFormulaireDemande();
+}
 
-//         $requeteLike = getLikedVideoForUserIdAndSection($userId, $section);
-        
-//         require_once('./Views/espacePersoView.php');
-//     } else{
-//         erreurView();
-//     }
-//     var_dump($_POST['categorie']);
-// }
+if(isset($_POST['modifPseudo'])){
+    $_GET['page'] = 'modifPseudo';
+}
+if(isset($_POST['supprimerCompte'])){
+    $_GET['page'] = 'supprimerCompte';
+}
+
 //choix de l'affichage principal
 function choixRequete(){
 
@@ -139,6 +140,19 @@ function choixRequete(){
                 userAction('deconnexion');
                 $_GET['page'] = '';
                 break;
+            case 'demandeStatut' :
+                userAction('demandeStatut');
+                $_GET['page'] = '';
+                break;
+            case 'modifPseudo' :
+                userAction('modifPseudo');
+                $_GET['page'] = '';
+                break;
+            case 'supprimerCompte' :
+                userAction('supprimerCompte');
+                $_GET['page'] = '';
+                break;
+            
             default :
                 erreurView();
                 $_GET['page'] = '';   
@@ -156,7 +170,7 @@ function headerFooterContent($choix){
 //fonctions pour lancer les requêtes sql
 function requeteAccueil(){
     $_SESSION['pageView'] = 'accueil';
-    // $_GET['page'] = 'accueil';
+    
     $sections = ['covers', 'duos', 'compos', 'theorie', 'morceaux'];
     
     $requetes =[
@@ -196,11 +210,10 @@ function requeteLectureVideo(){
         $likeExist = rechercherLikeUneVideoUnUser($rVideoId, $userId );
         $_SESSION['like'] = $likeExist;
     }
-    // var_dump($_GET);
+    
     $requete = getOneVideoById($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
     $requeteFirstTwoVideo = getFirstTwoVideo();
-    // var_dump($_SESSION['like']);
     
     require('./Views/lectureVideoView.php');
     
@@ -222,7 +235,6 @@ function requeteEspacePerso(){
 
 function administration(){
     
-
         if ($_SESSION['role'] === 'admin' && isset($_SESSION['pseudo']) && isset($_SESSION['id'])){
 
             $_SESSION['pageView'] = '';
@@ -230,27 +242,11 @@ function administration(){
 
         } else{
             erreurView();
-        }
-        
+        }    
     
 }
 
-// function inscription(){
-//     $title = 'Inscription';
-//     require('./Views/inscriptionView.php');
-// }
 
-// function connexion(){
-//     $title = 'Connexion';
-//     require('./Views/connexionView.php');
-// }
-
-// function deconnexion(){
-//     $title = 'deconnexion';
-    
-//     require('./Views/deconnexionView.php');
-// }
-// en remplacement des trois fonctions au dessus
 function userAction($action){
     $title = $action;
     require('./Views/'.$action.'View.php');
@@ -331,8 +327,7 @@ function traitementFormulaireConnexion(){
 }
 
 function traitementFormulaireDeconnexion(){
-    // unset($_GET['page']);
-    // $pageActuelle = $_SESSION['pageView'];
+   
     $_SESSION = array();
     session_destroy();
    
@@ -350,9 +345,8 @@ function traitementFormulaireCommentaire(){
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
     } else {
-        // $error ='Vous devez être connecté pour pouvoir commenter';
-        // require('./Views/errorView.php');
-        echo'Vous devez être connecté pour commenter';
+        ?> <script>alert('Vous devez être connecté pour commenter une vidéo')</script> <?php
+        // echo'Vous devez être connecté pour commenter';
         
     }
 }
@@ -372,17 +366,30 @@ function traitementFormulaireLike(){
             $id = $likeExist['id'];
             supprimerUnLike($id);
         }
-        // echo('</br> like </br>');
-        // var_dump($likeExist);
 
     } else {
-        // $error = 'Vous devez être connecté pour pouvoir liker une vidéo';
-        // require('./Views/errorView.php');
+        
         ?> <script>alert('Vous devez être connecté pour liker une vidéo')</script> <?php
-        echo'Vous devez être connecté pour liker une vidéo';
+        // echo'Vous devez être connecté pour liker une vidéo';
     }
 }
 
+function traitementFormulaireDemande(){
+    if(isset($_SESSION['id']) && isset($_SESSION['pseudo'])){
+        if(!empty($_POST['userPseudo']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['ecole'])){
 
-//Fonction administration
+            $pseudo = htmlspecialchars($_POST['userPseudo']);
+            $prenom = htmlspecialchars($_POST['prenom']);
+            $nom = htmlspecialchars($_POST['nom']);
+            $ecole = htmlspecialchars($_POST['ecole']);
+            $message = htmlspecialchars($_POST['message']);
+
+            insertDemandeStatut($pseudo, $prenom, $nom, $ecole, $message);
+            
+        } else {
+            $_GET['error'] = 'Remplissez tous les champs';
+            $_GET['page'] = 'demandeStatut';
+        }
+    }
+}
 
