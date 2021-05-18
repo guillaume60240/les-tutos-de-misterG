@@ -36,7 +36,7 @@ function remplirSectionPartition($partition){
 
     $title = $partition['titre'];
     $artiste = $partition['artiste'];
-    $link = $partition['lien'];
+    $link = $partition['link'];
 
     require('./Views/functionView/affichePartitionView.php');
 
@@ -91,7 +91,7 @@ function affichePartitions($partition){
     $artiste = $partition['artiste'];
     
     $created_at = $partition['dateUpload'];
-    $link = $partition['lien'];
+    $link = $partition['link'];
 
     require('./Views/functionView/administration/affichePartitions.php');
 }

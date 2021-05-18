@@ -89,3 +89,49 @@ if(isset($_POST['supprimerPartition'])){
     $requetePartitions = getPartition();
     require('./Views/functionView/administration/tableauPartitions.php');
 }
+
+if(isset($_POST['modifierContenu'])){
+    $action = 'Modifier un post';
+    require('./Views/functionView/administration/modifierContenu.php');
+}
+
+if(isset($_POST['updateContenu'])){
+   if(isset($_POST['recherche']) && $_POST['recherche'] === 'video'){
+       echo('video modifiée');
+       $champ = $_POST['champ'];
+       $key = $_POST['rechercheClef'];
+       $valeur = $_POST['valeur'];
+       updateVideo($champ, $key, $valeur);
+
+   } elseif(isset($_POST['recherche']) && $_POST['recherche'] === 'partition'){
+       echo('partition modifiée');
+       $champ = $_POST['champ'];
+       $key = $_POST['rechercheClef'];
+       $valeur = $_POST['valeur'];
+       updatePartition($champ, $key, $valeur);
+
+   } else{
+       echo('erreur');
+   }
+}
+
+if(isset($_POST['creerContenu'])){
+    $action = 'Creer un nouveau post';
+    require('./Views/functionView/administration/creerContenu.php');
+}
+
+if(isset($_POST['insertContenu'])){
+    $titre = htmlspecialchars( $_POST['titre']);
+    $artiste = htmlspecialchars( $_POST['artiste']);
+    $section = htmlspecialchars( $_POST['section']);
+    $link = htmlspecialchars( $_POST['link']);
+    $restriction = htmlspecialchars( $_POST['restriction']);
+
+    if(isset($_POST['recherche']) && $_POST['recherche'] === 'video'){
+        insertVideo($titre, $artiste, $section, $link, $restriction);
+    } elseif(isset($_POST['recherche']) && $_POST['recherche'] === 'partition'){
+        insertPartition($titre, $artiste,$section, $link, $restriction);
+    } else{
+        echo('erreur');
+    }
+}

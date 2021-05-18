@@ -28,12 +28,11 @@ ob_start();
                 
                 <span class="actionTitle">Gestion du contenu</span>
                 <li><button type="submit" name="afficheContenu" action="#" class="btn">Afficher</button> </li>
-                <li><button type="submit" name="modifierContenu" action="#" class="btn">Modifier</button></li>
-                
+                <li><button type="submit" name="modifierContenu" action="#" class="btn">Modifier</button></li>                
                 <li><button type="submit" name="creerContenu" action="#" class="btn">Créer</button></li>
+                
                 <span class="actionTitle">Gestion des demandes</span>
-                <li><button type="submit" name="afficheDemandes" action="#" class="btn">Afficher</button> </li>
-               
+                <li><button type="submit" name="afficheDemandes" action="#" class="btn">Afficher</button> </li>               
                 <li><button type="submit" name="supprimerDemandes" action="#" class="btn">Supprimer</button></li>
                
             </form>
@@ -51,7 +50,7 @@ ob_start();
 <?php
 if(isset($action)){
 ?>
-<h2 class="titleAction"><?=$action?></h2>
+    <h2 class="titleAction"><?=$action?></h2>
 <?php
 }
 
