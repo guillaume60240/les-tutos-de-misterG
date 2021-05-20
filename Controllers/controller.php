@@ -26,7 +26,7 @@ function actualiser_session(){
     if(isset($_GET['page']) && $_GET['page'] != 'inscription' && $_GET['page'] != 'connexion' && $_GET['page'] != 'deconnexion'){
         $_SESSION['pageView'] = $_GET['page'];
     }
-    if(isset($_GET['page']) && $_GET['page'] != 'lectureVideo' && $_GET['page'] != 'connexion' && $_GET['page'] != 'inscription' && $_GET['page'] != 'deconnexion'){
+    if(isset($_GET['page']) && $_GET['page'] != 'lectureVideo' && $_GET['page'] != 'connexion' && $_GET['page'] != 'inscription' && $_GET['page'] != 'deconnexion' && $_GET['page'] != 'aPropos' && $_GET['page'] != 'contact' && $_GET['page'] != 'liensUtiles'){
         unset($_SESSION['videoId']);
         unset($_SESSION['videoTitle']);
         unset($_SESSION['like']);
@@ -100,6 +100,10 @@ if(isset($_POST['deleteCompte'])){
     deleteUser($id);
     traitementFormulaireDeconnexion();
 }
+
+if(isset($_POST['mailContact'])){
+    traitementFormulaireContact();
+}
 //choix de l'affichage principal
 function choixRequete(){
 
@@ -171,6 +175,18 @@ function choixRequete(){
                 break;
             case 'supprimerCompte' :
                 userAction('supprimerCompte');
+                $_GET['page'] = '';
+                break;
+            case 'aPropos' :
+                userAction('aPropos');
+                $_GET['page'] = '';
+                break;
+            case 'contact' :
+                userAction('contact');
+                $_GET['page'] = '';
+                break;
+            case 'liensUtiles' :
+                userAction('liensUtiles');
                 $_GET['page'] = '';
                 break;
             
@@ -457,4 +473,22 @@ function traitementFormulairePseudo($id, $pseudo, $newPseudo){
         $_GET['page'] = 'modifPseudo';
     }
     
+}
+
+function traitementFormulaireContact(){
+    if(!empty($_POST['message']) && !empty($_POST['mail'])){
+
+        $pseudo = htmlspecialchars($_POST['userPseudo']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $nom = htmlspecialchars($_POST['nom']);
+        $ecole = htmlspecialchars($_POST['mail']);
+        $message = htmlspecialchars($_POST['message']);
+
+        insertDemandeStatut($pseudo, $prenom, $nom, $ecole, $message);
+        $_GET['error'] = 'Message envoyé';
+        
+    } else {
+        $_GET['error'] = 'Remplissez tous les champs';
+        $_GET['page'] = 'contact';
+    }
 }

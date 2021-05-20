@@ -9,9 +9,9 @@ ob_start()
 <footer class="footer">
     <div class="nav-container2">
         <ul class="nav-barre2">
-            <li class="menu-nav" >A propos</li>
-            <li class="menu-nav" ><a href="form.html"> Me contacter</a></li>
-            <li class="menu-nav" >Liens utiles</li>
+            <li class="menu-nav" ><a href="/?page=aPropos">A propos</a> </li>
+            <li class="menu-nav" ><a href="/?page=contact"> Me contacter</a></li>
+            <li class="menu-nav" ><a href="/?page=liensUtiles">Liens Utiles</a></li>
             
         </ul>       
     </div>

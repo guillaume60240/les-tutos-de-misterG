@@ -316,6 +316,12 @@ div img{
     height: 170px;
     border-radius: 20px;
 }
+.logo{
+    margin-bottom: 10px;
+    width: auto;
+    height: 170px;
+    
+}
 video{
     margin-bottom: 20px;
     width: 373px;
@@ -514,8 +520,8 @@ button[type=submit], button[type=reset] {
 .modal_content{
     background-color: white;
     padding: 1.5em 2em;
-    width: 300px;
-    max-width: 90%;
+    min-width: 300px;
+    max-width: 70%;
     border-radius: 10px;
     position: relative;
 }
@@ -526,8 +532,14 @@ button[type=submit], button[type=reset] {
     color: grey;
     text-decoration: none;
 }
-
-
+.linkUtiles{
+    text-decoration: none;
+    color: cornflowerblue;
+    cursor: pointer;
+}
+.linkUtiles:hover{
+    color: rgb(133, 114, 184);
+}
 /* media query */
 
 @media screen and (max-width: 1230px){
