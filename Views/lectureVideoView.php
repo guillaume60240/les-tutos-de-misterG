@@ -43,8 +43,11 @@ ob_start();
             <form action="#" method="post" class="formCommentaire">
                 <label for="commentaire" class="formCommentaireLabel">Mon commentaire</label>
                 <textarea name="commentaire" id="commentaire" rows="5" cols="50" style="resize: none;"></textarea>
-                <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
-                <button type="reset" class="btn2" name="formulaireCommentaireAnnuler" id="commentsAnnuler">Annuler</button>
+                <p>
+
+                    <button type="submit" class="btn2" name="formulaireCommentaire">Poster mon commentaire</button>
+                    <button type="reset" class="btn2" name="formulaireCommentaireAnnuler" id="commentsAnnuler">Annuler</button>
+                </p>
             </form>
         </div>
         <div class="commentaireContainer" id="commentaireContainer">

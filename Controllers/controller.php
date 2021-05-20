@@ -34,7 +34,10 @@ function actualiser_session(){
     } elseif(isset($_GET['page']) && $_GET['page'] === 'lectureVideo'){
         $_SESSION['redirection'] = $_SESSION['pageView'].'&videoId='.$_GET['videoId'].'&videoTitle='.$_GET['videoTitle'];
     } else{
-        $_SESSION['redirection'] = $_SESSION['redirection'];
+        if(isset($_SESSION['redirection'])){
+
+            $_SESSION['redirection'] = $_SESSION['redirection'];
+        }
     }
     
 }
