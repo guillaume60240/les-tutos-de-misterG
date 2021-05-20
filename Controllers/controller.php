@@ -1,9 +1,9 @@
 <?php
 // Ce fichier contient toutes les fonctions nécessaires à l'affichage des pages avec les controlers
 require('./Models/affichageModel.php');
-require('./Models/function.php');
+
 require('./Models/databaseModel.php');
-require('./Models/adminModel.php');
+
 require('./Models/videosModel.php');
 require('./Models/partitionsModel.php');
 require('./Models/usersModel.php');
