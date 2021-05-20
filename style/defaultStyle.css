@@ -41,7 +41,7 @@ body{
     position: relative;
     width: 100%;
     height: 100%;
-    
+    cursor: pointer;
 }
 
 .linkVoirVideo{
@@ -144,8 +144,9 @@ body{
     padding: 5px;
 }
 .vid3{
+    position: relative;
     width: 400px;
-    height: 250px;
+    height: 300px;
     margin-top: 60px;
     
     box-shadow: 4px 4px 4px rgba(51, 51, 51, 0.233);
@@ -156,7 +157,12 @@ body{
     transition: all .5s;
 }
 
-
+.formSuggestion{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 40px;
+}
 .videoEnLecture{
     position: absolute;
     top: 0;

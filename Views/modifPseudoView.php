@@ -8,13 +8,19 @@ ob_start();
 <section class="affichage">
     <div id="inscription" class="modal_inscription">
         <div class="modal_content">
-
+            <span style="color: red;">
+                <?php
+                if (isset($_GET['error'])) {
+                    echo ($_GET['error']);
+                }
+                ?>
+            </span>
             <form method="post" action="#" enctype="multipart/form-data">
 
-                <label for="userPseudo">Mon pseudo</label>
+                <label for="userPseudo">Mon pseudo *</label>
                 <input type="text" name="userPseudo" id="userPseudo" placeholder="Pseudo">
 
-                <label for="nouveauPseudo">Mon nouveau pseudo</label>
+                <label for="nouveauPseudo">Mon nouveau pseudo *</label>
                 <input type="text" name="nouveauPseudo" id="nouveauPseudo" placeholder="nouveau pseudo">
 
                 

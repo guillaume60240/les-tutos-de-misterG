@@ -12,13 +12,15 @@ function remplirSection($video, $nomSection){
         $videoId = $video['id'];
         
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
+        
 }
 
 
 function remplirSuggestion1($video){
     $videoTitle = $video['titre'];
     $linkS = $video['link'];
-    
+    $videoId = $video['id'];
+    $section = $video['section'];
     require('./Views/functionView/remplirSuggestion1View.php');
 }
 function afficheCommentaire($comment){

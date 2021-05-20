@@ -45,6 +45,16 @@ function deleteUser($id){
     $requete->execute(['id' =>intval($id)]);
 }
 
+function modifPseudo($id, $pseudo){
+    $bdd = getPdo();
+
+    $requete = $bdd->prepare("UPDATE membres SET pseudo = :valeur  WHERE id = :clef");
+    $requete->execute([':valeur' => $pseudo,
+                        ':clef' => $id
+    ]);
+
+}
+
 function updateUtilisateur($champ, $recherche, $key, $valeur){
     $bdd = getPdo();
 

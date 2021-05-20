@@ -27,7 +27,7 @@ if(isset($_POST['form_inscription'])){
                 <button type="submit" name="form_inscription" class="btn2">Je m inscris</button>
                 <button type="reset" class="btn2">Tout effacer</button>
             </form>
-            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close" class="formInscriptionLink">&times;</a>
+            <a href="/?page=accueil" class="modal_close" class="formInscriptionLink">&times;</a>
         </div>
     </div>
 </section>

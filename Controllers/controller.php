@@ -72,13 +72,26 @@ if(isset($_POST['demandeStatut'])){
     traitementFormulaireDemande();
 }
 
+
 if(isset($_POST['modifPseudo'])){
     $_GET['page'] = 'modifPseudo';
+}
+
+if(isset($_POST['updatePseudo'])){
+    $id = $_SESSION['id'];
+    $pseudo = htmlspecialchars($_POST['userPseudo']);
+    $newPseudo = htmlspecialchars($_POST['nouveauPseudo']);
+    traitementFormulairePseudo($id, $pseudo, $newPseudo);
 }
 if(isset($_POST['supprimerCompte'])){
     $_GET['page'] = 'supprimerCompte';
 }
 
+if(isset($_POST['deleteCompte'])){
+    $id = $_SESSION['id'];
+    deleteUser($id);
+    traitementFormulaireDeconnexion();
+}
 //choix de l'affichage principal
 function choixRequete(){
 
@@ -393,3 +406,34 @@ function traitementFormulaireDemande(){
     }
 }
 
+function traitementFormulairePseudo($id, $pseudo, $newPseudo){
+
+    if(isset($_SESSION['id']) && isset($_SESSION['pseudo'])){
+    
+        if(!empty($_POST['userPseudo']) && !empty($_POST['nouveauPseudo'])){
+
+            if($pseudo === $_SESSION['pseudo']){
+                
+                $UserPseudoExist = verificationPseudoExist($newPseudo);
+                
+                if($UserPseudoExist === false){
+                    modifPseudo($id, $newPseudo);
+                    $_SESSION['pseudo'] = $newPseudo;
+                } else{
+                    $_GET['error'] = 'Ce pseudo existe déjà';
+                    $_GET['page'] = 'modifPseudo';
+                }
+            } else{
+                $_GET['error'] = 'Les informations ne sont pas correctes';
+                $_GET['page'] = 'modifPseudo';
+            }
+        } else{
+            $_GET['error'] = 'Les informations ne sont pas correctes';
+            $_GET['page'] = 'modifPseudo';
+        }
+    } else{
+        $_GET['error'] = 'Les informations ne sont pas correctes';
+        $_GET['page'] = 'modifPseudo';
+    }
+    
+}
