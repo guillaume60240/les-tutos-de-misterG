@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* html{
-    width: 100%;
-    min-height: 100%;
-} */
+
 body{
     width: 100%;
     height: 100vh;
@@ -120,8 +117,7 @@ body{
 .suggestion{
     
     margin-right: 20px;
-    /* display: flex;
-    justify-content: space-around; */
+    
     margin-top: 30px;
     position: absolute;
     top: 0;
@@ -133,7 +129,7 @@ body{
 .suggestionContainer{
     width: 60%;
     display: flex;
-    /* flex-wrap: wrap; */
+   
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -240,7 +236,7 @@ body{
 .btnSupCom{
     font-size: .6em;
     text-decoration: none;
-    /* padding: .7em 1em; */
+    
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
@@ -402,9 +398,7 @@ video{
 /* formulaire inscription et connexion */
 
 
-/* form {
-    max-width: 80%; 
-} */
+
 
 form label {
     display: block;
@@ -493,8 +487,7 @@ button[type=submit], button[type=reset] {
 }
 
 .modal_inscription, .modal_connexion, .modal_deconnexion{
-    /* visibility: hidden; */
-    /* opacity: 0; */
+    
     position: absolute;
     top: 0;
     bottom: 0;
@@ -550,19 +543,19 @@ button[type=submit], button[type=reset] {
         margin-left: 50%;
         transform: translate(-50%);
         max-width: 1000px;
-        /* min-width: 759px; */
+        
     }
     .descriptionContainer{
         width: auto;
         max-width: 1000px;
-        /* min-width: 759px; */
+        
         margin-left: 50%;
         transform: translate(-50%);
     }
     .commentaireContainer{
         width: 100%;
         max-width: 1000px;
-        /* min-width: 759px; */
+        
         margin-left: 50%;
         transform: translateX(-50%);
         
@@ -655,9 +648,9 @@ button[type=submit], button[type=reset] {
         width: 100%;
     }
     .vid2{
-        /* max-width: 100%; */
+        
         width: 100%;
-        /* min-width: auto; */
+       
         margin: auto;
         transform: translate(0);
     }
@@ -670,7 +663,7 @@ button[type=submit], button[type=reset] {
     .descriptionContainer{
         width: 100%;
         margin-left: 0;
-        /* min-width: none; */
+        
         align-self: center;
         transform: translate(0);
     }

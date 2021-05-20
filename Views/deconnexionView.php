@@ -1,9 +1,7 @@
 <?php
 
 ob_start();
-// if(isset($_POST['form_deconnexion'])){
-//     traitementFormulaireDeconnexion();
-// }
+
 ?>
 <section class="affichage">
     <div id="deconnexion" class="modal_connexion">

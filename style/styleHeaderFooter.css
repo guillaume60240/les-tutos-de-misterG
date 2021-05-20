@@ -68,14 +68,7 @@ h1{
     content: "";
     
 }
-/* .active::after{
-    margin-left: 5px;
-    padding-left: 2px;
-    background-color: rgba(250, 240, 230, 0.507);
-    border-radius: 50%;
-    content: "";
-   
-} */
+
 .link-light{
     text-decoration: none;
     margin-right: 10px;

@@ -1,9 +1,7 @@
 <?php
 
 ob_start();
-if(isset($_POST['form_connexion'])){
-    traitementFormulaireConnexion();
-}
+
 ?>
 <section class="affichage">
     <div id="connexion" class="modal_connexion">
