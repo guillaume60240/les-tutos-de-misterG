@@ -15,7 +15,7 @@ ob_start();
                 
                 <button type="submit" name="form_deconnexion">Ok</button>
             </form>
-            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
+            <a href="/?page=<?=$_SESSION['redirection']?>" class="modal_close">&times;</a>
         </div>
     </div>
 </section>

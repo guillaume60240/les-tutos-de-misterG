@@ -8,7 +8,13 @@ if(isset($_POST['form_connexion'])){
 <section class="affichage">
     <div id="connexion" class="modal_connexion">
         <div class="modal_content">
-    
+        <span style="color: red;">
+                <?php
+                if (isset($_GET['error'])) {
+                    echo ($_GET['error']);
+                }
+                ?>
+            </span>
         
 
             <form method="post" action="../index.php" enctype='multipart/form-data'>
@@ -23,9 +29,10 @@ if(isset($_POST['form_connexion'])){
                 
 
                 <button type="submit" name="form_connexion" class="btn2">Je me connecte</button>
-                <button type="reset" class="btn2">Tout effacer</button>
+                <button type="reset" class="btn2">Tout effacer</button></br>
+                <a href="/?page=inscription">Pas encore inscrit?</a>
             </form>
-            <a href="/?page=<?=$_SESSION['pageView']?>" class="modal_close">&times;</a>
+            <a href="/?page=<?=$_SESSION['redirection']?>" class="modal_close">&times;</a>
         </div>
     </div>
 </section>

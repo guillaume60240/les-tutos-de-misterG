@@ -26,10 +26,15 @@ function actualiser_session(){
     if(isset($_GET['page']) && $_GET['page'] != 'inscription' && $_GET['page'] != 'connexion' && $_GET['page'] != 'deconnexion'){
         $_SESSION['pageView'] = $_GET['page'];
     }
-    if(isset($_GET['page']) && $_GET['page'] != 'lectureVideo'){
+    if(isset($_GET['page']) && $_GET['page'] != 'lectureVideo' && $_GET['page'] != 'connexion' && $_GET['page'] != 'inscription' && $_GET['page'] != 'deconnexion'){
         unset($_SESSION['videoId']);
         unset($_SESSION['videoTitle']);
         unset($_SESSION['like']);
+        $_SESSION['redirection'] = $_SESSION['pageView'];
+    } elseif(isset($_GET['page']) && $_GET['page'] === 'lectureVideo'){
+        $_SESSION['redirection'] = $_SESSION['pageView'].'&videoId='.$_GET['videoId'].'&videoTitle='.$_GET['videoTitle'];
+    } else{
+        $_SESSION['redirection'] = $_SESSION['redirection'];
     }
     
 }
@@ -274,6 +279,7 @@ function traitementFormulaireInscription(){
         $mdp = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
         $mdp2 = password_hash($_POST['userPassword2'], PASSWORD_DEFAULT);
     } else {
+        
         ?><script>alert('Veuillez renseigner tous les champs')</script>  <?php
     }
 
@@ -288,20 +294,27 @@ function traitementFormulaireInscription(){
             if($_POST['userPassword'] === $_POST['userPassword2']){
 
                 inscriptionUtilisateur($userPseudo, $userMail, $mdp);
-
-                ?><script>alert('Inscription réussie. Vous pouvez vous connecter')</script>  <?php
-                userAction('connexion');
-
+                unset($_GET) ;
+                $_GET['error'] = 'Inscription réussie. Vous pouvez vous connecter';
+                $_GET['page'] = 'connexion';
+                
             } else {
-                ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
+                unset($_GET) ;
+                $_GET['error'] = 'Erreur lors de l\'inscription, veuillez réessayer ';
+                $_GET['page'] = 'inscription';
+                
             }
 
         } else {
-            ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
+            unset($_GET) ;
+            $_GET['error'] = 'Erreur lors de l\'inscription, veuillez réessayer ';
+            $_GET['page'] = 'inscription';
         }
 
     } else {
-        ?><script>alert('Erreur lors de l\'inscription, veuillez réessayer ')</script>  <?php
+        unset($_GET) ;
+        $_GET['error'] = 'Erreur lors de l\'inscription, veuillez réessayer ';
+        $_GET['page'] = 'inscription';
     }
 }
 
@@ -320,6 +333,7 @@ function traitementFormulaireConnexion(){
                 $_SESSION['pseudo'] = $userPseudoExist['pseudo'];
                 $_SESSION['id'] = $userPseudoExist['id'];
                 $_SESSION['role'] = $userPseudoExist['role'];
+                
                 $pageActuelle = $_SESSION['pageView'];
                 if($pageActuelle != 'lectureVideo'){
 
@@ -329,13 +343,17 @@ function traitementFormulaireConnexion(){
                 }
                 
             } else {
-                ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
+                unset($_GET);
+                $_GET['error'] = 'Erreur lors de la connexion, veuillez réessayer ';
+               
                 $_GET['page'] = 'connexion';
             }
         }
     } else {
-        ?><script>alert('Erreur lors de la connexion, veuillez réessayer 3')</script>  <?php
-        userAction('connexion');
+        unset($_GET);
+        $_GET['error'] = 'Erreur lors de la connexion, veuillez réessayer ';
+        $_GET['page'] = 'connexion';
+        
     }
 }
 
@@ -358,8 +376,8 @@ function traitementFormulaireCommentaire(){
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
     } else {
-        ?> <script>alert('Vous devez être connecté pour commenter une vidéo')</script> <?php
-        // echo'Vous devez être connecté pour commenter';
+        $_GET['error'] = 'vous devez être connecté pour liker une vidéo';
+        $_GET['page'] = 'connexion';
         
     }
 }
@@ -381,9 +399,9 @@ function traitementFormulaireLike(){
         }
 
     } else {
+        $_GET['error'] = 'vous devez être connecté pour liker une vidéo';
+        $_GET['page'] = 'connexion';
         
-        ?> <script>alert('Vous devez être connecté pour liker une vidéo')</script> <?php
-        // echo'Vous devez être connecté pour liker une vidéo';
     }
 }
 
