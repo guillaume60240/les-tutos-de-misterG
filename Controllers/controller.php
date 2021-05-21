@@ -14,6 +14,9 @@ require('./Models/demandesModel.php');
 
 //actualisation de la session en fonction de GET
 function actualiser_session(){
+    if(!isset($_SESSION['redirection'])){
+        $_SESSION['redirection'] = 'accueil';
+    }
     if(isset($_GET['videoId'])){
         $_SESSION['videoId'] = $_GET['videoId'];
     }
