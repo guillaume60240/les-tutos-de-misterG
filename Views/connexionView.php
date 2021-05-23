@@ -15,7 +15,7 @@ ob_start();
             </span>
         
 
-            <form method="post" action="../index.php" enctype='multipart/form-data'>
+            <form method="post" action="/?page=<?=$_SESSION['redirection']?>" enctype='multipart/form-data'>
 
                 <label for="userPseudo">Mon pseudo</label>
                 <input type="text" name="userPseudo" id="userPseudo" placeholder="Pseudo" value="">
