@@ -370,6 +370,11 @@ function traitementFormulaireConnexion(){
                
                 $_GET['page'] = 'connexion';
             }
+        } else {
+            unset($_GET);
+            $_GET['error'] = 'Erreur lors de la connexion, veuillez réessayer ';
+           
+            $_GET['page'] = 'connexion';
         }
     } else {
         unset($_GET);

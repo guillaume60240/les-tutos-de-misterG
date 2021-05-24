@@ -140,6 +140,89 @@ h1{
     
 }
 
+/* style de la navbar mobile */
+
+.navbar-mobile-container{
+    display: none;
+    position: relative;
+    width: 25%;
+    height: 100%;
+}
+
+.navbar-mobile-btn{
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+    width: 50px;
+    border: solid 1px linen;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+
+.navbar-mobile-burger{
+    
+    height: 4px;
+    width: 40px;
+    background-color: linen;
+    border-radius: 10px;
+    opacity: 1;
+    transition: ease-in-out .5s;
+}
+.navbar-mobile-burger-close{
+   
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 40px;
+    background-color: linen;
+    border-radius: 10px;
+    opacity: 0;
+    transition: ease-in-out .5s;
+}
+.close1{
+   opacity: 0;
+}
+.close2{
+    transform: rotate(45deg);
+    height: 2px;
+}
+.close3{
+    opacity: 0;
+    
+}
+#close5{
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.navbar-mobile-link{
+    
+    position: absolute;
+    background: rgba(51, 51, 51, 0.911);
+    top: 150px;
+    width: 50%;
+    min-width: 320px;
+    height: 100vh;
+    text-align: start;
+    font-size: 2em;
+    padding-top: 10%;
+    padding-left: 10%;
+    z-index: 10;
+    list-style: none;
+    line-height: 2em;
+    transition: all ease-in-out .5s;
+}
+
+
 @media screen and (max-width: 1282px) {
     .menu-a{
         font-size: .7em;
@@ -157,13 +240,7 @@ h1{
 
 @media screen and (max-width: 900px){
     .nav-barre{
-        margin-top: 2px;   
-        width: 25%;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-       
+        display: none;
     }
     .menu-nav{
         font-weight: 900;
@@ -180,9 +257,10 @@ h1{
         
     }
     nav div h1{
-        width: 72%;
+        width: 100%;
         position: absolute;
-        left: 25%;
+        left: 50%;
+        transform: translate(-50%);
     }
     .messageBienvenue{
         display: none;
@@ -192,28 +270,30 @@ h1{
         bottom: 10px;
         left: 0;
         width: 50%;
-        font-size: small;
+        font-size: medium;
         text-align: right;
     }
-    
+    .navbar-mobile-container{
+        display: block;
+    }
 }
 
 @media screen and (max-width: 710px){
-    .nav-barre{
-        width: 30%;
-    }
+    
     nav div h1{
         width: 70%;
     }
 }
 
 @media screen and (max-width: 434px){
-    .menu-nav{
-        font-size: x-small;
-    }
+    
     nav div h1{
         font-size: 1.5rem;
-        width: 50%;
-        left: 40%;
+        width: 100%;
+        /* left: 40%; */
+    }
+
+    .navbar-mobile-link{
+        width: 100%;
     }
 }

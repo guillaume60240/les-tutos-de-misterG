@@ -52,6 +52,28 @@ ob_start();
             <li class="menu-nav <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'morceaux'){ echo 'active';}}?>" id="morceau"><a href="/?page=morceaux" class="menu-a">Morceaux expliqués</a></li>
             <li class="menu-nav <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'partitions'){ echo 'active';}}?>" id="partition"><a href="/?page=partitions" class="menu-a">Partitions</a></li>
         </ul>
+
+        <div class="navbar-mobile-container">
+
+            <button class="navbar-mobile-btn" id="navbar-mobile-btn" >
+                <span class="navbar-mobile-burger" id="close1"></span>
+                <span class="navbar-mobile-burger" id="close2"></span>
+                <span class="navbar-mobile-burger" id="close3"></span>
+                
+                <span class="navbar-mobile-burger-close " id="close5" ></span>
+            </button>
+
+            <ul class="navbar-mobile-link" id="navbar-mobile-link" style="left: -400%;">   
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'accueil'){ echo 'active';}}?>" id="accueil" ><a href="/?page=accueil" class="menu-a">Accueil</a> </li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'covers'){ echo 'active';}}?>" id="cover"><a href="/?page=covers" class="menu-a">Les covers</a> </li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'duos'){ echo 'active';}}?>" id="duo"><a href="/?page=duos" class="menu-a">Les covers en duo</a></li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'compos'){ echo 'active';}}?>" id="compo"><a href="/?page=compos" class="menu-a">Mes compos</a></li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'theorie'){ echo 'active';}}?>" id="theorie"><a href="/?page=theorie" class="menu-a">Cours de théorie</a></li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'morceaux'){ echo 'active';}}?>" id="morceau"><a href="/?page=morceaux" class="menu-a">Morceaux expliqués</a></li>
+                <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'partitions'){ echo 'active';}}?>" id="partition"><a href="/?page=partitions" class="menu-a">Partitions</a></li>        
+            </ul>
+            
+        </div>
     </nav>
 </header>
 

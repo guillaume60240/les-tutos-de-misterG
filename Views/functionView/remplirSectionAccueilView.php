@@ -7,6 +7,6 @@
     <p class="btn-container-accueil" >
         
         <button class="btnVoirVideo"><a href="/?page=lectureVideo&videoId=<?=$videoId?>&videoTitle=<?=$titleVideo?>" class="linkVoirVideo">Voir la vidéo</a> </button>
-        <button class="btnVoirSection"><a href=<?=$video['section']?> class="linkVoirSection">Voir la section</a> </button>
+        <button class="btnVoirSection"><a href="/?page=<?=$video['section']?>" class="linkVoirSection">Voir la section</a> </button>
     </p>
 </div>
