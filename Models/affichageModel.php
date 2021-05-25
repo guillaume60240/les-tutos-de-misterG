@@ -7,6 +7,7 @@ function remplirSectionVide(){
 function remplirSection($video, $nomSection){
     
         $titleVideo = $video['titre'];
+        $artiste = $video['artiste'];
         $date = $video['created_at'];
         $link = $video['link'];
         $videoId = $video['id'];

@@ -10,7 +10,7 @@
         
             <div class="titleVideo">
 
-                <h3><?=$titleVideo ?></h3>
+                <h3><?=$titleVideo ?> - <?=$artiste?></h3>
                 <h6>Publié le : <?= $date?> </h6>
                 <div class="btn-container">
                     <button class="btn2 comments" id="comments">Commenter</button>

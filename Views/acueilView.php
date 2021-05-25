@@ -22,7 +22,7 @@ ob_start();
             if($video = $requete->fetch()){
                 
                 do{              
-                    ?><div><h2 class="sectionTitle"><?=$video['section']?></h2><?php
+                    ?><div><a href="/?page=<?=$video['section']?>" class="linkVoirSection"><h2 class="sectionTitle">Les <?=$video['section']?></h2></a><?php
                     remplirSection($video, 'Accueil');
                     ?></div><?php
                 } while ($video = $requete->fetch());
