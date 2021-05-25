@@ -1,9 +1,14 @@
 <?php
 
-function getPdo(){
 
+
+
+function getPdo(){
+    
+    require('./functions/variables.php');
+    
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=les_tutos_de_mister_G;charset=utf8', 'root', 'root');
+        $bdd = new PDO('mysql:host=localhost;dbname='.$dbName.';charset=utf8', $userName , $mdp);
     }
     catch(Exception $e) {
         die('Erreur : '.$e->getMessage());
