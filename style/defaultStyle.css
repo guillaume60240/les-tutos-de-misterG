@@ -499,6 +499,7 @@ button[type=submit], button[type=reset] {
     align-items: center;
     /* width: 0; */
     transition: ease-in-out .4s;
+    z-index: 4;
 }
 
 
