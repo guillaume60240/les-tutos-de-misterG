@@ -211,7 +211,7 @@ h1{
     top: 150px;
     width: 50%;
     min-width: 320px;
-    height: 100vh;
+    min-height: calc(100vh - 175px);
     text-align: start;
     font-size: 2em;
     padding-top: 10%;
@@ -220,8 +220,13 @@ h1{
     list-style: none;
     line-height: 2em;
     transition: all ease-in-out .5s;
+    opacity: 0;
 }
-
+.messageBienvenue-navbar-mobile{
+    font-size: small;
+    color: lightgrey;
+    border-bottom: 1px solid;
+}
 
 @media screen and (max-width: 1282px) {
     .menu-a{
@@ -250,12 +255,16 @@ h1{
         width: auto;
     }
     header{
-        height: 175px;
+        height: 135px;
     }
     .nav-container{
-        height: 176px;
+        height: 135px;
         
     }
+    .nav-barre2{
+        margin-left: 0;
+    }
+    
     nav div h1{
         width: 100%;
         position: absolute;
@@ -273,16 +282,21 @@ h1{
         font-size: medium;
         text-align: right;
     }
+    .navbar-mobile-link{
+       top: 106px;
+        min-height: calc(100vh - 135px);
+    }
     .navbar-mobile-container{
         display: block;
     }
 }
 
-@media screen and (max-width: 710px){
-    
-    nav div h1{
-        width: 70%;
+@media screen and (max-width: 639px){
+    .navbar-mobile-link{
+       
+        min-width: 100vw;
     }
+    
 }
 
 @media screen and (max-width: 434px){
@@ -292,8 +306,44 @@ h1{
         width: 100%;
         /* left: 40%; */
     }
-
+    header{
+        height: 120px;
+    }
+    .nav-container{
+        height: 120px;
+    }
     .navbar-mobile-link{
         width: 100%;
     }
+
+    .navbar-mobile-btn{
+        width: 30px;
+        height: 30px;
+    }
+    .navbar-mobile-burger{
+        width: 20px;
+        height: 2px;
+    }
+    .navbar-mobile-burger-close{
+        width: 20px;
+    }
+    .navbar-mobile-link{
+        top: 91px;
+        min-height: calc(100vh - 120px);
+    }
+}
+
+
+@media screen and (max-width: 325px){
+    .userAction{
+        width: 75%;
+        
+        margin-left: 25%;
+    }
+    nav div h1{
+        font-size: 1.2rem;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
 }

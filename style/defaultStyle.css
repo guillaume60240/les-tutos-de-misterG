@@ -11,7 +11,7 @@ body{
     background: rgba(11, 11, 15, 0.1);
 }
 .affichage{
-    min-height: 70vh;
+    min-height: calc(100vh - 143px);
     position: relative;
     margin-top: 10px;
 }
@@ -489,7 +489,7 @@ button[type=submit], button[type=reset] {
 .modal_inscription, .modal_connexion, .modal_deconnexion{
     
     position: absolute;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -535,6 +535,11 @@ button[type=submit], button[type=reset] {
 }
 /* media query */
 
+@media screen and (max-width: 1282px){
+    .modal_inscription, .modal_connexion, .modal_deconnexion{
+        top: 0;
+    }
+}
 @media screen and (max-width: 1230px){
     .suggestion{
         display: none;
@@ -565,6 +570,7 @@ button[type=submit], button[type=reset] {
     transform: translateX(-50%);
     }
     
+    
 }
 @media screen and (max-width: 1000px) {
     .titleSection{
@@ -573,8 +579,8 @@ button[type=submit], button[type=reset] {
     .vid{
         width: 350px;
         min-width: 288px;
-        height: 300px;
-        
+        height: 270px;
+        margin-top: 15px;
     }
     iframe{
         width: 300px;
@@ -583,10 +589,7 @@ button[type=submit], button[type=reset] {
     .section{
         margin: 0;
     }
-    .linkVoirVideo{
-        padding-right: 135px;
-        padding-left: 135px;
-    }
+    
     
 }
 
@@ -595,7 +598,7 @@ button[type=submit], button[type=reset] {
     .vid{
         width: 300px;
         min-width: 230px;
-        height: 270px;
+        height: 230px;
 
     }
     iframe{
@@ -605,11 +608,10 @@ button[type=submit], button[type=reset] {
     .titleSection{
         margin-top: 20px;
         font-size: xx-large;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     .linkVoirVideo{
-        padding-right: 110px;
-        padding-left: 110px;
+        padding-top: 140px;
     }
     .vid2{
         margin-top: 10px;
@@ -625,27 +627,23 @@ button[type=submit], button[type=reset] {
         min-width: 450px;
         margin-bottom: 20px;
     }
+    .modal_inscription, .modal_connexion, .modal_deconnexion{
+        top: -10px;
+    }
 }
 
 @media screen and (max-width: 772px){
 
-    .vid{
-        width: 230px;
-       
-    }
-    iframe{
-        width: 220px;
-
-    }
-    .linkVoirVideo{
-        padding-right: 75px;
-        padding-left: 75px;
-    }
+    
     .formCommentaire{
         max-width: 75%;
     }
     .sectionVideo{
         width: 100%;
+    }
+    .vid{
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .vid2{
         
@@ -674,3 +672,24 @@ button[type=submit], button[type=reset] {
     }
 }
 
+@media screen and (max-width: 500px){
+    .titleSection{
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: larger;
+    }
+    .vid{
+        width: 100%;
+        min-width:none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    iframe{
+        width: 100%;
+        height: calc(100vw / 1.99);
+    }
+}
+
+@media screen and (max-width: 325px){
+    
+}

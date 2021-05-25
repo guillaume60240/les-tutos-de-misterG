@@ -63,7 +63,16 @@ ob_start();
                 <span class="navbar-mobile-burger-close " id="close5" ></span>
             </button>
 
-            <ul class="navbar-mobile-link" id="navbar-mobile-link" style="left: -400%;">   
+            <ul class="navbar-mobile-link" id="navbar-mobile-link" style="left: -400%;">
+                <li ><?php if(isset($_SESSION['id'])){
+                if(isset($_SESSION['role']) && $_SESSION['role'] === 'eleve'){
+                    $role = 'Padawan';
+                } else{
+                    $role = '';
+                }
+                echo '<p class="messageBienvenue-navbar-mobile" >Bonjour '.$role.' '.$_SESSION['pseudo'].' !</p>'; 
+            }
+            ?></li>
                 <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'accueil'){ echo 'active';}}?>" id="accueil" ><a href="/?page=accueil" class="menu-a">Accueil</a> </li>
                 <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'covers'){ echo 'active';}}?>" id="cover"><a href="/?page=covers" class="menu-a">Les covers</a> </li>
                 <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'duos'){ echo 'active';}}?>" id="duo"><a href="/?page=duos" class="menu-a">Les covers en duo</a></li>

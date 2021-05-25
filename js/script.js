@@ -17,12 +17,14 @@ const close5 = document.getElementById('close5');
 navbarMobileBtn.addEventListener('click',(e)=>{
     if(navbarMobileLink.style.left == '-400%'){
         navbarMobileLink.style.left = 0;
+        navbarMobileLink.style.opacity = 1;
        close2.classList.toggle("close2");
        close1.classList.toggle("close1");
        close3.classList.toggle("close3");
        close5.style.opacity = 1;
     } else{
         navbarMobileLink.style.left = '-400%';
+        navbarMobileLink.style.opacity = 0;
         close2.classList.toggle("close2");
         close1.classList.toggle("close1");
         close3.classList.toggle("close3");

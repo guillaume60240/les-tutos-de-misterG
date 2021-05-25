@@ -403,7 +403,7 @@ function traitementFormulaireCommentaire(){
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
     } else {
-        $_GET['error'] = 'vous devez être connecté pour liker une vidéo';
+        $_GET['error'] = 'Vous devez être connecté pour liker une vidéo';
         $_GET['page'] = 'connexion';
         
     }
@@ -426,7 +426,7 @@ function traitementFormulaireLike(){
         }
 
     } else {
-        $_GET['error'] = 'vous devez être connecté pour liker une vidéo';
+        $_GET['error'] = 'Vous devez être connecté pour liker une vidéo';
         $_GET['page'] = 'connexion';
         
     }
@@ -445,7 +445,7 @@ function traitementFormulaireDemande(){
             insertDemandeStatut($pseudo, $prenom, $nom, $ecole, $message);
             
         } else {
-            $_GET['error'] = 'Remplissez tous les champs';
+            $_GET['error'] = 'Remplissez tous les champs demandés';
             $_GET['page'] = 'demandeStatut';
         }
     }
@@ -496,7 +496,7 @@ function traitementFormulaireContact(){
         $_GET['error'] = 'Message envoyé';
         
     } else {
-        $_GET['error'] = 'Remplissez tous les champs';
+        $_GET['error'] = 'Remplissez tous les champs demandés';
         $_GET['page'] = 'contact';
     }
 }
