@@ -276,7 +276,8 @@ h3{
     color: #333;
 }
 .likedVideoTitle{
-    margin-left: 50%;
+    text-align-last: center;
+    margin-bottom: 10px;
 }
 h6{
     margin-bottom: 5px;
@@ -647,14 +648,9 @@ button[type=submit], button[type=reset] {
         flex-direction: column-reverse;
     }
     .aside-perso-menu{
-        max-width: 100%;
-        flex-direction: initial;
-        justify-content: space-around;
-        border-top: solid 1px #333;
+       display: none;
     }
-    .perso-section{
-        min-height: 80vh;
-    }
+    
 }
 
 @media screen and (max-width: 772px){
@@ -696,12 +692,7 @@ button[type=submit], button[type=reset] {
         
     }
 }
-@media screen and (max-width: 600px){
-    .aside-perso-menu{
-        flex-direction: column;
-        align-self: center;
-    }
-}
+
 
 @media screen and (max-width: 500px){
     .titleSection{
@@ -721,10 +712,4 @@ button[type=submit], button[type=reset] {
     }
 }
 
-@media screen and (max-width: 435px){
 
-    .form-perso{
-        display: flex;
-        flex-direction: column;
-    }
-}
