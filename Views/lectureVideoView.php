@@ -55,6 +55,9 @@ ob_start();
             <div class="commentaires" id="blocCommentaires">
                 <h3>Commentaires</h3>
                 <?php
+                    if(isset($_GET['success']) && !empty($_GET['success'])){
+                        echo('<p class="success">'.$_GET['success'].'</p>');
+                    }
                     if($comment = $comments->fetch()){
                         do{
                             

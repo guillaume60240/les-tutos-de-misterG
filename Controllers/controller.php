@@ -70,6 +70,7 @@ if(isset($_POST['confirm'])){
     $idCommentaire  = $_POST['confirm'];
     
     suppressionCommentaire($idCommentaire);
+    $_GET['success'] = 'Votre commentaire a été supprimé';
 } 
 
 if(isset($_POST['ajoutLike'])){
@@ -402,6 +403,7 @@ function traitementFormulaireCommentaire(){
         $videoTitle = $_SESSION['videoTitle'];
 
         insererUnCommentaire($userId, $userPseudo, $contenu, $videoId, $videoTitle);
+        $_GET['success'] = 'Votre commentaire est publié';
     } else {
         $_GET['error'] = 'Vous devez être connecté pour liker une vidéo';
         $_GET['page'] = 'connexion';
@@ -443,6 +445,7 @@ function traitementFormulaireDemande(){
             $message = htmlspecialchars($_POST['message']);
 
             insertDemandeStatut($pseudo, $prenom, $nom, $ecole, $message);
+            $_GET['success'] = 'Votre demande a été envoyée';
             
         } else {
             $_GET['error'] = 'Remplissez tous les champs demandés';

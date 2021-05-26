@@ -14,7 +14,14 @@ ob_start();
         
         <aside class="aside-perso-menu">
             <h3>Gestion du compte</h3>
-            <form action="#" method="post">
+            <span>
+                <?php
+                    if(isset($_GET['success']) && !empty($_GET['success'])){
+                        echo('<p class="success">'.$_GET['success'].'</p>');
+                    }
+                ?>
+            </span>
+            <form action="#" method="post" class="form-perso">
                 <?php
                     if(isset($_SESSION['role']) && $_SESSION['role'] === 'user'){
 
@@ -27,10 +34,10 @@ ob_start();
             
         
         </aside>
-        <div class="section">
+        <div class="section perso-section">
 
             <?php
-
+                
 
                 if($liste = $requeteLike->fetch()){
                     

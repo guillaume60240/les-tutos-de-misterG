@@ -10,11 +10,12 @@ ob_start();
 
     <div id="inscription" class="modal_inscription">
         <div class="modal_content">
-            <span style="color: red;">
+            <span >
                 <?php
                 if (isset($_GET['error'])) {
-                    echo ($_GET['error']);
+                    echo ('<p class="error">'.$_GET['error'].'</p>');
                 }
+                
                 ?>
             </span>
             <form method="post" action="#" enctype="multipart/form-data">
