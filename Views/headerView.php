@@ -22,15 +22,25 @@ ob_start();
             <div class="pl-4 userAction">
 
             <?php
+                
                 if(!isset($_SESSION['id'])){
 
                     echo 
                     '<a href="/?page=inscription" class="link-light inscription_modale" >M\'inscrire</a>
                     <a href="/?page=connexion" class="link-light connexion_modale" >Me connecter</a>';
                 } else{
-                    echo 
-                    '<a href="/?page=espacePerso" class="link-light" >Mon espace perso</a>
-                    <a href="/?page=deconnexion" class="link-light" >Me déconnecter</a>';
+                    ?> 
+                    <a href="/?page=espacePerso" class="link-light" >Mon espace perso 
+                        <?php
+                        if(isset($_SESSION['nbreMessages']) && $_SESSION['nbreMessages'] > 0 ){
+                            $alerte = $_SESSION['nbreMessages'];
+                            echo'<span class="alerteMessage">'.$alerte.'</span>';
+                        }
+                        ?>                    
+                    </a>
+                    
+                    <a href="/?page=deconnexion" class="link-light" >Me déconnecter</a>
+                    <?php
                 }
                 if(isset($_SESSION['id']) && $_SESSION['role']==='admin'){
                     echo 
@@ -92,6 +102,9 @@ ob_start();
                 <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'morceaux'){ echo 'active';}}?>" id="morceau"><a href="/?page=morceaux" class="menu-a">Morceaux expliqués</a></li>
                 <li class="navbar-mobile-menu <?php if(isset($_SESSION['pageView'])){if($_SESSION['pageView'] === 'partitions'){ echo 'active';}}?>" id="partition"><a href="/?page=partitions" class="menu-a">Partitions</a></li>  
                 <div class="aside-perso-menu-mobile">
+            <?php
+            if(isset($_SESSION['role']) && isset($_SESSION['id'])){
+                ?>
                 <li class="navbar-mobile-menu"><h3 class="mobile-title">Gestion du compte</h3></li>
             <span>
                 <?php
@@ -100,12 +113,21 @@ ob_start();
                     }
                 ?>
             </span>
-            <form action="#" method="post" class="form-perso">
-                          
+                <form action="#" method="post" class="form-perso">
+                <button type="submit" name="voirMessagesNonLus" class="btn2-mobile">Messages perso 
+                        <?php
+                        if(isset($_SESSION['nbreMessages']) && $_SESSION['nbreMessages'] > 0 ){
+                            $alerte = $_SESSION['nbreMessages'];
+                            echo'<span class="alerteMessage">'.$alerte.'</span>';
+                        }
+                        ?>      
+                </button>      
                 <button type="submit"  name="modifPseudo"class="btn2-mobile">Modifier mon pseudo</button>
                 <button type="submit"  name="supprimerCompte"class="btn2-mobile">Supprimer mon compte</button>
-            </form>      
-            </ul>
+                </form>   
+                <?php   
+            } ?>
+                </ul>
             
             
         

@@ -151,3 +151,26 @@ if(isset($_POST['supprimerDemande'])){
     $requeteDemandes = getDemandes();
     require('./Views/functionView/administration/tableauDemandes.php');
 }
+
+//gestion des messages internes
+
+if(isset($_POST['envoyerMessageInterne'])){
+
+    $action = 'Envoyer un message';
+    require('./Views/functionView/administration/envoyerMessageInterne.php');
+}
+
+if(isset($_POST['createMessageInterne'])){
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $userRecepteur = getUserByPseudo($pseudo);
+    $user = $userRecepteur->fetch();
+    
+    $idEmetteur = $_SESSION['id'];
+    $pseudoEmetteur = $_SESSION['pseudo'];
+    $contenu = htmlspecialchars($_POST['contenu']);
+    $idRecepteur = $user['id'];
+    $pseudoRecepteur = $user['pseudo'];
+    createMessageInterne($idEmetteur, $pseudoEmetteur, $contenu, $idRecepteur, $pseudoRecepteur);
+   
+
+}

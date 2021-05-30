@@ -27,7 +27,15 @@ ob_start();
 
                         echo('<button type="submit"  name="statut" class="btn2">Demander le statut élève</button>');
                     }
-                ?>               
+                ?>  
+                <button type="submit" name="voirMessagesNonLus" class="btn2">Messages perso 
+                        <?php
+                        if(isset($_SESSION['nbreMessages']) && $_SESSION['nbreMessages'] > 0 ){
+                            $alerte = $_SESSION['nbreMessages'];
+                            echo'<span class="alerteMessage">'.$alerte.'</span>';
+                        }
+                        ?>      
+                </button>             
                 <button type="submit"  name="modifPseudo"class="btn2">Modifier mon pseudo</button>
                 <button type="submit"  name="supprimerCompte"class="btn2">Supprimer mon compte</button>
             </form>

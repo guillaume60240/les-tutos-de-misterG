@@ -65,3 +65,10 @@ function updateUtilisateur($champ, $recherche, $key, $valeur){
 
 }
 
+function getUserByPseudo($pseudo){
+    $bdd = getPdo();
+
+    $requete = $bdd->query('SELECT * FROM membres WHERE pseudo = "'.$pseudo.'"');
+
+    return $requete;
+}

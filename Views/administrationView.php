@@ -34,6 +34,8 @@ ob_start();
                 <span class="actionTitle">Gestion des demandes</span>
                 <li><button type="submit" name="afficheDemandes" action="#" class="btn">Afficher</button> </li>               
                 
+                <span class="actionTitle">Message interne</span>
+                <li><button type="submit" name="envoyerMessageInterne" action="#" class="btn">Envoyer un message</button> </li>
                
             </form>
             

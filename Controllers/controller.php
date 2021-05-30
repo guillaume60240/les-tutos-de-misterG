@@ -10,6 +10,7 @@ require('./Models/usersModel.php');
 require('./Models/commentsModel.php');
 require('./Models/likeModel.php');
 require('./Models/demandesModel.php');
+require('./Models/messageInterneModel.php');
 
 
 //actualisation de la session en fonction de GET
@@ -42,7 +43,25 @@ function actualiser_session(){
             $_SESSION['redirection'] = $_SESSION['redirection'];
         }
     }
-    
+    if(isset($_SESSION['id'])){
+        $idRecepteur = $_SESSION['id'];
+        $messages = getMessageNonLuByUserId($idRecepteur);
+        
+        if($result = $messages->fetch()){
+            $i = 1;
+            do{
+                $alerteMessage[$i] = $result['id'];
+                $i ++;
+            } while ($result = $messages->fetch());
+        };
+        if(isset($alerteMessage)){
+
+            $_SESSION['nbreMessages'] = count($alerteMessage);
+        } else {
+            unset($_SESSION['nbreMessages']);
+        }
+       
+    }
 }
 
 //lancement des fonctions
@@ -84,6 +103,26 @@ if(isset($_POST['demandeStatut'])){
     traitementFormulaireDemande();
 }
 
+if(isset($_POST['voirMessagesNonLus'])){
+    $_GET['page'] = 'listeConversations';
+}
+
+if(isset($_POST['lireMessage'])){   
+    $_GET['page'] = 'lireUnMessage';
+}
+
+if(isset($_POST['lireConversation'])){
+    $_GET['page'] = 'conversation';
+}
+
+if(isset($_POST['reponseMessage'])){
+    $contenu = htmlspecialchars($_POST['contenu']);
+    $idRecepteur = intval($_POST['reponseMessage']);
+    $pseudoRecepteur = 'Moi';
+    $idEmetteur = $_SESSION['id'];
+    $pseudoEmetteur = $_SESSION['pseudo'];
+    createMessageInterne($idEmetteur, $pseudoEmetteur, $contenu, $idRecepteur, $pseudoRecepteur);
+}
 
 if(isset($_POST['modifPseudo'])){
     $_GET['page'] = 'modifPseudo';
@@ -171,6 +210,18 @@ function choixRequete(){
                 break;
             case 'demandeStatut' :
                 userAction('demandeStatut');
+                $_GET['page'] = '';
+                break;
+            case 'listeConversations' :
+                userAction('listeConversations');
+                $_GET['page'] = '';
+                break;
+            case 'conversation' :
+                userAction('conversation');
+                $_GET['page'] = '';
+                break;
+            case 'lireUnMessage' :
+                userAction('lireUnMessage');
                 $_GET['page'] = '';
                 break;
             case 'modifPseudo' :

@@ -277,6 +277,7 @@ h3{
 }
 .likedVideoTitle{
     text-align-last: center;
+    text-align: center;
     margin-bottom: 10px;
 }
 h6{
@@ -372,6 +373,7 @@ video{
     background: transparent;
     color: #333;
     max-width: 200px;
+    min-width: 150px;
     letter-spacing: .2em;
     transition: all .4s;
     cursor: pointer;
@@ -379,7 +381,7 @@ video{
 .btn2:hover{
     background: rgba(13, 19, 44, 0.685);;
     color: linen;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 
@@ -395,6 +397,27 @@ video{
     flex-direction: column;
     max-width: 15%;
     padding-left: 10px;
+}
+
+.affichageMessage{
+    width: 80%;
+    min-height: calc(100vh - 173px);
+}
+
+.emetteurMessage{
+    border: none;
+    background: none;
+    color: blue;
+    cursor: pointer;
+}
+
+.message{
+    margin-bottom: 10px;
+}
+
+.reponseMessage{
+    width: 90%;
+    resize: none;
 }
 /* formulaire inscription et connexion */
 
