@@ -7,7 +7,7 @@
 body{
     width: 100%;
     height: 100vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: rgba(11, 11, 15, 0.1);
 }
 .affichage{
@@ -23,7 +23,7 @@ body{
     letter-spacing: .5rem;
     font-weight: 500;
     font-size: 3rem;
-    text-shadow: 2px 2px rgba(46, 80, 231, 0.623);
+    /* text-shadow: 2px 2px rgba(46, 80, 231, 0.623); */
 }
 .btn-container-accueil{
     width: 100%;
@@ -188,6 +188,7 @@ body{
     background: gainsboro;
     color:green;
     max-width: 200px;
+    min-width: 100px;
     letter-spacing: .2em;
     transition: all .4s;
 }
@@ -263,7 +264,7 @@ body{
     text-align: center;
 }
 #commentaire{
-    width: 100%;
+    width: 85%;
 }
 .formCommentaireLabel{
     align-self: flex-start;
@@ -373,7 +374,7 @@ video{
     background: transparent;
     color: #333;
     max-width: 200px;
-    min-width: 150px;
+    min-width: 100px;
     letter-spacing: .2em;
     transition: all .4s;
     cursor: pointer;
@@ -661,7 +662,7 @@ button[type=submit], button[type=reset] {
     }
     .formCommentaire{
         max-width: 50%;
-        min-width: 450px;
+        /* min-width: 450px; */
         margin-bottom: 20px;
     }
     .modal_inscription, .modal_connexion, .modal_deconnexion{
@@ -728,11 +729,30 @@ button[type=submit], button[type=reset] {
         min-width:none;
         margin-left: 0;
         margin-right: 0;
+        height: 300px;
+        border-radius: 0;
     }
     iframe{
         width: 100%;
         height: calc(100vw / 1.99);
+        border-radius: 0;
+    }
+    .linkVoirVideo{
+        padding-top: 250px;
+    }
+    .sectionTitleVideo{
+        width: 100vw;
+    }
+    button[type=submit], button[type=reset] {
+        padding-left: 0;
+        margin-top: 0;
+    }
+
+    .vid{
+        height: calc(100vw / 1.5);
+    }
+    .linkVoirVideo{
+        padding-top: calc(100vw / 1.5);
     }
 }
-
 
