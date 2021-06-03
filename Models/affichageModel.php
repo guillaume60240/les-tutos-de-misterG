@@ -11,7 +11,7 @@ function remplirSection($video, $nomSection){
         $date = $video['created_at'];
         $link = $video['link'];
         $videoId = $video['id'];
-        
+        $vue = $video['nbreVue'];
         require('./Views/functionView/remplirSection'.$nomSection.'View.php');
         
 }

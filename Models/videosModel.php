@@ -120,3 +120,18 @@ function insertVideo($titre, $artiste, $section, $link, $restriction){
         ':restriction' =>$restriction
     ));
 }
+
+function adVue($id){
+    $bdd = getPdo();
+    $nbreVue = $bdd->query('SELECT nbreVue FROM videos WHERE id = "'.$id.'"');
+    
+    $vue = $nbreVue->fetch();
+    $value = intval($vue['0']);
+    $value += 1;
+
+    $requete = $bdd->prepare("UPDATE videos SET nbreVue = :vue WHERE id = :id");
+    $requete->execute([
+        ':vue' => $value,
+        ':id' => $id
+    ]);
+}

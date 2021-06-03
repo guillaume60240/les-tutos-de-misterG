@@ -304,6 +304,7 @@ function requeteLectureVideo(){
     }
     
     $requete = getOneVideoById($rVideoId);
+    adVue($rVideoId);
     $comments = recupererCommentairesPourUneVideo($rVideoId);
     $requeteFirstTwoVideo = getFirstTwoVideo();
     
