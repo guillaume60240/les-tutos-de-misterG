@@ -72,3 +72,18 @@ function getUserByPseudo($pseudo){
 
     return $requete;
 }
+
+function addConnexion($idUser){
+    $bdd = getPdo();
+    $nbreConnexions = $bdd->query('SELECT nbreConnexions FROM membres WHERE id = "'.$idUser.'"');
+    
+    $connexion = $nbreConnexions->fetch();
+    $value = intval($connexion['0']);
+    $value += 1;
+
+    $requete = $bdd->prepare("UPDATE membres SET nbreConnexions = :connexion WHERE id = :idUser");
+    $requete->execute([
+        ':connexion' => $value,
+        ':idUser' => $idUser
+    ]);
+}

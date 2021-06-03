@@ -407,7 +407,15 @@ function traitementFormulaireConnexion(){
                 $_SESSION['pseudo'] = $userPseudoExist['pseudo'];
                 $_SESSION['id'] = $userPseudoExist['id'];
                 $_SESSION['role'] = $userPseudoExist['role'];
+                $_SESSION['connexion'] = intval($userPseudoExist['nbreConnexions']);
                 
+                if($_SESSION['connexion'] === 0){
+                    sendMessageWelcome();
+
+                }
+
+                addConnexion($_SESSION['id']);
+
                 $pageActuelle = $_SESSION['pageView'];
                 if($pageActuelle != 'lectureVideo'){
 

@@ -28,24 +28,7 @@ ob_start();
                 }
 
             ?>
-            <!-- </form>
-            <h3>Mes conversations</h3>
-            <form action="#" method="post"> -->
-                <?php
-                  //  $idRecepteur = $_SESSION['id'];
-                    //$result = getMessageByUserId($idRecepteur);
-                    //if($message = $result->fetch()){
-                      //  do{
-                            
-                    //        $pseudoEmetteur = $message['pseudoEmetteur'];    
-                      //      $idEmetteur = $message['idEmetteur'];                        
-                ?>
-                         <!-- <p>Conversation avec :<button type="submit" class="emetteurMessage" name="lireConversation" value="<?=$idEmetteur?>"><?=$pseudoEmetteur?></button></p>        -->
-                <?php
-                //        } while($message = $result->fetch());
-                  //  }
-                ?>
-            <!-- </form> -->
+            
             <a href="/?page=espacePerso" class="modal_close" class="formInscriptionLink">&times;</a>
         </div>
     </div>
